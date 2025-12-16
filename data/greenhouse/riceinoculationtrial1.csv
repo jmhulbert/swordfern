@@ -1,0 +1,61 @@
+﻿Plant ID,treatment,Symptopmatic (Y/N),Number of Symptomatic Fronds,Number of Severely Symptomatic Fronds,Number of Moderately symptomatic Fronds,Number of Mildly symptomatic fronds,Notes
+GINA-130,globisporangium intermedium,Y,21,21,0,0,severe crisping
+SYRB-016,phytophthora syringae,Y,20,20,0,0,very severe
+GINC-146,globisporangium intermedium,Y,20,0,0,0,18 symptomatic fronds on left side of plant
+SYRA-003,phytophthora syringae,Y,19,19,0,0,
+CACB-029,phytophthora cactorum,Y,16,16,0,0,most fronds dead/crispy
+SYRA-001,phytophthora syringae,Y,16,16,0,0,"very severe, crisp"
+BLAA-155,blank agar,Y,16,16,0,0,all severe
+OCCB-115,phytophthora occultans,Y,16,0,0,0,all fronds crisping
+GINC-148,globisporangium intermedium,Y,15,15,0,0,severe crisping
+CACA-082,phytophthora cactorum,Y,13,12,0,1,
+PLUB-036,phytophthora plurivora,Y,13,13,0,0,
+SYRB-018,phytophthora syringae,Y,13,5,8,0,
+PLUA-027,phytophthora syringae,Y,12,3,9,0,
+CACA-080,phytophthora cactorum,Y,10,0,10,0,moderate crisping
+EURA-063,phytophthora europaea,Y,10,1,0,9,
+OCCB-114,phytophthora occultans,Y,10,9,0,10,
+SYRB-014,phytophthora syringae,Y,10,4,6,0,
+GINC-147,globisporangium intermedium,Y,10,8,2,0,
+PLUA-025,phytophthora plurivora,Y,10,5,5,0,
+SYRA-004,phytophthora syringae,Y,9,0,9,0,~ 40% crisp
+CAMA-044,phytophthora cambivora,Y,9,4,0,5,
+SYRB-013,phytophthora syringae,Y,9,5,4,0,
+GINB-138,globisporangium intermedium,Y,9,4,5,0,
+CACA-081,phytophthora cactorum,Y,9,9,3,0,
+BLAB-165,blank agar,Y,9,9,0,0,
+CAMB-054,phytophthora cambivora,Y,9,8,1,0,
+SYRA-005,phytophthora syringae,Y,8,2,0,6,many dead
+FLEX-072,phytophthora flexuosa,Y,8,4,0,4,
+PLUB-034,phytophthora plurivora,Y,8,6,0,2,
+OCCA-100,phytophthora occultans,Y,8,7,1,0,
+PLUA-026,phytophthora plurivora,Y,7,0,0,7,"all mild crisp, discolored"
+EURA-064,phytophthora europaea,Y,7,6,0,1,
+OCCA-099,phytophthora occultans,Y,7,3,0,4,
+CAMA-046,phytophthora cambivora,Y,7,0,0,0,
+CAMB-055,phytophthora cambivora,Y,7,7,0,0,
+CAMB-053,phytophthora cambivora,Y,6,2,0,4,
+SYRB-015,phytophthora syringae,Y,6,6,0,0,
+CACB-091,phytophthora cactorum,Y,5,4,1,0,
+SYRA-002,phytophthora syringae,Y,5,2,0,3,
+BLAB-164,blank agar,Y,5,4,1,0,
+GINA-129,globisporangium intermedium,Y,4,1,0,3,"1 severe, 3 very mild crisp"
+FLEX-071,phytophthora flexuosa,Y,4,0,0,4,lots of fiddleheads
+BLAA-156,blank agar,Y,4,1,0,3,
+GINB-139,globisporangium intermedium,Y,4,0,0,4,very mild crisping
+NONE-174,no agar,Y,4,1,0,3,
+GINB-137,globisporangium intermedium,Y,4,0,4,0,
+OCCB-113,phytophthora occultans,Y,4,1,0,3,"3 very mild, one severe"
+PLUB-035,phytophthora plurivora,Y,4,0,0,0,
+EURA-062,phytophthora europaea,Y,4,1,3,0,
+BLAB-166,blank agar,Y,3,1,0,2,
+SYRA-006,phytophthora syringae,Y,3,0,2,1,
+BLAA-157,blank agar,Y,2,0,1,1,
+CAMA-045,phytophthora cambivora,Y,2,2,0,0,
+FLEX-073,phytophthora flexuosa,Y,2,0,2,0,
+SYRB-017,phytophthora syringae,Y,1,0,0,1,mild crisping on one frond
+GINA-122,globisporangium intermedium,Y,1,1,0,0,
+CACB-090,phytophthora cactorum,Y,1,0,0,1,very mild
+OCCA-098,phytophthora occultans,Y,1,0,0,1,
+NONE-043,no agar,Y,1,1,0,0,"1 severe, smallest frond"
+NONE-173,no agar,Y,0,0,0,0,no crisp noticed

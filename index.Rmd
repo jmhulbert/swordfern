@@ -1,0 +1,23 @@
+---
+title: "Swordfern Dieback Analyses"
+output: html_document
+date: "2025-11-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Welcome
+
+The purpose of this repository is to organize and share active research about the western sword fern dieback in the Puget Sound. 
+
+
+## Disclaimer
+
+Note these data are raw and the analyses are preliminary. Some of the sequence results or isolate identifications are still being fleshed out. Stay tuned for updates.
+
+
+## Contact
+
+Please contact Joey at hulbe@wsu.edu if you're interested in collaborating! 

@@ -1,0 +1,149 @@
+---
+title: "Sword Fern Dieback Maps"
+output: html_document
+date: "2025-11-17"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(gghalves)
+library(patchwork)
+library(scales)
+library(ggmap)
+library(osmdata)
+```
+
+
+Note you can add 'keep_md:yes' to the YAML to save all r outputs as images. 
+
+# Purpose
+
+The purpose of this page is to generate maps of data used in analyses. 
+
+
+# Wrangle
+
+```{r}
+setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
+data <- read.csv("./data/lab/combined.results.csv")
+```
+
+```{r}
+data <- rename(data,Tentative.Result = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.)
+```
+
+
+```{r}
+data <- data %>% filter(common_name=="western sword fern") %>% filter(!is.na(latitude))
+```
+
+```{r}
+data$Tentative.Result[data$Tentative.Result=="Phytophthora europaea or abietivora?"] <- "Phytophthora sp."
+data$Tentative.Result[data$Tentative.Result=="Phytophthora flexuosa?"] <- "Phytophthora sp."
+```
+
+```{r}
+data <- data %>%
+  mutate(Results.Neg = if_else(
+    is.na(Tentative.Result) | Tentative.Result == "",
+    "No Oomycete found",
+    Tentative.Result
+  ))
+
+```
+
+
+```{r}
+Phytophthora <- data %>% filter(Genus=="Phytophthora") %>% droplevels()
+```
+
+
+```{r}
+levels(as.factor(Phytophthora$Results.Neg))
+```
+
+
+```{r}
+levels(as.factor(data$place_guess))
+Seward <- data %>% filter(place_guess=="Seward Park, Seattle, WA, US") %>% droplevels()
+```
+
+
+# Map
+
+
+```{r}
+sewardbb <- c(left = min(Seward$longitude), 
+                              bottom = min(Seward$latitude), 
+                              right = max(Seward$longitude), 
+                              top = max(Seward$latitude))
+```
+
+
+```{r}
+seward.map <- get_map(sewardbb, zoom = 16, scale = 2, maptype="satellite",source="google")
+```
+
+```{r}
+species.map <- ggmap(seward.map)+geom_point(data=Seward,aes(x=longitude,y=latitude,fill=Results.Neg),color = "black",pch=21, size = 3, alpha=0.9) + theme_minimal() +labs(title="Sword Fern Dieback Results",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) + scale_fill_discrete(labels = function(x) parse(text = paste0("italic('",x, "')")))
+```
+
+```{r}
+species.map
+```
+
+
+
+
+
+
+```{r}
+databb <- c(left = min(Phytophthora$longitude), 
+                              bottom = min(Phytophthora$latitude), 
+                              right = max(Phytophthora$longitude), 
+                              top = max(Phytophthora$latitude))
+```
+
+
+```{r}
+data.map <- get_map(databb, zoom = 9, scale = 2, maptype="terrain",source="google")
+```
+
+```{r}
+species.map <- ggmap(data.map)+geom_point(data=Phytophthora,aes(x=longitude,y=latitude,fill=Results.Neg),color = "black",pch=21, size = 3) + theme_minimal() +labs(title="Sword Fern Dieback Results",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) + scale_fill_discrete(labels = function(x) parse(text = paste0("italic('",x, "')")))
+```
+
+```{r}
+species.map
+```
+
+
+```{r}
+syringaebb <- c(left = min(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$longitude), 
+                              bottom = min(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$latitude), 
+                              right = max(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$longitude), 
+                              top = max(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$latitude))
+```
+
+
+```{r}
+data.map <- get_map(syringaebb, zoom = 10, scale = 2, maptype="terrain",source="google")
+```
+
+
+```{r}
+syringae.map <- ggmap(data.map)+geom_point(data=Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",],aes(x=longitude,y=latitude,fill=Tentative.Result),color = "black",pch=21, size = 3) + theme_minimal() +labs(title="Phytophthora syringae",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) +guides(fill="none")
+
+```
+
+```{r}
+syringae.map
+```
+
+

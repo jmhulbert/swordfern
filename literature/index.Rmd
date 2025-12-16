@@ -1,0 +1,102 @@
+---
+title: "Literature Review"
+output: html_document
+date: "2025-11-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Literature Review
+
+## Phytophthora species of interest
+
+### Phytophthora syringae
+
+Prior research plants or environments
+-	Lilac (Klebahn,1909)
+-	Apple tree (England) (Edney, 1978)
+-	Pear tree (England) (Edney, 1978)
+-	Pome fruits (Ireland) (Lafferty & Pethybridge, 1922)
+o	Also found in NW Europe, Canada, England, Wales (Harris, 1979)
+-	Orchard soils (Holland) (Roosje, 1958)
+-	Orchard soils (England) (Sewell & Wilson, 1964)
+
+
+### Phytophthora Occultans
+
+Pathogen of the species:
+-	Netherlands: https://doi.org/10.3852/12-371
+o	Buxus sempervirens 
+	Also observed in Eastern USA https://doi.org/10.1094/PDIS-04-18-0684-PDN
+	Czech Republic https://doi.org/10.1094/PDIS-07-22-1537-PDN
+	Turkey https://link.springer.com/article/10.1007/s10658-018-01636-4
+o	Acer palmatum
+-	Oregon: https://doi.org/10.1094/PDIS-02-15-0156-PDN
+o	Ceanothus sanguineus
+o	Ceanothus velutinus
+o	Ceanothus integerrimus
+o	Rhododendron
+o	Gaultheria shallon
+o	Arctostaphylos uva-ursi
+o	Mahonia nervosa  
+-	Iran
+o	Dracaena trifasciata https://www.sid.ir/fileserver/je/1311-279689-x-1133641.pdf
+-	UK: 
+o	Euphorbia amygdaloides https://www.researchgate.net/profile/Fryni-Drizou/publication/377598941_First_report_of_Phytophthora_occultans_infecting_Euphorbia_amygdaloides_in_the_United_Kingdom/links/65af73a48c1a4a6d1d1882f8/First-report-of-Phytophthora-occultans-infecting-Euphorbia-amygdaloides-in-the-United-Kingdom.pdf
+
+
+### Phytophthora Cactorum
+
+-	spanning at least 154 genera of vascular plants within 54 families (Waterhouse & Waterston, 1966)
+o	Including herbaceous and woody plants
+-	Strawberry (Erwin & Ribeiro, 1996)
+-	woody cultivated apple and pear (Erwin & Ribeiro, 1996)
+-	carrot (Vaartaja & Salisbury, 1961) https://doi.org/10.1094/PDIS-09-12-0895-RE
+-	raspberry (Duncan, Kennedy & Seemuller, 1987)
+o	Kennedy, D. M. & Duncan, J. M. (1995). A papillate Phytophthora species with speci®city to Rubus. Mycological Research 99, 57±68.
+-	Noble Fir (Hamm & Hansen, 1982; Chastagner, Hamm & Riley, 1995)
+o	https://www.apsnet.org/publications/plantdisease/backissues/Documents/1995Abstracts/PD_79_290.htm
+o	https://doi.org/10.1111/j.1439-0329.1982.tb01390.x
+-	horse chestnut (Caroselli, 1953; Werres, Richter & Veser, 1995)
+o	Caroselli, N. E. (1953). Bleeding canker diseases of hardwoods. Barlett Tree Research Laboratory. Science of the Tree Topics 2(1), 1±6.
+o	Werres, S., Richter, J. & Veser, I. (1995). Untersuchungen von kranken und abgestorbenen Roûkastanien (Aesculus hippocastanum L.) im offentlichen Grun. Nachrichtenblatt des Deutschen P¯anzenschutzdienstes 47 (4), 81±85.
+-	Acer spp. (Strouts, 1981)
+o	Strouts, R. G. (1981). Phytophthora diseases of trees and shrubs. Arbocultural Lea¯et, Department of the Environment, U.K. No. 8, 16 pp.
+-	Scots pine (Molin, Persson & Persson, 1960; Vaartaja & Salisbury, 1961)
+o	Molin, N., Persson, M. & Persson, S. (1960). Root parasites on forest tree seedlings. Meddelanden fran Statens Skogsforskningsinstitut, Band 49 (1), 1±17.
+o	Vaartaja, O. & Salisbury, P. J. (1961). Potential pathogenicity of Pythium isolates from forest nurseries. Phytopathology 51, 35±42.
+-	Betula spp. (Caroselli, 1953) 
+o	Caroselli, N. E. (1953). Bleeding canker diseases of hardwoods. Barlett Tree Research Laboratory. Science of the Tree Topics 2(1), 1±6.
+-	Eucalyptus spp. (Wardlaw & Palzer, 1985)
+o	Wardlaw, T. J. & Palzer, C. (1985). Stem diseases in nursery seedlings caused by Phytophthora cactorum, P. citricola and Pythium anandrum. Australasian Plant Pathology 14, 57±59.
+-	silver birch (Betula pendula Roth) (Lilja et al., 1996b)
+o	Lilja, A., Rikala, R., Hietala, A. & Heinonen, R. (1996b). Stem lesions on Betula pendula seedlings in Finnish forest nurseries and the pathogenicity of Phytophthora cactorum. European Journal of Forest Pathology 26, 89±96
+-	No report of sword fern as host species
+
+### Phytophthora Plurivora
+-	Polystichum munitum (western swordfern) (USDA APHIS 2022).
+o	https://www.aphis.usda.gov/plant_health/plant_pest_info/pram/downloads/pdf_files/usdaprlist.pdf
+
+### Phytophthora Flexuosa
+-	Fagus hayatae (Taiwan)
+o	https://doi.org/10.1111/ppa.12564
+
+### Phytophthora Europaea
+-	Quercus robur (Lubeck,Germany,1995; NEFrance,1998)
+-	Quercus sp. (NE France,1998)
+o	https://doi.org/10.1017/S0953756202005622
+-	Q. alba in West Virginia, Q. rubra in Minnesota, West Virginia, and Wisconsin, Q. phellos in Ohio, and Q. velutina in Pennsylvania.
+o	https://doi.org/10.1094/PD-90-0827B
+
+### Phytophthora Cambivora
+-	P. cambivora is a common pathogen of Castanea, Fagus and other hardwoods in Europe (Peace, 1962)
+-	Fagus sylvatica (Norway)
+o	https://doi.org/10.1111/efp.12215
+-	P. cambivora had only been isolated from noble fir (Abies procera Rehder) in Norway (Talgø et al. 2006)
+-	chestnuts (Castanea), apricots, peaches, plums, almonds and cherries (Prunus), apples (Malus), oaks (Quercus), and beech (Fagus)
+o	https://link.springer.com/article/10.1186/s43008-023-00109-6
+
+
+

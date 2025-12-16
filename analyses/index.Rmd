@@ -1,0 +1,96 @@
+---
+title: "Swordfern Dieback Sample Analyses"
+output: html_document
+date: "2025-11-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(kableExtra)
+```
+
+
+```{r}
+setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
+data <- read.csv("./data/lab/combined.results.csv")
+```
+
+```{r}
+data <- rename(data,Tentative.Result = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.)
+```
+
+
+```{r}
+data <- data %>% filter(common_name=="western sword fern")
+```
+
+
+
+```{r}
+data$Tentative.Result[data$Tentative.Result=="Phytophthora europaea or abietivora?"] <- "Phytophthora sp."
+data$Tentative.Result[data$Tentative.Result=="Phytophthora flexuosa?"] <- "Phytophthora sp."
+```
+
+
+
+
+
+```{r}
+data$Project <- as.factor(data$Project)
+data$place_guess <- as.factor(data$place_guess)
+data$Oomycete <- as.factor(data$Oomycete)
+```
+
+
+```{r}
+field.baits <- data %>% filter(Project=="Swordfern Soil Bait Isolates")
+```
+
+```{r}
+roots <- data %>% filter(Project=="Swordfern Roots")
+```
+
+
+### Field Baits
+
+
+## Summary Tables
+
+## Number of Isolates
+
+
+```{r}
+ggplot(field.baits[field.baits$Tentative.Result!="" & !is.na(field.baits$Tentative.Result),],aes(Tentative.Result,fill=Genus)) +geom_histogram(stat="count")+coord_flip() +theme_bw() +guides(fill="none") +theme(axis.text = element_text(face = "italic")) + labs(y="Number of Isolates")
+```
+
+```{r}
+levels(field.baits$Oomycete)
+```
+
+
+```{r}
+site.summary <- field.baits %>% group_by(place_guess) %>% summarize(n.samples=n_distinct(Sample),n.isolates=n(),n.oomycete.isolates=sum(Oomycete=="Oomycete",na.rm=TRUE),n.oomycete.spec=n_distinct(Tentative.Result),n.Phytoph.isolates=sum(Genus=="Phytophthora",na.rm=TRUE),n.Phytoph.spec=n_distinct(Tentative.Result[Genus=="Phytophthora" & !is.na(Tentative.Result)]),Phytoph.spp=paste(unique(Tentative.Result[Genus=="Phytophthora" & !is.na(Tentative.Result)]),collapse=", "))
+kable(site.summary,digits = 2) %>% kable_material(c("striped", "hover","condensed")) %>% kable_styling(full_width = F) %>% scroll_box(height = "400px")
+```
+
+
+
+```{r}
+species.summary <- field.baits %>% filter(!is.na(Tentative.Result) & Tentative.Result!="") %>% group_by(Tentative.Result) %>% summarize(n.sites = n_distinct(place_guess,na.rm=TRUE),n.samples = n_distinct(Sample,na.rm=TRUE),n.isolates=n(),Genus=paste(unique(Genus))) 
+species.summary
+```
+
+
+
+
+```{r}
+ggplot(species.summary,aes(Tentative.Result,n.sites,fill=Genus)) +geom_col() +theme_bw() +coord_flip() + guides(fill=FALSE) +theme(axis.text = element_text(face = "italic")) +labs(x="Species",y="Number of Sites (e.g. Seward Park)")
+```
+
+```{r}
+ggplot(species.summary,aes(Tentative.Result,n.samples,fill=Genus)) +geom_col() +theme_bw() +coord_flip() + guides(fill=FALSE) +theme(axis.text = element_text(face = "italic")) +labs(x="Species",y="Number of Samples")
+```

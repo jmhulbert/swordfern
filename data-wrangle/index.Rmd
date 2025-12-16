@@ -1,0 +1,58 @@
+---
+title: "Data Wrangling Methods"
+output: html_document
+date: "2025-11-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+
+
+## Data Wrangle
+
+```{r}
+setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
+sites <- read.csv("./data/field/sword.fern.field.sample.data.csv")
+isolates <- read.csv("./data/lab/sword.fern.isolates.csv")
+extractions <- read.csv("./data/lab/sword.fern.isolate.extractions.csv")
+```
+
+```{r}
+names(isolates)
+```
+
+
+```{r}
+extractions <- extractions[1:15]
+```
+
+
+```{r}
+names(extractions)
+```
+
+```{r}
+results <- left_join(isolates,extractions,join_by("Isolate.ID"=="Isolate.Name"))
+```
+
+```{r}
+results <- results %>% mutate(Isolate.ID2=Isolate.ID) %>% separate(Isolate.ID2, into=c("Sample", "Isolate Number"), sep="-")
+```
+
+
+```{r}
+results <- left_join(results,sites,join_by("Sample"=="Sample.ID"))
+```
+
+
+```{r}
+setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
+write.csv(results,file="./data/lab/combined.results.csv")
+```
+
