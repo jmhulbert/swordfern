@@ -34,8 +34,9 @@ extractions <- extractions[1:15]
 
 
 ```{r}
-names(extractions)
+extractions <- extractions %>% filter(Sample.Extraction.Number!="FHL0167")
 ```
+
 
 ```{r}
 results <- left_join(isolates,extractions,join_by("Isolate.ID"=="Isolate.Name"))

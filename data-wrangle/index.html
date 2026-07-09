@@ -357,11 +357,11 @@ display: none;
 
 <pre class="r"><code>library(tidyverse)</code></pre>
 <pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ readr     2.1.5
-## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-## ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
-## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-## ✔ purrr     1.0.4     
+## ✔ dplyr     1.1.4     ✔ readr     2.1.6
+## ✔ forcats   1.0.1     ✔ stringr   1.6.0
+## ✔ ggplot2   4.0.1     ✔ tibble    3.3.1
+## ✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+## ✔ purrr     1.2.1     
 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
@@ -373,11 +373,59 @@ sites &lt;- read.csv(&quot;./data/field/sword.fern.field.sample.data.csv&quot;)
 isolates &lt;- read.csv(&quot;./data/lab/sword.fern.isolates.csv&quot;)
 extractions &lt;- read.csv(&quot;./data/lab/sword.fern.isolate.extractions.csv&quot;)</code></pre>
 <pre class="r"><code>names(isolates)</code></pre>
-<pre><code>##  [1] &quot;Isolate.ID&quot;             &quot;Project&quot;                &quot;Primary.ioslation.date&quot;
-##  [4] &quot;Date.Extracted&quot;         &quot;Date&quot;                   &quot;Location&quot;              
-##  [7] &quot;Current.Isolate.Status&quot; &quot;Phytophthora.likely&quot;    &quot;Morphology&quot;            
-## [10] &quot;Species&quot;                &quot;Ready.to.Extract&quot;       &quot;Media&quot;                 
-## [13] &quot;Backup.Location&quot;        &quot;Notes&quot;</code></pre>
+<pre><code>##  [1] &quot;X&quot;                                                                  
+##  [2] &quot;Isolate.ID&quot;                                                         
+##  [3] &quot;Project&quot;                                                            
+##  [4] &quot;Primary.ioslation.date&quot;                                             
+##  [5] &quot;Date.Extracted.x&quot;                                                   
+##  [6] &quot;Date&quot;                                                               
+##  [7] &quot;Location&quot;                                                           
+##  [8] &quot;Current.Isolate.Status&quot;                                             
+##  [9] &quot;Phytophthora.likely.x&quot;                                              
+## [10] &quot;Morphology&quot;                                                         
+## [11] &quot;Species&quot;                                                            
+## [12] &quot;Ready.to.Extract&quot;                                                   
+## [13] &quot;Media&quot;                                                              
+## [14] &quot;Backup.Location&quot;                                                    
+## [15] &quot;Notes.x&quot;                                                            
+## [16] &quot;Sample.Extraction.Number&quot;                                           
+## [17] &quot;Sample.Number..Soil.or.Tissue.&quot;                                     
+## [18] &quot;Secondary.Isolation.Number&quot;                                         
+## [19] &quot;Sample.Substrate&quot;                                                   
+## [20] &quot;Priority&quot;                                                           
+## [21] &quot;Date.Extracted.y&quot;                                                   
+## [22] &quot;Extraction.Kit&quot;                                                     
+## [23] &quot;Qubit..ng.ul.&quot;                                                      
+## [24] &quot;Notes.y&quot;                                                            
+## [25] &quot;PCR.Amplification.Date&quot;                                             
+## [26] &quot;Successful.Amplification.&quot;                                          
+## [27] &quot;Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.&quot;
+## [28] &quot;Genus&quot;                                                              
+## [29] &quot;Oomycete&quot;                                                           
+## [30] &quot;Sample&quot;                                                             
+## [31] &quot;Isolate.Number&quot;                                                     
+## [32] &quot;Collection.Date&quot;                                                    
+## [33] &quot;iNat.User&quot;                                                          
+## [34] &quot;url&quot;                                                                
+## [35] &quot;place_guess&quot;                                                        
+## [36] &quot;latitude&quot;                                                           
+## [37] &quot;longitude&quot;                                                          
+## [38] &quot;scientific_name&quot;                                                    
+## [39] &quot;common_name&quot;                                                        
+## [40] &quot;plant.health.condition&quot;                                             
+## [41] &quot;plant.symptom&quot;                                                      
+## [42] &quot;Dieback.percent&quot;                                                    
+## [43] &quot;site.type&quot;                                                          
+## [44] &quot;site.area.disturbance.level&quot;                                        
+## [45] &quot;site.hydrology&quot;                                                     
+## [46] &quot;site.location.description&quot;                                          
+## [47] &quot;slope.position&quot;                                                     
+## [48] &quot;percent.of.plants..of.same.species..affected.within.sight....&quot;      
+## [49] &quot;regeneration.present.&quot;                                              
+## [50] &quot;soil.sample.number&quot;                                                 
+## [51] &quot;Phytophthora.likely.y&quot;                                              
+## [52] &quot;Notes&quot;                                                              
+## [53] &quot;Notes.Extra&quot;</code></pre>
 <pre class="r"><code>extractions &lt;- extractions[1:15]</code></pre>
 <pre class="r"><code>names(extractions)</code></pre>
 <pre><code>##  [1] &quot;Sample.Extraction.Number&quot;                                           

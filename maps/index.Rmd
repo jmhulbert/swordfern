@@ -1,5 +1,5 @@
 ---
-title: "Sword Fern Dieback Maps"
+title: "Sword Fern Mortality Maps"
 output: html_document
 date: "2025-11-17"
 ---
@@ -12,12 +12,17 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(knitr)
 library(kableExtra)
-library(gghalves)
 library(patchwork)
 library(scales)
 library(ggmap)
 library(osmdata)
 ```
+
+```{r}
+ggmap::register_google(key = Sys.getenv("GOOGLE_API_KEY"))
+```
+
+
 
 
 Note you can add 'keep_md:yes' to the YAML to save all r outputs as images. 
@@ -35,12 +40,12 @@ data <- read.csv("./data/lab/combined.results.csv")
 ```
 
 ```{r}
-data <- rename(data,Tentative.Result = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.)
+data <- rename(data,Tentative.Result = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast..x)
 ```
 
 
 ```{r}
-data <- data %>% filter(common_name=="western sword fern") %>% filter(!is.na(latitude))
+data <- data %>% filter(common_name.x=="western sword fern") %>% filter(!is.na(latitude.x))
 ```
 
 ```{r}
@@ -60,18 +65,15 @@ data <- data %>%
 
 
 ```{r}
-Phytophthora <- data %>% filter(Genus=="Phytophthora") %>% droplevels()
+Phytophthora <- data %>% filter(Genus.x=="Phytophthora") %>% droplevels()
 ```
 
 
-```{r}
-levels(as.factor(Phytophthora$Results.Neg))
-```
 
 
 ```{r}
-levels(as.factor(data$place_guess))
-Seward <- data %>% filter(place_guess=="Seward Park, Seattle, WA, US") %>% droplevels()
+levels(as.factor(data$place_guess.x))
+Seward <- data %>% filter(place_guess.x=="Seward Park, Seattle, WA, US") %>% droplevels()
 ```
 
 
@@ -79,10 +81,10 @@ Seward <- data %>% filter(place_guess=="Seward Park, Seattle, WA, US") %>% dropl
 
 
 ```{r}
-sewardbb <- c(left = min(Seward$longitude), 
-                              bottom = min(Seward$latitude), 
-                              right = max(Seward$longitude), 
-                              top = max(Seward$latitude))
+sewardbb <- c(left = min(Seward$longitude.x), 
+                              bottom = min(Seward$latitude.x), 
+                              right = max(Seward$longitude.x), 
+                              top = max(Seward$latitude.x))
 ```
 
 
@@ -91,7 +93,7 @@ seward.map <- get_map(sewardbb, zoom = 16, scale = 2, maptype="satellite",source
 ```
 
 ```{r}
-species.map <- ggmap(seward.map)+geom_point(data=Seward,aes(x=longitude,y=latitude,fill=Results.Neg),color = "black",pch=21, size = 3, alpha=0.9) + theme_minimal() +labs(title="Sword Fern Dieback Results",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) + scale_fill_discrete(labels = function(x) parse(text = paste0("italic('",x, "')")))
+species.map <- ggmap(seward.map)+geom_jitter(data=Seward,aes(x=longitude.x,y=latitude.x,fill=Results.Neg),color = "black",pch=21, size = 3, alpha=0.7,width = 0.00015) + theme_minimal() +labs(title="Sword Fern Dieback Results",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) + scale_fill_discrete(labels = function(x) parse(text = paste0("italic('",x, "')")))
 ```
 
 ```{r}
@@ -99,15 +101,21 @@ species.map
 ```
 
 
+```{r}
+syringae.seward.map <- ggmap(seward.map)+geom_point(data=Seward[Seward$Results.Neg=="Phytophthora syringae",],aes(x=longitude.x,y=latitude.x,fill=Results.Neg),color = "black",pch=21, size = 3, alpha=0.7) + theme_minimal() +labs(title="Seward Park",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) + scale_fill_discrete(labels = function(x) parse(text = paste0("italic('",x, "')")))
+```
 
+```{r}
+syringae.seward.map
+```
 
 
 
 ```{r}
-databb <- c(left = min(Phytophthora$longitude), 
-                              bottom = min(Phytophthora$latitude), 
-                              right = max(Phytophthora$longitude), 
-                              top = max(Phytophthora$latitude))
+databb <- c(left = min(Phytophthora$longitude.x), 
+                              bottom = min(Phytophthora$latitude.x), 
+                              right = max(Phytophthora$longitude.x), 
+                              top = max(Phytophthora$latitude.x))
 ```
 
 
@@ -116,7 +124,7 @@ data.map <- get_map(databb, zoom = 9, scale = 2, maptype="terrain",source="googl
 ```
 
 ```{r}
-species.map <- ggmap(data.map)+geom_point(data=Phytophthora,aes(x=longitude,y=latitude,fill=Results.Neg),color = "black",pch=21, size = 3) + theme_minimal() +labs(title="Sword Fern Dieback Results",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) + scale_fill_discrete(labels = function(x) parse(text = paste0("italic('",x, "')")))
+species.map <- ggmap(data.map)+geom_point(data=Phytophthora,aes(x=longitude.x,y=latitude.x,fill=Results.Neg),color = "black",pch=21, size = 3) + theme_minimal() +labs(title="Sword Fern Dieback Results",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) + scale_fill_discrete(labels = function(x) parse(text = paste0("italic('",x, "')")))
 ```
 
 ```{r}
@@ -125,10 +133,7 @@ species.map
 
 
 ```{r}
-syringaebb <- c(left = min(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$longitude), 
-                              bottom = min(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$latitude), 
-                              right = max(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$longitude), 
-                              top = max(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$latitude))
+syringaebb <- c(left = min(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$longitude.x),bottom = min(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$latitude.x), right = max(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$longitude.x),top = max(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$latitude.x))
 ```
 
 
@@ -138,8 +143,7 @@ data.map <- get_map(syringaebb, zoom = 10, scale = 2, maptype="terrain",source="
 
 
 ```{r}
-syringae.map <- ggmap(data.map)+geom_point(data=Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",],aes(x=longitude,y=latitude,fill=Tentative.Result),color = "black",pch=21, size = 3) + theme_minimal() +labs(title="Phytophthora syringae",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) +guides(fill="none")
-
+syringae.map <- ggmap(data.map)+geom_point(data=Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",],aes(x=longitude.x,y=latitude.x,fill=Tentative.Result),color = "black",pch=21, size = 3) + theme_minimal() +labs(title="Phytophthora syringae",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) +guides(fill="none")
 ```
 
 ```{r}
@@ -147,3 +151,45 @@ syringae.map
 ```
 
 
+```{r}
+databb <- c(left = min(Phytophthora$longitude.x), 
+                              bottom = min(Phytophthora$latitude.x), 
+                              right = max(Phytophthora$longitude.x), 
+                              top = max(Phytophthora$latitude.x))
+```
+
+
+```{r}
+data.map <- get_map(databb, zoom = 9, scale = 4, maptype="terrain",source="google")
+```
+
+```{r}
+sample.map <- ggmap(data.map)+geom_jitter(data=Phytophthora,aes(x=longitude.x,y=latitude.x,fill="red"),color="black",pch=21,size=3,alpha=0.7,width=0.015) + theme_minimal() +labs(title="Sword Fern Dieback Sample Locations",x="Longitude",y="Latitude") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) +guides(color="none",fill="none")
+```
+
+```{r}
+sample.map
+```
+
+
+```{r}
+field.baits2<- field.baits %>% filter(latitude.x!="NA") 
+databb <- c(left = min(field.baits2$longitude.x), 
+                              bottom = min(field.baits2$latitude.x), 
+                              right = max(field.baits2$longitude.x), 
+                              top = max(field.baits2$latitude.x))
+```
+
+
+```{r}
+data.map <- get_map(databb, zoom = 9, scale = 4, maptype="terrain",source="google")
+```
+
+
+```{r}
+sample.map <- ggmap(data.map)+geom_jitter(data=field.baits,aes(x=longitude.x,y=latitude.x,fill="red"),color="black",pch=21,size=3,alpha=0.7,width=0.015) + theme_minimal() +labs(title="Sword Fern Dieback Sample Locations",x="Longitude",y="Latitude") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) +guides(color="none",fill="none")
+```
+
+```{r}
+sample.map
+```

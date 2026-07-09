@@ -1,5 +1,5 @@
 ---
-title: "Swordfern Dieback Analyses"
+title: "Swordfern Mortality Analyses"
 output: html_document
 date: "2025-11-14"
 ---

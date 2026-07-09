@@ -1,5 +1,5 @@
 ---
-title: "Swordfern Dieback Sample Analyses"
+title: "Swordfern Mortality Sample Analyses"
 output: html_document
 date: "2025-11-14"
 ---
@@ -20,12 +20,12 @@ data <- read.csv("./data/lab/combined.results.csv")
 ```
 
 ```{r}
-data <- rename(data,Tentative.Result = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.)
+data <- rename(data,Tentative.Result = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast..x)
 ```
 
 
 ```{r}
-data <- data %>% filter(common_name=="western sword fern")
+data <- data %>% filter(common_name.x=="western sword fern")
 ```
 
 
@@ -41,8 +41,8 @@ data$Tentative.Result[data$Tentative.Result=="Phytophthora flexuosa?"] <- "Phyto
 
 ```{r}
 data$Project <- as.factor(data$Project)
-data$place_guess <- as.factor(data$place_guess)
-data$Oomycete <- as.factor(data$Oomycete)
+data$place_guess.x <- as.factor(data$place_guess.x)
+data$Oomycete.x <- as.factor(data$Oomycete.x)
 ```
 
 
@@ -64,7 +64,7 @@ roots <- data %>% filter(Project=="Swordfern Roots")
 
 
 ```{r}
-ggplot(field.baits[field.baits$Tentative.Result!="" & !is.na(field.baits$Tentative.Result),],aes(Tentative.Result,fill=Genus)) +geom_histogram(stat="count")+coord_flip() +theme_bw() +guides(fill="none") +theme(axis.text = element_text(face = "italic")) + labs(y="Number of Isolates")
+ggplot(field.baits[field.baits$Tentative.Result!="" & !is.na(field.baits$Tentative.Result),],aes(Tentative.Result,fill=Genus.x)) +geom_histogram(stat="count")+coord_flip() +theme_bw() +guides(fill="none") +theme(axis.text = element_text(face = "italic")) + labs(y="Number of Isolates")
 ```
 
 ```{r}
@@ -72,15 +72,37 @@ levels(field.baits$Oomycete)
 ```
 
 
+## Sample Collections
+
 ```{r}
-site.summary <- field.baits %>% group_by(place_guess) %>% summarize(n.samples=n_distinct(Sample),n.isolates=n(),n.oomycete.isolates=sum(Oomycete=="Oomycete",na.rm=TRUE),n.oomycete.spec=n_distinct(Tentative.Result),n.Phytoph.isolates=sum(Genus=="Phytophthora",na.rm=TRUE),n.Phytoph.spec=n_distinct(Tentative.Result[Genus=="Phytophthora" & !is.na(Tentative.Result)]),Phytoph.spp=paste(unique(Tentative.Result[Genus=="Phytophthora" & !is.na(Tentative.Result)]),collapse=", "))
+sample.summary <- field.baits %>% summarize(n.sites = n_distinct(place_guess.x,na.rm=TRUE),n.samples=n_distinct(Sample),n.isolates=n(),n.oomycete.isolates=sum(Oomycete.x=="Oomycete",na.rm=TRUE),n.oomycete.spec=n_distinct(Tentative.Result),n.Phytoph.isolates=sum(Genus.x=="Phytophthora",na.rm=TRUE),n.Phytoph.spec=n_distinct(Tentative.Result[Genus.x=="Phytophthora" & !is.na(Tentative.Result)]),Phytoph.spp=paste(unique(Tentative.Result[Genus.x=="Phytophthora" & !is.na(Tentative.Result)]),collapse=", "))
+
+kable(sample.summary,digits = 2) %>% kable_material(c("striped", "hover","condensed")) %>% kable_styling(full_width = F) %>% scroll_box(height = "400px")
+```
+
+
+## Phytophthora Isolates
+
+```{r}
+Phytophthora.summary <- field.baits %>% filter(Genus.x=="Phytophthora") %>% summarize(n.sites = n_distinct(place_guess.x,na.rm=TRUE),n.samples=n_distinct(Sample),n.isolates=n(),n.oomycete.isolates=sum(Oomycete.x=="Oomycete",na.rm=TRUE),n.oomycete.spec=n_distinct(Tentative.Result),n.Phytoph.isolates=sum(Genus.x=="Phytophthora",na.rm=TRUE),n.Phytoph.spec=n_distinct(Tentative.Result[Genus.x=="Phytophthora" & !is.na(Tentative.Result)]),Phytoph.spp=paste(unique(Tentative.Result[Genus.x=="Phytophthora" & !is.na(Tentative.Result)]),collapse=", "))
+
+kable(Phytophthora.summary,digits = 2) %>% kable_material(c("striped", "hover","condensed")) %>% kable_styling(full_width = F) %>% scroll_box(height = "400px")
+```
+
+
+
+## Samples per 'place guess'
+
+
+```{r}
+site.summary <- field.baits %>% group_by(place_guess.x) %>% summarize(n.samples=n_distinct(Sample),n.isolates=n(),n.oomycete.isolates=sum(Oomycete.x=="Oomycete",na.rm=TRUE),n.oomycete.spec=n_distinct(Tentative.Result),n.Phytoph.isolates=sum(Genus.x=="Phytophthora",na.rm=TRUE),n.Phytoph.spec=n_distinct(Tentative.Result[Genus.x=="Phytophthora" & !is.na(Tentative.Result)]),Phytoph.spp=paste(unique(Tentative.Result[Genus.x=="Phytophthora" & !is.na(Tentative.Result)]),collapse=", "))
 kable(site.summary,digits = 2) %>% kable_material(c("striped", "hover","condensed")) %>% kable_styling(full_width = F) %>% scroll_box(height = "400px")
 ```
 
 
 
 ```{r}
-species.summary <- field.baits %>% filter(!is.na(Tentative.Result) & Tentative.Result!="") %>% group_by(Tentative.Result) %>% summarize(n.sites = n_distinct(place_guess,na.rm=TRUE),n.samples = n_distinct(Sample,na.rm=TRUE),n.isolates=n(),Genus=paste(unique(Genus))) 
+species.summary <- field.baits %>% filter(!is.na(Tentative.Result) & Tentative.Result!="") %>% group_by(Tentative.Result) %>% summarize(n.sites = n_distinct(place_guess.x,na.rm=TRUE),n.samples = n_distinct(Sample,na.rm=TRUE),n.isolates=n(),Genus.x=paste(unique(Genus.x))) 
 species.summary
 ```
 
@@ -88,9 +110,39 @@ species.summary
 
 
 ```{r}
-ggplot(species.summary,aes(Tentative.Result,n.sites,fill=Genus)) +geom_col() +theme_bw() +coord_flip() + guides(fill=FALSE) +theme(axis.text = element_text(face = "italic")) +labs(x="Species",y="Number of Sites (e.g. Seward Park)")
+ggplot(species.summary,aes(Tentative.Result,n.sites,fill=Genus.x)) +geom_col() +theme_bw() +coord_flip() + guides(fill=FALSE) +theme(axis.text = element_text(face = "italic")) +labs(x="Species",y="Number of Sites (e.g. Seward Park)")
 ```
 
 ```{r}
-ggplot(species.summary,aes(Tentative.Result,n.samples,fill=Genus)) +geom_col() +theme_bw() +coord_flip() + guides(fill=FALSE) +theme(axis.text = element_text(face = "italic")) +labs(x="Species",y="Number of Samples")
+ggplot(species.summary,aes(Tentative.Result,n.samples,fill=Genus.x)) +geom_col() +theme_bw() +coord_flip() + guides(fill=FALSE) +theme(axis.text = element_text(face = "italic")) +labs(x="Species",y="Number of Samples")
+```
+
+```{r}
+
+```
+
+
+
+```{r}
+species.summary <- field.baits %>% filter(!is.na(Tentative.Result) & Tentative.Result!="") %>% group_by(site.location.description.x,Tentative.Result) %>% summarize(n.sites = n_distinct(place_guess.x,na.rm=TRUE),n.samples = n_distinct(Sample,na.rm=TRUE),n.isolates=n(),Genus.x=paste(unique(Genus.x))) 
+species.summary
+```
+
+```{r}
+ggplot(species.summary,aes(Tentative.Result,n.sites,fill=Genus.x)) +geom_col() +facet_wrap(~site.location.description.x) +theme_bw() +coord_flip() + guides(fill=FALSE) +theme(axis.text = element_text(face = "italic")) +labs(x="Species",y="Number of Sites")
+```
+
+
+```{r}
+names(field.baits)
+str(field.baits$percent.of.plants..of.same.species..affected.within.sight.....y)
+```
+
+
+```{r}
+ggplot(field.baits,aes(Tentative.Result,percent.of.plants..of.same.species..affected.within.sight.....y ,fill=Genus.x)) +geom_boxplot()+coord_flip()+theme_bw()+guides(fill="none")
+```
+
+```{r}
+ggplot(field.baits,aes(Tentative.Result,Dieback.percent.x,fill=Genus.x)) +geom_boxplot()+coord_flip()+theme_bw()+guides(fill="none")
 ```
