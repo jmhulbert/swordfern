@@ -42,16 +42,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 A guide for collecting samples is available at: https://foresthealth.org/wp-content/uploads/2024/08/Sword-Fern-Field-Sampling-Protocolv2.pdf
 
-+ Root General Prep
-  + Soil and litter were washed from roots with tap water
-  + Roots were not surface sterilized 
-+ Roots - NGS Lab Prep
-  + Small parts of roots were cut and placed int+ 2 screw cap tubes (2 tubes per sample)
-  + Cut roots in screwcap tubes were stored in freezer (-80c) 
-+ Roots - direct plating 
-  + Roots from 5 plants from Kitsap Peninsula were plated directly int+ PARPH on Feb 20, 2025 (3 days after collection)
-  + Roots from 10 plants were collected from a private property in mirrormont on Feb 21, 2025
-
 ### Field Sample Locations
 
 Root samples were collected from healthy and unhealthy plants at 3-4 locations
@@ -95,9 +85,45 @@ Root samples were collected from healthy and unhealthy plants at 3-4 locations
   +	Seward Park
     + 4 sites: all unhealthy
 
+### Field Soil Baiting Methods
+
+2025 Sword Fern Soil Baiting Methods
+
+2025 Methods
++	500g soils samples were added t+ plastic 6Q bait trays on March 17, 2025
++ 100ml ish of tap water was added t+ dry soils samples t+ wet the soil for 24 hours
++	Bait trays were flooded with tap water halfway on March 18th, 2025 soil all soil was submerged
++	Rhododendron leaves were collected on March 18th and added t+ half flooded samples
++	More water was added on March 19th s+ the bait trays were full
++ Some leaves remained semerged in the water
+
+
+### Field Root Sample Methods
+
++ Root General Prep
+  + Soil and litter were washed from roots with tap water
+  + Roots were not surface sterilized 
+
+
+#### Oomycete Isolation Methods
+
++ Roots - direct plating 
+  + Roots from 5 plants from Kitsap Peninsula were plated directly int+ PARPH on Feb 20, 2025 (3 days after collection)
+  + Roots from 10 plants were collected from a private property in mirrormont on Feb 21, 2025
+
+
+#### NGS Illumina Miseq i100 (PE300) Sample Methods
+
++ Roots - NGS Lab Prep
+  + Small parts of roots were cut and placed int+ 2 screw cap tubes (2 tubes per sample)
+  + Cut roots in screwcap tubes were stored in freezer (-80c) 
+
+
 ## Greenhouse Trials
 
 ### Seward Park Trials
+
+#### Trial 1
 
 + Seward Soil
   +	Six 5-gallon buckets (hence forth referred as buckets) of soil were collected from Seward Park (11/12/24)
@@ -138,42 +164,33 @@ Root samples were collected from healthy and unhealthy plants at 3-4 locations
       +	Abnormalities
       +	Spotting
 
-Greenhouse environmental controls and power returned on 12/4/2024
-Watering was switched t+ 30 minutes each interval. However, water was turned off
-Water was turned back on 12/8/2024 with 20 minute intervals starting at 11am.
+#### Trial 2
 
-Temp was originally set t+ 68-76 and 63-76, but we adjusted it t+ lower high temp before fans kick on as below
-
-Temperature in greenhouse set to:
-+	Daytime: 68-74 F
-+	Nighttime: 63-74 F
-Lighting set t+ turn on <= 120 W/m^2, 5 min delay, 30 W/m^2 differential from 7 AM t+ 6 PM only 
-Soil moisture measurement sensors were placed on opposite sides of water influx, 2 more were added on 12/9/24
-Trial 2
-+	Six 5-gallon buckets of soil were collected from Seward Park (12/11/24)
-+	Seward Park Soil was mixed on (12/17/24)
-+	Soil was divided int+ treatments:
-+ Sterilized Soil: 3 buckets of Seward soil were added t+ Pro-Grow Electric Soil Sterilizer and heated t+ 80C for 1hour on (12/17/24)
-	 total time in soil sterilizer was 3 hours and 35 minutes
-+ Seward Soil Wild: 3 buckets of Seward soil were set aside for mixing
-+	Soil was mixed with potting soil at a 1:1 rati+ three buckets of potting mix t+ three buckets of wild and sterilized soil.
-+	44 ferns were potted in each of the sterilized and wild soil mixes (12/18/24) 
-+	18 additional ferns were potted in purely potting soil for control. (12/18/24)
-+	Ferns were organized t+ alternate between wild soil, sterilized soil and controlled soil or water
-+	2 tables were set up with an irrigation line down the middle of the table that had 14 emitters with four-way connectors on each emitter. 
-+	Each table has 3 buckets t+ collect water and assure that emitters are dripping properly.
-+	Soil was added t+ bait trays for baiting before and after treatment soil 
-+ 3 bait trays before sterilization
-+ 3 bait trays after sterilization-mixed 
-+ Greenhouse tap water was added t+ the soil bait trays
-+ Rhododendron leaves were added t+ the surface of the water (12/18/24)
-+ Baits were removed and plated ont+ PARPHV8 in January
-+ Secondary isolations were made from growth out of baits
-+ Plates without any growth representative of oomycetes were discarded
-+ DNA was extracted from isolates that were originally subcultured on PARPHV8 and transferred t+ PDA
-+ DNA was extracted with prepman ultra extractions by scraping mycelia from surface of PDA plates
-+	Fern condition recorded (12/19/24)
-+ Health condition
++ Methods
+  +	Six 5-gallon buckets of soil were collected from Seward Park (12/11/24)
+  +	Seward Park Soil was mixed on (12/17/24)
+  +	Soil was divided int+ treatments:
+  + Sterilized Soil: 3 buckets of Seward soil were added t+ Pro-Grow Electric Soil Sterilizer and heated t+ 80C for 1hour on (12/17/24)
+    + total time in soil sterilizer was 3 hours and 35 minutes
+  + Seward Soil Wild: 3 buckets of Seward soil were set aside for mixing
+  +	Soil was mixed with potting soil at a 1:1 rati+ three buckets of potting mix t+ three buckets of wild and sterilized soil.
+  +	44 ferns were potted in each of the sterilized and wild soil mixes (12/18/24) 
+  +	18 additional ferns were potted in purely potting soil for control. (12/18/24)
+  +	Ferns were organized t+ alternate between wild soil, sterilized soil and controlled soil or water
+  +	2 tables were set up with an irrigation line down the middle of the table that had 14 emitters with four-way connectors on each emitter. 
+  +	Each table has 3 buckets t+ collect water and assure that emitters are dripping properly.
+  +	Soil was added t+ bait trays for baiting before and after treatment soil 
+  + 3 bait trays before sterilization
+  + 3 bait trays after sterilization-mixed 
+  + Greenhouse tap water was added t+ the soil bait trays
+  + Rhododendron leaves were added t+ the surface of the water (12/18/24)
+  + Baits were removed and plated ont+ PARPHV8 in January
+  + Secondary isolations were made from growth out of baits
+  + Plates without any growth representative of oomycetes were discarded
+  + DNA was extracted from isolates that were originally subcultured on PARPHV8 and transferred t+ PDA
+  + DNA was extracted with prepman ultra extractions by scraping mycelia from surface of PDA plates
+  +	Fern condition recorded (12/19/24)
+    + Health condition
       +	Good
       +	Fair
       +	Poor
@@ -183,7 +200,30 @@ Trial 2
       +	Where plant is starting t+ brown
       +	Abnormalities
       +	Spotting
-+ Watering
+
+#### Greenhouse Environmental Controls
+
+Greenhouse environmental controls and power returned on 12/4/2024
+Watering was switched t+ 30 minutes each interval. However, water was turned off
+Water was turned back on 12/8/2024 with 20 minute intervals starting at 11am.
+
+Temp was originally set t+ 68-76 and 63-76, but we adjusted it t+ lower high temp before fans kick on as below
+
++ HOBO Temperature Logger
+  + Channel 1 – blue – in soil, plant number W26
+  + Channel 2 – pink – in air, beneath table in center of table in center row
+  + Channel 3 – yellow – in air, beneath table in front (south side) of table in center row
+  + Channel 4 – new cord, added 10.10.25, in soil of potted plant number C36
+
+Temperature in greenhouse set to:
++	Daytime: 68-74 F
++	Nighttime: 63-74 F
+Lighting set t+ turn on <= 120 W/m^2, 5 min delay, 30 W/m^2 differential from 7 AM t+ 6 PM only 
+Soil moisture measurement sensors were placed on opposite sides of water influx, 2 more were added on 12/9/24
+
+#### Watering
+
++ Methods
   +	Ferns were watered for 20 minutes every 12 hours until February 5th, 2025.
   +	On February 5th, 2025, water schedule was changed t+ 5 minutes every 12 hours. 
   +	Watering was changed t+ 5 minutes per 24 hours on Feb 10, 2025 because plants were still fully saturated on above water regime (5 minutes per 12 hours as of Feb 5, 2025). Plants were receiving 4oz per day. 
@@ -211,14 +251,16 @@ On June 10th, the water pump – cooling pad pump 2 was turned on and instructed
 On June 10th, the stage 1 cooling (fan 1) was changed t+ turn on at 72 degrees f (was previously set at 74). 
 
 
-
-Measurements
+#### Measurements
 +	Meter data downloaded on Feb 5, 2025
 +	Poromoter data was collected on x number of random fern pairs and x number of ferns in potting soil on February 5, 2025
 +	Poromoter data was collected on x number of random fern pairs and x number of ferns in potting soil on February 5, 2025
 +	Fern conditions were assessed on February 1 ? 
 +	The number of healthy and unhealthy fronds were counted on x(30?) fern pairs on xx date? 
 +	Poromoter data was collected on February 14, 2025
+
+
+##### Foliar Fungal Isolation
 
 Feb 10, 2025
 Leaves were cut and plated t+ try and determine organism involved in leaf tip browning
@@ -232,15 +274,6 @@ All three leaf samples mixed in the following contents then allowed t+ dry
 30 seconds in 96% ethanol
 Allowed t+ dry in hood
 
-
-
-
- HOBO Temperature Logger
-Channel 1 – blue – in soil, plant number W26
-Channel 2 – pink – in air, beneath table in center of table in center row
-Channel 3 – yellow – in air, beneath table in front (south side) of table in center row
-Channel 4 – new cord, added 10.10.25, in soil of potted plant number C36
-
 August 19, 2025
 +	Selected 4 sword ferns from Trial 1: C11, C22, W12, W23 (check numbers)
 +	Brushed off excess soil with hands
@@ -253,11 +286,7 @@ August 19, 2025
 + Majority of roots selected were thin, dry
 + Placed int+ PARPHV8 plates 
 
-
-
-
-
-#### Conductance data
+##### Conductance data
 
 Sword ferns were planted int+ three soils types 1) wild (positive control), 2) sterilized, and 3) potting mix. Plants were grown in soils in controlled greenhouse environment for 4 months, and water stressed during the last month (Starting Feb 28th). Stomatal conductance was measured 33 plants (9 plants in potting mix, 12 plants and sterilized soil, 12 plants in wild soil) after 40 days (Apirl 9th) of water stress. Stomatal conductance was measured on tw+ healthy fronds per plant and averaged together. 
 
@@ -266,11 +295,12 @@ After confirming the data was fairly normally distributed with visual investigat
 Within the limited sampling period, there was difference between the treatments in our research question. The lack of evidence for a relationship may be due t+ the small sample size or the ability of sword ferns t+ limit stress t+ individual fronds. Sword ferns produce many fronds and it is unclear if the stomatal conductance of each frond would be affected by a root disease at the same time or individually.
 
 
-### Rice Inoculations
+### Rice Inoculation Trials
 
 Swordfern Soil Bait Rice Inoculation
 
-Trial 1:
+#### Trial 1
+
 6/17/25: Rice flasks prepared in a 250 Erlenmeyer flask
 +	25 g long grain rice
 +	18 mL DI water
@@ -306,18 +336,11 @@ Adding 10, 3mm plugs of each culture t+ corresponding flask
 
 8/29/25: Inoculated plants with rice flasks
 
+#### Trial 2
 
 
-## Baiting Methods
 
-2025 Sword Fern Soil Baiting Methods
 
-2025 Methods
-+	500g soils samples were added t+ plastic 6Q bait trays on March 17, 2025
-+ 100ml ish of tap water was added t+ dry soils samples t+ wet the soil for 24 hours
-+	Bait trays were flooded with tap water halfway on March 18th, 2025 soil all soil was submerged
-+	Rhododendron leaves were collected on March 18th and added t+ half flooded samples
-+	More water was added on March 19th s+ the bait trays were full
-+ Some leaves remained semerged in the water
+
 
 
