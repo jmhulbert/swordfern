@@ -13,125 +13,130 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### iNat Questions
 
-iNaturalist Questions
++ iNaturalist Questions
   +	Fern Heath Conditions
     +	Good, fair, poor, dead, unsure, other
   +	Percent Dieback (0 is healthy, 100 is dead)
   +	Fern Symptom
     +	Browning 
     +	Wilting
-+	Collapse of individual fronds
-+	Dead
-+ Absence of new growth
-+ Multiple symptoms (list in notes)
-+ Other ____
-+	Surrounding Fern Conditions: 
-+ Percent Dieback of surrounding ferns
-+ Similar symptoms? 
-+ Absence of regeneration?
-+	Hydrology
-+ Wetland/stream/flooded area
-+ Upland/well drained
-+	Urban, natural, managed, or a mix.
-+	Site Description
-+ Top of slope, bottom of ravine, mid slope, etc.
-+	Disturbance level
-+	GPS location
-
-
+    +	Collapse of individual fronds
+    +	Dead
+    + Absence of new growth
+    + Multiple symptoms (list in notes)
+    + Other ____
+  +	Surrounding Fern Conditions: 
+  + Percent Dieback of surrounding ferns
+  + Similar symptoms? 
+  + Absence of regeneration?
+  +	Hydrology
+    + Wetland/stream/flooded area
+    + Upland/well drained
+    +	Urban, natural, managed, or a mix.
+  +	Site Description
+    + Top of slope, bottom of ravine, mid slope, etc.
+  +	Disturbance level
+  +	GPS location
 
 ### Sample Methods
 
 A guide for collecting samples is available at: https://foresthealth.org/wp-content/uploads/2024/08/Sword-Fern-Field-Sampling-Protocolv2.pdf
 
-Sword Fern Root Sample Methods
++ Root General Prep
+  + Soil and litter were washed from roots with tap water
+  + Roots were not surface sterilized 
++ Roots - NGS Lab Prep
+  + Small parts of roots were cut and placed int+ 2 screw cap tubes (2 tubes per sample)
+  + Cut roots in screwcap tubes were stored in freezer (-80c) 
++ Roots - direct plating 
+  + Roots from 5 plants from Kitsap Peninsula were plated directly int+ PARPH on Feb 20, 2025 (3 days after collection)
+  + Roots from 10 plants were collected from a private property in mirrormont on Feb 21, 2025
+
+### Field Sample Locations
+
 Root samples were collected from healthy and unhealthy plants at 3-4 locations
-+	Mercer Island – roots collected on October 28, 2024
-+ Collected from all plants
-+	Seward Park – roots from healthy and unhealthy plants collected on October 28, 2024
-+ Did we collect roots from all?
-+	Bainbridge Island (Fort Ward, Blakely cemetery, Blakely harbor) – only roots from dying plants collected in Jan 24 2025
-+ Roots only collected from dying plants, n+ dead roots taken
-+ Fort ward: 3 sites, all unhealthy
-+ Blakely Cemetery: 2 Sites, all unhelathy
-+ Blakely Harbor: 1 Site, unhealthy
-+	Eatonville (Marshall Falls) Feb 10 2025
-+ Only 2 root samples or all?
-+ 1 site, unhealthy
-+	Kitsap Peninsula (Seabeck) – roots from healthy and unhealthy plants collected (but only 1 site, 3 plants was considered healthy – double check) on Feb 17, 2025
-+ Roots collected from all samples
-+ 6 sites, 3 health, 3 unhealthy
-+	Mirrormont (Issaquah) - roots from healthy and unhealthy plants collected on Feb 21, 2025
-+ 4 sites: 2 healthy, 2 unhealthy
-+	Belfair – roots from healthy and unhealthy plants collected on Feb 27, 2025
-+ 4 sites: all unhealthy
-+	Issaquah (Swamp Trail)- roots from healthy and unhealthy plants collected on March 3, 2025
-+ 4 sites, 1 healthy, 3 unhealthy
-+	Mercer Island (Luther Burbank site 1)- roots from healthy and unhealthy plants collected on March 3, 2025
-+ 1 site, unhealthy
-+	Port Ludlow- roots from healthy and unhealthy plants collected on March 4, 2025
-+ 4 sites: all unhealthy
-+	Mercer Island (Luther burbank site 2)- roots from healthy and unhealthy plants collected on March 13, 2025
-+ 1 site, unhealthy
-+	Seward Park
-+ 4 sites: all unhealthy
-
-Roots were stored in the fridge (6C?) until washed
-Soil and litter were washed from roots
-Small parts of roots were cut and placed int+ 2 screw cap tubes (2 tubes per sample)
-Cut roots in screwcap tubes were stored in freezer (-20c?) 
-
-Roots from 5 plants from Kitsap Peninsula were plated directly int+ PARPH on Feb 20, 2025 (3 days after collection)
-
-Roots from 10 plants were collected from a private property in mirrormont on Feb 21, 2025
-Roots were placed in the fridge on Feb 22, 2025
-
-### Locations
-
-
++ Sword Fern Root Field Sample Locations
+  +	Mercer Island
+    + roots collected on October 28, 2024
+    + Collected from all plants
+  +	Seward Park 
+    + roots from healthy and unhealthy plants collected on October 28, 2024
+    + Did we collect roots from all?
+  +	Bainbridge Island (Fort Ward, Blakely cemetery, Blakely harbor) 
+    + only roots from dying plants collected in Jan 24 2025
+    + Roots only collected from dying plants, n+ dead roots taken
+  + Fort ward: 
+    + 3 sites, all unhealthy
+    + Blakely Cemetery: 2 Sites, all unhelathy
+  + Blakely Harbor
+    + 1 Site, unhealthy
+  +	Eatonville (Marshall Falls) Feb 10 2025
+    + Only 2 root samples or all?
+    + 1 site, unhealthy
+  +	Kitsap Peninsula (Seabeck) – 
+    + roots from healthy and unhealthy plants collected (but only 1 site, 3 plants was considered healthy – double check) on Feb 17, 2025
+    + Roots collected from all samples
+    + 6 sites, 3 health, 3 unhealthy
+  +	Mirrormont (Issaquah) 
+    + roots from healthy and unhealthy plants collected on Feb 21, 2025
+    + 4 sites: 2 healthy, 2 unhealthy
+  +	Belfair
+    + roots from healthy and unhealthy plants collected on Feb 27, 2025
+    + 4 sites: all unhealthy
+  +	Issaquah (Swamp Trail)- roots from healthy and unhealthy plants collected on March 3, 2025
+    + 4 sites, 1 healthy, 3 unhealthy
+  +	Mercer Island (Luther Burbank)
+    + Site 1 - roots from healthy and unhealthy plants collected on March 3, 2025
+      + 1 site, unhealthy
+    + Site 2 - roots from healthy and unhealthy plants collected on March 13, 2025
+      + 1 site, unhealthy
+  +	Port Ludlow- roots from healthy and unhealthy plants collected on March 4, 2025
+    + 4 sites: all unhealthy
+  +	Seward Park
+    + 4 sites: all unhealthy
 
 ## Greenhouse Trials
 
-### Potted Plants
+### Seward Park Trials
 
-Greenhouse Trials Methods
-+	Six 5-gallon buckets (hence forth referred as buckets) of soil were collected from Seward Park (11/12/24)
-+	Seward Park Soil was mixed on 11/21/24
-+	Soil was divided int+ treatments
-+ Sterilized Soil: 3 buckets of Seward soil were added t+ Pro-Grow Electric Soil Sterilizer and heated t+ 80C for 1hour (11/22/24)
-+ Seward Soil Wild: 3 buckets of Seward soil were set aside for mixing
-+	Soil was mixed with potting soil at 2:1 rati+ (Six buckets of potting mix t+ three buckets of wild and sterilized soil
-+ However, we previously cooked 3 buckets of potting mix, and we split it between soil mixes (~11/18/24)
-	1.5 buckets of previously sterilized potting mix
-	4.5 buckets of potting soil
-	3 buckets of treated or untreated Seward soil
-+	Soil was added t+ bait trays for baiting before and after treatment soil 
-+ 250g of soil were added t+ three soil bait trays each
-+ 3 bait trays before sterilization
-+ 3 bait trays after sterilization-mixed with potting soil
-+ Greenhouse tap water was added t+ the soil bait trays
-+ Rhododendron leaves were added t+ the the surface of the water (9/22/24)
-+	45 ferns were potted in each of the soil mixes (11/22/24)
-+ Ferns were organized t+ alternate between wild soil and sterilized soil. 
-+ 2 tables were set up with an irrigation line down the middle of the table that had 12 emitters with four-way connectors on each emitter.
-	48 lines are on each table
-	On each four-way emitter is 2 ferns in wild soil and 2 ferns in sterilized soil.
-	At the first, sixth, and last emitter on each table, one of the four-way splitters is watering int+ a bucket t+ monitor watering
-+	Ferns were watered after potting for 20 minutes (~20 ounces of water)
-+ The irrigation timer was set t+ water the ferns every 12 hours for 10 minutes 
-	~10 ounces of water, twice a day
-+ Irrigation times were adjusted t+ xx
-+	Fern condition recorded (11/27/24)
-+ Health condition
-+	Good
-+	Fair
-+	Poor
-+	Dead
-+ Percent of foliage browning
-+ Notes
-+	Where plant is starting t+ brown
-+	Abnormalities
-+	Spotting
++ Seward Soil
+  +	Six 5-gallon buckets (hence forth referred as buckets) of soil were collected from Seward Park (11/12/24)
+  +	Seward Park Soil was mixed on 11/21/24
+  +	Soil was divided int+ treatments
+  + Sterilized Soil: 3 buckets of Seward soil were added t+ Pro-Grow Electric Soil Sterilizer and heated t+ 80C for 1hour (11/22/24)
+  + Seward Soil Wild: 3 buckets of Seward soil were set aside for mixing
+  +	Soil was mixed with potting soil at 2:1 rati+ (Six buckets of potting mix t+ three buckets of wild and sterilized soil
+  + However, we previously cooked 3 buckets of potting mix, and we split it between soil mixes (~11/18/24)
+    + 1.5 buckets of previously sterilized potting mix
+    +	4.5 buckets of potting soil
+    +	3 buckets of treated or untreated Seward soil
+  +	Soil was added to bait trays for baiting before and after treatment soil 
+    + 250g of soil were added t+ three soil bait trays each
+    + 3 bait trays before sterilization
+    + 3 bait trays after sterilization-mixed with potting soil
+    + Greenhouse tap water was added t+ the soil bait trays
+    + Rhododendron leaves were added t+ the the surface of the water (9/22/24)
+  +	45 ferns were potted in each of the soil mixes (11/22/24)
+    + Ferns were organized t+ alternate between wild soil and sterilized soil. 
+    + 2 tables were set up with an irrigation line down the middle of the table that had 12 emitters with four-way connectors on each emitter.
+      +	48 lines are on each table
+      +	On each four-way emitter is 2 ferns in wild soil and 2 ferns in sterilized soil.
+      +	At the first, sixth, and last emitter on each table, one of the four-way splitters is watering int+ a bucket t+ monitor watering
+    +	Ferns were watered after potting for 20 minutes (~20 ounces of water)
+    + The irrigation timer was set t+ water the ferns every 12 hours for 10 minutes 
+    + ~10 ounces of water, twice a day
+    + Irrigation times were adjusted t+ xx
+  +	Fern condition recorded (11/27/24)
+    + Health condition
+      +	Good
+      +	Fair
+      +	Poor
+      +	Dead
+    + Percent of foliage browning 
+    + Notes
+      +	Where plant is starting t+ brown
+      +	Abnormalities
+      +	Spotting
 
 Greenhouse environmental controls and power returned on 12/4/2024
 Watering was switched t+ 30 minutes each interval. However, water was turned off
@@ -169,35 +174,34 @@ Trial 2
 + DNA was extracted with prepman ultra extractions by scraping mycelia from surface of PDA plates
 +	Fern condition recorded (12/19/24)
 + Health condition
-	Good
-	Fair
-	Poor
-	Dead
-+ Percent of foliage browning
-+ Notes
-	Where plant is starting t+ brown
-	Abnormalities
-	Spotting
-+	
-Watering
-+	Ferns were watered for 20 minutes every 12 hours until February 5th, 2025.
-+	On February 5th, 2025, water schedule was changed t+ 5 minutes every 12 hours. 
-+	Watering was changed t+ 5 minutes per 24 hours on Feb 10, 2025 because plants were still fully saturated on above water regime (5 minutes per 12 hours as of Feb 5, 2025). Plants were receiving 4oz per day. 
-+	Watering was changed t+ 5 minutes per 48 hours on Feb 18, 2025 because plants were still fully saturated (with the exception of 8 day dry period – three watering events skipped -- Feb 22, Feb 24, and Feb 26)
-+ Plants received 4oz on Feb 18, 2025
-+ Plants did not receive water on Feb 19, 2025
-+ Plants received 4oz on Feb 20, 2025
-+ Water was shut off for the weekend t+ allow plants t+ dry out a bit (Feb 22 and Feb 24 watering skipped)
-+ Plants did not receive water on Feb 25, 2025
-+ Plants did not receive water on Feb 26
-+	Water schedule changed t+ 5 minutes every 72 hrs on Feb 26
-+ Watering resumed on Feb 28, plants received 4 oz
-+ Plants received 4 oz on March 3
-+ Plants received 4 oz on March 6
-+ Plants received 4 oz on March 9 Sunday
-+ Plants received 4 oz on March 12 Wednesday
-+ Plants received 4 oz on March 15 – Saturday
-+ Plants received 4 oz on March 18 – Tuesday?
+      +	Good
+      +	Fair
+      +	Poor
+      +	Dead
+    + Percent of foliage browning 
+    + Notes
+      +	Where plant is starting t+ brown
+      +	Abnormalities
+      +	Spotting
++ Watering
+  +	Ferns were watered for 20 minutes every 12 hours until February 5th, 2025.
+  +	On February 5th, 2025, water schedule was changed t+ 5 minutes every 12 hours. 
+  +	Watering was changed t+ 5 minutes per 24 hours on Feb 10, 2025 because plants were still fully saturated on above water regime (5 minutes per 12 hours as of Feb 5, 2025). Plants were receiving 4oz per day. 
+  +	Watering was changed t+ 5 minutes per 48 hours on Feb 18, 2025 because plants were still fully saturated (with the exception of 8 day dry period – three watering events skipped -- Feb 22, Feb 24, and Feb 26)
+  + Plants received 4oz on Feb 18, 2025
+  + Plants did not receive water on Feb 19, 2025
+  + Plants received 4oz on Feb 20, 2025
+  + Water was shut off for the weekend t+ allow plants t+ dry out a bit (Feb 22 and Feb 24 watering skipped)
+  + Plants did not receive water on Feb 25, 2025
+  + Plants did not receive water on Feb 26
+  +	Water schedule changed t+ 5 minutes every 72 hrs on Feb 26
+  + Watering resumed on Feb 28, plants received 4 oz
+  + Plants received 4 oz on March 3
+  + Plants received 4 oz on March 6
+  + Plants received 4 oz on March 9 Sunday
+  + Plants received 4 oz on March 12 Wednesday
+  + Plants received 4 oz on March 15 – Saturday
+  + Plants received 4 oz on March 18 – Tuesday
 
 (NOTE Changes were made without ‘resetting’ because of Rain Drip Model: R675CT Manual indicates: “Programming Changes - If you avoid the RESET position, Frequency and Run Time dial settings can be made at any time and will not change your original start time. (ref). The changes t+ the dial did lower the watering frequency. 
 
