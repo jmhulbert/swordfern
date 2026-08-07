@@ -1,0 +1,65 @@
+---
+title: "WSDA Report"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Title
+Building Research Capacity to Support Plant Nurseries: Investigating Western Sword Fern Dieback with Traditional and NGS Methods
+
+
+Term of Project: July 1, 2025 through June 30 2026
+Principal Investigator(s): Joseph Hulbert, Marianne Elliott
+Collaborator(s): Seattle Parks and Recreation, Forest Health Watch Community Scientists
+
+
+## Project Summary 
+Western sword ferns are one of the most common container plants grown for restoration in the Pacific Northwest. Regional reports of sword fern die-off raised concerns of many stakeholders in the native plant industry. Local patterns of spread inspired a hypothesis that plant mortality was linked to root disease. FY26 WSDA Nursery Research Funding was provided to test this hypothesis with field collections, inoculation trials, and eDNA analyses. Field collections were completed and preliminary findings are summarized below. Greenhouse trials and eDNA analyses are underway.
+
+
+## Technical Contributions: 
+
++ Presentations
+  + Northwest Scientific Association
+  + South Sound Native Plant Society
+  + Society of American Foresters
+
+## Objective(s) and Experiments Conducted to Meet Stated Objective(s): 
+
+All objectives and experiments will be completed within the performance period, but the scheduling has changed slightly (see below). Active and ongoing experiements include: 
+
++ Objectives
+  1. Field Sampling and Microbial Community Analysis
+  2. Soil-Based Pathogenicity Assays
+  3. Controlled Inoculation and Koch’s Postulates Testing
+
+## Major Research Accomplishments and Results (by Objective and including a timeline): 
+
+### Field Sampling and Microbial Community Analysis
+
+Rhizosphere and root samples were collected from 104 ferns at 12 sites in Puget Sound lowlands (Figure 1). Random roots were removed from each plant and frozen for eDNA analysis. Rhizosphere samples were baited for oomycetes. 
+
+Isolates (n=108) of 16 oomycete species were recovered from baited rhizosphere samples. Ten Phytophthora species (36 isolates) were recovered from eight sites (e.g. Seward Park), including P. syringae (5 sites), P. megasperma (1 site), P. plurivora (4 sites), P. cactorum (1 site), P. pseudosyringae (3 sites), P. cambivora (1 site), P. obscura (1 site), P. occultans (1 site), P. attenuata (1 site), P. nemrosa (1 site). Four Phytophthora isolates from 3 sites could not be identified to species. Globisporganium intermedium was recovered from 25 samples and 8 sites. Phytophthora syringae was recovered from the most sites (Figure 2) and the sites with the most sword fern mortality (Seward Park and Fort Ward on Bainbridge Island).
+
+DNA will be extracted and illumina sequencing will be completed after ITS amplification from frozen root samples in February and March of 2026.   
+
+### Soil-Based Pathogenicity Assays
+
+Additional rhizosphere samples were collected in bulk from Seward Park (15 gallons, mixed from multiple locations) where the die-off has been most well studied during two periods in fall of 2025 (30 gallons total). Heat-sterilized and non-sterilized buckets of bulk soil were mixed with potting mix for planting healthy sword ferns in two green house trials. Sword ferns growing in the mixed soils remain healthy, but the watering regime was altered recently to favor Phytophthora colonization. 
+
+### Controlled Inoculation and Koch’s Postulates Testing
+
+Two inoculation trials were initiated in the greenhouse. Rice grains were inoculated with recovered Phytophthora species and added to the root zone of sword fern plants growing in potting mix. Trial one included 6 Phytophthora species and G. intermedium and Trial 2 included 4 Phytophthora species and G. intermedium. Trial 2 was evaluated, but the results were confounded by other factors affecting nursery stock used in the experiment. Phytophthora occultans was recovered from a surface sterilized root. Trial 1 remains to be evaluated and broader findings from Trial 2 are still under analysis.
+
+Differences between root masses in treatment groups were not observed within Trial 2,  but many plants were noted to have stem rot and dead rhizomorphs in both the controls and inoculated plant trials (Figures 3 and 4). 
+
+
+
+
+
+
