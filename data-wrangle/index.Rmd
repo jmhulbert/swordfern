@@ -21,10 +21,14 @@ setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfer
 sites <- read.csv("./data/field/sword.fern.field.sample.data.csv")
 isolates <- read.csv("./data/lab/sword.fern.isolates.csv")
 extractions <- read.csv("./data/lab/sword.fern.isolate.extractions.csv")
+greenhouse.weights <- read.csv("./data/greenhouse/Final.Root.Weights.csv")
+greenhouse.fronds <- read.csv("./data/greenhouse/Final.Frond.Counts.csv")
 ```
 
+
+
 ```{r}
-names(isolates)
+greenhouse <- left_join(greenhouse.weights,greenhouse.fronds,by="Fern.Number")
 ```
 
 

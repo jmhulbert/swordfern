@@ -1,175 +1,253 @@
-﻿Fern Number,Trial,Treatment,Weight (g)
-C01,Seward Trial One,Sterilized,14.11
-C02,Seward Trial One,Sterilized,34.32
-C03,Seward Trial One,Sterilized,37.76
-C04,Seward Trial One,Sterilized,17.52
-C05,Seward Trial One,Sterilized,13.95
-C06,Seward Trial One,Sterilized,16.76
-C07,Seward Trial One,Sterilized,22.62
-C08,Seward Trial One,Sterilized,12.49
-C09,Seward Trial One,Sterilized,7.56
-C10,Seward Trial One,Sterilized,9.56
-C12,Seward Trial One,Sterilized,26.13
-C13,Seward Trial One,Sterilized,41.03
-C14,Seward Trial One,Sterilized,19.11
-C15,Seward Trial One,Sterilized,15.79
-C16,Seward Trial One,Sterilized,19.47
-C17,Seward Trial One,Sterilized,25.48
-C18,Seward Trial One,Sterilized,43.7
-C19,Seward Trial One,Sterilized,28.18
-C20,Seward Trial One,Sterilized,34.98
-C21,Seward Trial One,Sterilized,4.62
-C22,Seward Trial One,Sterilized,10.51
-C24,Seward Trial One,Sterilized,13.5
-C25,Seward Trial One,Sterilized,7.05
-C26,Seward Trial One,Sterilized,27.42
-C27,Seward Trial One,Sterilized,13.58
-C28,Seward Trial One,Sterilized,4.56
-C29,Seward Trial One,Sterilized,28.02
-C30,Seward Trial One,Sterilized,13.57
-C31,Seward Trial One,Sterilized,8.08
-C32,Seward Trial One,Sterilized,6.12
-C33,Seward Trial One,Sterilized,10.49
-C34,Seward Trial One,Sterilized,8.03
-C35,Seward Trial One,Sterilized,16.13
-C36,Seward Trial One,Sterilized,8.27
-C37,Seward Trial One,Sterilized,31.18
-C38,Seward Trial One,Sterilized,25.88
-C39,Seward Trial One,Sterilized,14.93
-C40,Seward Trial One,Sterilized,8.57
-C41,Seward Trial One,Sterilized,12.29
-C42,Seward Trial One,Sterilized,18.42
-C43,Seward Trial One,Sterilized,15.94
-C44,Seward Trial One,Sterilized,6.64
-C45,Seward Trial One,Sterilized,15.12
-C46,Seward Trial Two,Sterilized,13.5
-C47,Seward Trial Two,Sterilized,10.21
-C48,Seward Trial Two,Sterilized,12.01
-C49,Seward Trial Two,Sterilized,10.79
-C50,Seward Trial Two,Sterilized,14.17
-C51,Seward Trial Two,Sterilized,15.61
-C52,Seward Trial Two,Sterilized,14.76
-C53,Seward Trial Two,Sterilized,20.77
-C54,Seward Trial Two,Sterilized,21.29
-C55,Seward Trial Two,Sterilized,32.07
-C56,Seward Trial Two,Sterilized,31.33
-C57,Seward Trial Two,Sterilized,18.5
-C58,Seward Trial Two,Sterilized,25.31
-C59,Seward Trial Two,Sterilized,10.84
-C60,Seward Trial Two,Sterilized,19.05
-C61,Seward Trial Two,Sterilized,11
-C62,Seward Trial Two,Sterilized,17.64
-C63,Seward Trial Two,Sterilized,10.39
-C64,Seward Trial Two,Sterilized,20.49
-C65,Seward Trial Two,Sterilized,14
-C66,Seward Trial Two,Sterilized,11.6
-C67,Seward Trial Two,Sterilized,12.47
-C68,Seward Trial Two,Sterilized,14.96
-C69,Seward Trial Two,Sterilized,33.6
-C70,Seward Trial Two,Sterilized,13.55
-C71,Seward Trial Two,Sterilized,27.15
-C72,Seward Trial Two,Sterilized,11.67
-C73,Seward Trial Two,Sterilized,32.76
-C74,Seward Trial Two,Sterilized,9.69
-C75,Seward Trial Two,Sterilized,30.38
-C76,Seward Trial Two,Sterilized,11.88
-C77,Seward Trial Two,Sterilized,25.05
-C78,Seward Trial Two,Sterilized,10.35
-C79,Seward Trial Two,Sterilized,10.56
-C80,Seward Trial Two,Sterilized,14.35
-C81,Seward Trial Two,Sterilized,25.01
-C82,Seward Trial Two,Sterilized,9.33
-C83,Seward Trial Two,Sterilized,11.21
-C84,Seward Trial Two,Sterilized,9.79
-C85,Seward Trial Two,Sterilized,14.38
-C86,Seward Trial Two,Sterilized,11.67
-C87,Seward Trial Two,Sterilized,14.61
-C88,Seward Trial Two,Sterilized,13.48
-C89,Seward Trial Two,Sterilized,12.4
-W01,Seward Trial One,Wild,8.05
-W02,Seward Trial One,Wild,16.5
-W03,Seward Trial One,Wild,8.37
-W04,Seward Trial One,Wild,25.59
-W05,Seward Trial One,Wild,13.49
-W06,Seward Trial One,Wild,17.46
-W07,Seward Trial One,Wild,8.17
-W08,Seward Trial One,Wild,10.43
-W09,Seward Trial One,Wild,6.36
-W11,Seward Trial One,Wild,35.77
-W12,Seward Trial One,Wild,34.48
-W13,Seward Trial One,Wild,11.65
-W14,Seward Trial One,Wild,24.62
-W15,Seward Trial One,Wild,9.7
-W16,Seward Trial One,Wild,14.8
-W17,Seward Trial One,Wild,2.52
-W18,Seward Trial One,Wild,4.12
-W19,Seward Trial One,Wild,9.95
-W20,Seward Trial One,Wild,7.22
-W21,Seward Trial One,Wild,4.83
-W23,Seward Trial One,Wild,3.45
-W24,Seward Trial One,Wild,9.51
-W25,Seward Trial One,Wild,4.27
-W26,Seward Trial One,Wild,10.02
-W27,Seward Trial One,Wild,12.2
-W28,Seward Trial One,Wild,13.35
-W29,Seward Trial One,Wild,29.48
-W30,Seward Trial One,Wild,12.69
-W31,Seward Trial One,Wild,18.89
-W32,Seward Trial One,Wild,13.6
-W33,Seward Trial One,Wild,3.2
-W34,Seward Trial One,Wild,19.38
-W35,Seward Trial One,Wild,16.95
-W36,Seward Trial One,Wild,24.15
-W37,Seward Trial One,Wild,11.1
-W38,Seward Trial One,Wild,6.75
-W39,Seward Trial One,Wild,15.15
-W40,Seward Trial One,Wild,14.94
-W41,Seward Trial One,Wild,5.78
-W42,Seward Trial One,Wild,12.51
-W43,Seward Trial One,Wild,6.79
-W44,Seward Trial One,Wild,7.17
-W45,Seward Trial One,Wild,3.88
-W46,Seward Trial Two,Wild,12.24
-W47,Seward Trial Two,Wild,15.1
-W48,Seward Trial Two,Wild,11.83
-W49,Seward Trial Two,Wild,18.26
-W50,Seward Trial Two,Wild,17.73
-W51,Seward Trial Two,Wild,8.65
-W52,Seward Trial Two,Wild,16.82
-W53,Seward Trial Two,Wild,17.79
-W54,Seward Trial Two,Wild,12.49
-W55,Seward Trial Two,Wild,31.96
-W56,Seward Trial Two,Wild,4.38
-W57,Seward Trial Two,Wild,24.45
-W58,Seward Trial Two,Wild,15.23
-W59,Seward Trial Two,Wild,17.77
-W60,Seward Trial Two,Wild,5.48
-W61,Seward Trial Two,Wild,18.21
-W62,Seward Trial Two,Wild,14.87
-W63,Seward Trial Two,Wild,11
-W64,Seward Trial Two,Wild,7.02
-W65,Seward Trial Two,Wild,7.75
-W66,Seward Trial Two,Wild,27.11
-W67,Seward Trial Two,Wild,19.58
-W68,Seward Trial Two,Wild,27.01
-W69,Seward Trial Two,Wild,31.05
-W70,Seward Trial Two,Wild,23.84
-W71,Seward Trial Two,Wild,7.04
-W72,Seward Trial Two,Wild,11.67
-W73,Seward Trial Two,Wild,14.84
-W74,Seward Trial Two,Wild,12.72
-W75,Seward Trial Two,Wild,13.35
-W76,Seward Trial Two,Wild,22.29
-W77,Seward Trial Two,Wild,39.2
-W78,Seward Trial Two,Wild,17.49
-W79,Seward Trial Two,Wild,20.15
-W80,Seward Trial Two,Wild,4.8
-W81,Seward Trial Two,Wild,16.39
-W82,Seward Trial Two,Wild,10.6
-W83,Seward Trial Two,Wild,12.39
-W84,Seward Trial Two,Wild,10.28
-W85,Seward Trial Two,Wild,12.56
-W86,Seward Trial Two,Wild,10.9
-W87,Seward Trial Two,Wild,8.06
-W88,Seward Trial Two,Wild,10.92
-W89,Seward Trial Two,Wild,7.9
+﻿Fern Number,Experiment,Trial,Treatment,Weight (g)
+BLAA155,Inoculation,Inoculation Trial One,Control - Blank Agar,2.74
+BLAA156,Inoculation,Inoculation Trial One,Control - Blank Agar,6.92
+BLAA157,Inoculation,Inoculation Trial One,Control - Blank Agar,8.07
+BLAB164,Inoculation,Inoculation Trial One,Control - Blank Agar,13.26
+BLAB165,Inoculation,Inoculation Trial One,Control - Blank Agar,3.64
+BLAB166,Inoculation,Inoculation Trial One,Control - Blank Agar,9.46
+CACA80,Inoculation,Inoculation Trial One,Phytophthora cactorum,4.73
+CACA81,Inoculation,Inoculation Trial One,Phytophthora cactorum,3.19
+CACA82,Inoculation,Inoculation Trial One,Phytophthora cactorum,7.05
+CACB89,Inoculation,Inoculation Trial One,Phytophthora cactorum,2.95
+CACB90,Inoculation,Inoculation Trial One,Phytophthora cactorum,3.32
+CACB91,Inoculation,Inoculation Trial One,Phytophthora cactorum,6.12
+CAMA44,Inoculation,Inoculation Trial One,Phytophthora cambivora,6.12
+CAMA45,Inoculation,Inoculation Trial One,Phytophthora cambivora,3.56
+CAMA46,Inoculation,Inoculation Trial One,Phytophthora cambivora,8
+CAMB53,Inoculation,Inoculation Trial One,Phytophthora cambivora,14.21
+CAMB54,Inoculation,Inoculation Trial One,Phytophthora cambivora,4.24
+CAMB55,Inoculation,Inoculation Trial One,Phytophthora cambivora,9.52
+EURA62,Inoculation,Inoculation Trial One,Phytophthora europea,5.3
+EURA63,Inoculation,Inoculation Trial One,Phytophthora europea,9.9
+EURA64,Inoculation,Inoculation Trial One,Phytophthora europea,2.72
+FLEX71,Inoculation,Inoculation Trial One,Phytophthora flexuosa,5.68
+FLEX72,Inoculation,Inoculation Trial One,Phytophthora flexuosa,4.01
+FLEX73,Inoculation,Inoculation Trial One,Phytophthora flexuosa,5.96
+GINA128,Inoculation,Inoculation Trial One,Globisporangium intermedium,6.87
+GINA129,Inoculation,Inoculation Trial One,Globisporangium intermedium,7.4
+GINA130,Inoculation,Inoculation Trial One,Globisporangium intermedium,6.75
+GINB137,Inoculation,Inoculation Trial One,Globisporangium intermedium,9.57
+GINB138,Inoculation,Inoculation Trial One,Globisporangium intermedium,6.34
+GINB139,Inoculation,Inoculation Trial One,Globisporangium intermedium,13.02
+GINC146,Inoculation,Inoculation Trial One,Globisporangium intermedium,3.93
+GINC147,Inoculation,Inoculation Trial One,Globisporangium intermedium,10.51
+GINC148,Inoculation,Inoculation Trial One,Globisporangium intermedium,3.7
+NONE173,Inoculation,Inoculation Trial One,Control - No Rice,4.96
+NONE174,Inoculation,Inoculation Trial One,Control - No Rice,8.62
+NONE43,Inoculation,Inoculation Trial One,Control - No Rice,6.21
+OCCA100,Inoculation,Inoculation Trial One,Phytophthora occultans,4.64
+OCCA98,Inoculation,Inoculation Trial One,Phytophthora occultans,8.72
+OCCA99,Inoculation,Inoculation Trial One,Phytophthora occultans,4.86
+OCCB113,Inoculation,Inoculation Trial One,Phytophthora occultans,6.94
+OCCB114,Inoculation,Inoculation Trial One,Phytophthora occultans,6.35
+OCCB115,Inoculation,Inoculation Trial One,Phytophthora occultans,3.65
+PLUA25,Inoculation,Inoculation Trial One,Phytophthora plurivora,15.82
+PLUA26,Inoculation,Inoculation Trial One,Phytophthora plurivora,20.82
+PLUA27,Inoculation,Inoculation Trial One,Phytophthora plurivora,6.06
+PLUB34,Inoculation,Inoculation Trial One,Phytophthora plurivora,6.27
+PLUB35,Inoculation,Inoculation Trial One,Phytophthora plurivora,4.66
+PLUB36,Inoculation,Inoculation Trial One,Phytophthora plurivora,9.3
+SYRA1,Inoculation,Inoculation Trial One,Phytophthora syringae,5.04
+SYRA2,Inoculation,Inoculation Trial One,Phytophthora syringae,4.26
+SYRA3,Inoculation,Inoculation Trial One,Phytophthora syringae,7.11
+SYRA4,Inoculation,Inoculation Trial One,Phytophthora syringae,5.73
+SYRA5,Inoculation,Inoculation Trial One,Phytophthora syringae,9.64
+SYRA6,Inoculation,Inoculation Trial One,Phytophthora syringae,13.24
+SYRB13,Inoculation,Inoculation Trial One,Phytophthora syringae,4.15
+SYRB14,Inoculation,Inoculation Trial One,Phytophthora syringae,5.39
+SYRB15,Inoculation,Inoculation Trial One,Phytophthora syringae,4.56
+SYRB16,Inoculation,Inoculation Trial One,Phytophthora syringae,5.75
+SYRB17,Inoculation,Inoculation Trial One,Phytophthora syringae,14.75
+SYRB18,Inoculation,Inoculation Trial One,Phytophthora syringae,8.76
+C01,Seward Soil,Seward Trial One,Sterilized,14.11
+C02,Seward Soil,Seward Trial One,Sterilized,34.32
+C03,Seward Soil,Seward Trial One,Sterilized,37.76
+C04,Seward Soil,Seward Trial One,Sterilized,17.52
+C05,Seward Soil,Seward Trial One,Sterilized,13.95
+C06,Seward Soil,Seward Trial One,Sterilized,16.76
+C07,Seward Soil,Seward Trial One,Sterilized,22.62
+C08,Seward Soil,Seward Trial One,Sterilized,12.49
+C09,Seward Soil,Seward Trial One,Sterilized,7.56
+C10,Seward Soil,Seward Trial One,Sterilized,9.56
+C12,Seward Soil,Seward Trial One,Sterilized,26.13
+C13,Seward Soil,Seward Trial One,Sterilized,41.03
+C14,Seward Soil,Seward Trial One,Sterilized,19.11
+C15,Seward Soil,Seward Trial One,Sterilized,15.79
+C16,Seward Soil,Seward Trial One,Sterilized,19.47
+C17,Seward Soil,Seward Trial One,Sterilized,25.48
+C18,Seward Soil,Seward Trial One,Sterilized,43.7
+C19,Seward Soil,Seward Trial One,Sterilized,28.18
+C20,Seward Soil,Seward Trial One,Sterilized,34.98
+C21,Seward Soil,Seward Trial One,Sterilized,4.62
+C22,Seward Soil,Seward Trial One,Sterilized,10.51
+C24,Seward Soil,Seward Trial One,Sterilized,13.5
+C25,Seward Soil,Seward Trial One,Sterilized,7.05
+C26,Seward Soil,Seward Trial One,Sterilized,27.42
+C27,Seward Soil,Seward Trial One,Sterilized,13.58
+C28,Seward Soil,Seward Trial One,Sterilized,4.56
+C29,Seward Soil,Seward Trial One,Sterilized,28.02
+C30,Seward Soil,Seward Trial One,Sterilized,13.57
+C31,Seward Soil,Seward Trial One,Sterilized,8.08
+C32,Seward Soil,Seward Trial One,Sterilized,6.12
+C33,Seward Soil,Seward Trial One,Sterilized,10.49
+C34,Seward Soil,Seward Trial One,Sterilized,8.03
+C35,Seward Soil,Seward Trial One,Sterilized,16.13
+C36,Seward Soil,Seward Trial One,Sterilized,8.27
+C37,Seward Soil,Seward Trial One,Sterilized,31.18
+C38,Seward Soil,Seward Trial One,Sterilized,25.88
+C39,Seward Soil,Seward Trial One,Sterilized,14.93
+C40,Seward Soil,Seward Trial One,Sterilized,8.57
+C41,Seward Soil,Seward Trial One,Sterilized,12.29
+C42,Seward Soil,Seward Trial One,Sterilized,18.42
+C43,Seward Soil,Seward Trial One,Sterilized,15.94
+C44,Seward Soil,Seward Trial One,Sterilized,6.64
+C45,Seward Soil,Seward Trial One,Sterilized,15.12
+W01,Seward Soil,Seward Trial One,Wild,8.05
+W02,Seward Soil,Seward Trial One,Wild,16.5
+W03,Seward Soil,Seward Trial One,Wild,8.37
+W04,Seward Soil,Seward Trial One,Wild,25.59
+W05,Seward Soil,Seward Trial One,Wild,13.49
+W06,Seward Soil,Seward Trial One,Wild,17.46
+W07,Seward Soil,Seward Trial One,Wild,8.17
+W08,Seward Soil,Seward Trial One,Wild,10.43
+W09,Seward Soil,Seward Trial One,Wild,6.36
+W11,Seward Soil,Seward Trial One,Wild,35.77
+W12,Seward Soil,Seward Trial One,Wild,34.48
+W13,Seward Soil,Seward Trial One,Wild,11.65
+W14,Seward Soil,Seward Trial One,Wild,24.62
+W15,Seward Soil,Seward Trial One,Wild,9.7
+W16,Seward Soil,Seward Trial One,Wild,14.8
+W17,Seward Soil,Seward Trial One,Wild,2.52
+W18,Seward Soil,Seward Trial One,Wild,4.12
+W19,Seward Soil,Seward Trial One,Wild,9.95
+W20,Seward Soil,Seward Trial One,Wild,7.22
+W21,Seward Soil,Seward Trial One,Wild,4.83
+W23,Seward Soil,Seward Trial One,Wild,3.45
+W24,Seward Soil,Seward Trial One,Wild,9.51
+W25,Seward Soil,Seward Trial One,Wild,4.27
+W26,Seward Soil,Seward Trial One,Wild,10.02
+W27,Seward Soil,Seward Trial One,Wild,12.2
+W28,Seward Soil,Seward Trial One,Wild,13.35
+W29,Seward Soil,Seward Trial One,Wild,29.48
+W30,Seward Soil,Seward Trial One,Wild,12.69
+W31,Seward Soil,Seward Trial One,Wild,18.89
+W32,Seward Soil,Seward Trial One,Wild,13.6
+W33,Seward Soil,Seward Trial One,Wild,3.2
+W34,Seward Soil,Seward Trial One,Wild,19.38
+W35,Seward Soil,Seward Trial One,Wild,16.95
+W36,Seward Soil,Seward Trial One,Wild,24.15
+W37,Seward Soil,Seward Trial One,Wild,11.1
+W38,Seward Soil,Seward Trial One,Wild,6.75
+W39,Seward Soil,Seward Trial One,Wild,15.15
+W40,Seward Soil,Seward Trial One,Wild,14.94
+W41,Seward Soil,Seward Trial One,Wild,5.78
+W42,Seward Soil,Seward Trial One,Wild,12.51
+W43,Seward Soil,Seward Trial One,Wild,6.79
+W44,Seward Soil,Seward Trial One,Wild,7.17
+W45,Seward Soil,Seward Trial One,Wild,3.88
+C46,Seward Soil,Seward Trial Two,Sterilized,13.5
+C47,Seward Soil,Seward Trial Two,Sterilized,10.21
+C48,Seward Soil,Seward Trial Two,Sterilized,12.01
+C49,Seward Soil,Seward Trial Two,Sterilized,10.79
+C50,Seward Soil,Seward Trial Two,Sterilized,14.17
+C51,Seward Soil,Seward Trial Two,Sterilized,15.61
+C52,Seward Soil,Seward Trial Two,Sterilized,14.76
+C53,Seward Soil,Seward Trial Two,Sterilized,20.77
+C54,Seward Soil,Seward Trial Two,Sterilized,21.29
+C55,Seward Soil,Seward Trial Two,Sterilized,32.07
+C56,Seward Soil,Seward Trial Two,Sterilized,31.33
+C57,Seward Soil,Seward Trial Two,Sterilized,18.5
+C58,Seward Soil,Seward Trial Two,Sterilized,25.31
+C59,Seward Soil,Seward Trial Two,Sterilized,10.84
+C60,Seward Soil,Seward Trial Two,Sterilized,19.05
+C61,Seward Soil,Seward Trial Two,Sterilized,11
+C62,Seward Soil,Seward Trial Two,Sterilized,17.64
+C63,Seward Soil,Seward Trial Two,Sterilized,10.39
+C64,Seward Soil,Seward Trial Two,Sterilized,20.49
+C65,Seward Soil,Seward Trial Two,Sterilized,14
+C66,Seward Soil,Seward Trial Two,Sterilized,11.6
+C67,Seward Soil,Seward Trial Two,Sterilized,12.47
+C68,Seward Soil,Seward Trial Two,Sterilized,14.96
+C69,Seward Soil,Seward Trial Two,Sterilized,33.6
+C70,Seward Soil,Seward Trial Two,Sterilized,13.55
+C71,Seward Soil,Seward Trial Two,Sterilized,27.15
+C72,Seward Soil,Seward Trial Two,Sterilized,11.67
+C73,Seward Soil,Seward Trial Two,Sterilized,32.76
+C74,Seward Soil,Seward Trial Two,Sterilized,9.69
+C75,Seward Soil,Seward Trial Two,Sterilized,30.38
+C76,Seward Soil,Seward Trial Two,Sterilized,11.88
+C77,Seward Soil,Seward Trial Two,Sterilized,25.05
+C78,Seward Soil,Seward Trial Two,Sterilized,10.35
+C79,Seward Soil,Seward Trial Two,Sterilized,10.56
+C80,Seward Soil,Seward Trial Two,Sterilized,14.35
+C81,Seward Soil,Seward Trial Two,Sterilized,25.01
+C82,Seward Soil,Seward Trial Two,Sterilized,9.33
+C83,Seward Soil,Seward Trial Two,Sterilized,11.21
+C84,Seward Soil,Seward Trial Two,Sterilized,9.79
+C85,Seward Soil,Seward Trial Two,Sterilized,14.38
+C86,Seward Soil,Seward Trial Two,Sterilized,11.67
+C87,Seward Soil,Seward Trial Two,Sterilized,14.61
+C88,Seward Soil,Seward Trial Two,Sterilized,13.48
+C89,Seward Soil,Seward Trial Two,Sterilized,12.4
+P01,Seward Soil,Seward Trial Two,Control - Potting Mix,25.11
+P02,Seward Soil,Seward Trial Two,Control - Potting Mix,26.91
+P03,Seward Soil,Seward Trial Two,Control - Potting Mix,20.89
+P04,Seward Soil,Seward Trial Two,Control - Potting Mix,8.88
+P05,Seward Soil,Seward Trial Two,Control - Potting Mix,14.06
+P06,Seward Soil,Seward Trial Two,Control - Potting Mix,17.31
+P07,Seward Soil,Seward Trial Two,Control - Potting Mix,20.86
+P08,Seward Soil,Seward Trial Two,Control - Potting Mix,14.17
+P09,Seward Soil,Seward Trial Two,Control - Potting Mix,21.02
+P10,Seward Soil,Seward Trial Two,Control - Potting Mix,12.26
+P11,Seward Soil,Seward Trial Two,Control - Potting Mix,18.03
+P12,Seward Soil,Seward Trial Two,Control - Potting Mix,20.18
+P13,Seward Soil,Seward Trial Two,Control - Potting Mix,9.02
+P14,Seward Soil,Seward Trial Two,Control - Potting Mix,12.83
+P15,Seward Soil,Seward Trial Two,Control - Potting Mix,18
+P16,Seward Soil,Seward Trial Two,Control - Potting Mix,14.63
+P17,Seward Soil,Seward Trial Two,Control - Potting Mix,19.41
+P18,Seward Soil,Seward Trial Two,Control - Potting Mix,13.56
+W46,Seward Soil,Seward Trial Two,Wild,12.24
+W47,Seward Soil,Seward Trial Two,Wild,15.1
+W48,Seward Soil,Seward Trial Two,Wild,11.83
+W49,Seward Soil,Seward Trial Two,Wild,18.26
+W50,Seward Soil,Seward Trial Two,Wild,17.73
+W51,Seward Soil,Seward Trial Two,Wild,8.65
+W52,Seward Soil,Seward Trial Two,Wild,16.82
+W53,Seward Soil,Seward Trial Two,Wild,17.79
+W54,Seward Soil,Seward Trial Two,Wild,12.49
+W55,Seward Soil,Seward Trial Two,Wild,31.96
+W56,Seward Soil,Seward Trial Two,Wild,4.38
+W57,Seward Soil,Seward Trial Two,Wild,24.45
+W58,Seward Soil,Seward Trial Two,Wild,15.23
+W59,Seward Soil,Seward Trial Two,Wild,17.77
+W60,Seward Soil,Seward Trial Two,Wild,5.48
+W61,Seward Soil,Seward Trial Two,Wild,18.21
+W62,Seward Soil,Seward Trial Two,Wild,14.87
+W63,Seward Soil,Seward Trial Two,Wild,11
+W64,Seward Soil,Seward Trial Two,Wild,7.02
+W65,Seward Soil,Seward Trial Two,Wild,7.75
+W66,Seward Soil,Seward Trial Two,Wild,27.11
+W67,Seward Soil,Seward Trial Two,Wild,19.58
+W68,Seward Soil,Seward Trial Two,Wild,27.01
+W69,Seward Soil,Seward Trial Two,Wild,31.05
+W70,Seward Soil,Seward Trial Two,Wild,23.84
+W71,Seward Soil,Seward Trial Two,Wild,7.04
+W72,Seward Soil,Seward Trial Two,Wild,11.67
+W73,Seward Soil,Seward Trial Two,Wild,14.84
+W74,Seward Soil,Seward Trial Two,Wild,12.72
+W75,Seward Soil,Seward Trial Two,Wild,13.35
+W76,Seward Soil,Seward Trial Two,Wild,22.29
+W77,Seward Soil,Seward Trial Two,Wild,39.2
+W78,Seward Soil,Seward Trial Two,Wild,17.49
+W79,Seward Soil,Seward Trial Two,Wild,20.15
+W80,Seward Soil,Seward Trial Two,Wild,4.8
+W81,Seward Soil,Seward Trial Two,Wild,16.39
+W82,Seward Soil,Seward Trial Two,Wild,10.6
+W83,Seward Soil,Seward Trial Two,Wild,12.39
+W84,Seward Soil,Seward Trial Two,Wild,10.28
+W85,Seward Soil,Seward Trial Two,Wild,12.56
+W86,Seward Soil,Seward Trial Two,Wild,10.9
+W87,Seward Soil,Seward Trial Two,Wild,8.06
+W88,Seward Soil,Seward Trial Two,Wild,10.92
+W89,Seward Soil,Seward Trial Two,Wild,7.9
