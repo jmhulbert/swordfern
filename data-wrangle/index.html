@@ -372,9 +372,11 @@ display: none;
 sites &lt;- read.csv(&quot;./data/field/sword.fern.field.sample.data.csv&quot;)
 isolates &lt;- read.csv(&quot;./data/lab/sword.fern.isolates.csv&quot;)
 extractions &lt;- read.csv(&quot;./data/lab/sword.fern.isolate.extractions.csv&quot;)
-greenhouse.weights &lt;- read.csv(&quot;./data/greenhouse/Final.Root.Weights.csv&quot;)
-greenhouse.fronds &lt;- read.csv(&quot;./data/greenhouse/Final.Frond.Counts.csv&quot;)</code></pre>
-<pre class="r"><code>greenhouse &lt;- left_join(greenhouse.weights,greenhouse.fronds,by=&quot;Fern.Number&quot;)</code></pre>
+#greenhouse.weights &lt;- read.csv(&quot;./data/greenhouse/Final.Root.Weights.csv&quot;)
+#greenhouse.fronds &lt;- read.csv(&quot;./data/greenhouse/Final.Frond.Counts.csv&quot;)
+#write.csv(greenhouse,&quot;Final-Greenhouse-Data-Combined.csv&quot;,row.names=FALSE)
+#greenhouse &lt;- left_join(greenhouse.fronds,greenhouse.weights,by=&quot;Fern.Number&quot;)
+greenhouse &lt;- read.csv(&quot;./data/greenhouse/Final-Greenhouse-Data-Combined.csv&quot;)</code></pre>
 <pre class="r"><code>extractions &lt;- extractions[1:15]</code></pre>
 <pre class="r"><code>extractions &lt;- extractions %&gt;% filter(Sample.Extraction.Number!=&quot;FHL0167&quot;)</code></pre>
 <pre class="r"><code>results &lt;- left_join(isolates,extractions,join_by(&quot;Isolate.ID&quot;==&quot;Isolate.Name&quot;))</code></pre>

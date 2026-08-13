@@ -5,24 +5,24 @@ BLAA157,Inoculation,Inoculation Trial One,Control - Blank Agar,8.07
 BLAB164,Inoculation,Inoculation Trial One,Control - Blank Agar,13.26
 BLAB165,Inoculation,Inoculation Trial One,Control - Blank Agar,3.64
 BLAB166,Inoculation,Inoculation Trial One,Control - Blank Agar,9.46
-CACA80,Inoculation,Inoculation Trial One,Phytophthora cactorum,4.73
-CACA81,Inoculation,Inoculation Trial One,Phytophthora cactorum,3.19
-CACA82,Inoculation,Inoculation Trial One,Phytophthora cactorum,7.05
-CACB89,Inoculation,Inoculation Trial One,Phytophthora cactorum,2.95
-CACB90,Inoculation,Inoculation Trial One,Phytophthora cactorum,3.32
-CACB91,Inoculation,Inoculation Trial One,Phytophthora cactorum,6.12
-CAMA44,Inoculation,Inoculation Trial One,Phytophthora cambivora,6.12
-CAMA45,Inoculation,Inoculation Trial One,Phytophthora cambivora,3.56
-CAMA46,Inoculation,Inoculation Trial One,Phytophthora cambivora,8
-CAMB53,Inoculation,Inoculation Trial One,Phytophthora cambivora,14.21
-CAMB54,Inoculation,Inoculation Trial One,Phytophthora cambivora,4.24
-CAMB55,Inoculation,Inoculation Trial One,Phytophthora cambivora,9.52
+CACA080,Inoculation,Inoculation Trial One,Phytophthora cactorum,4.73
+CACA081,Inoculation,Inoculation Trial One,Phytophthora cactorum,3.19
+CACA082,Inoculation,Inoculation Trial One,Phytophthora cactorum,7.05
+CACB089,Inoculation,Inoculation Trial One,Phytophthora cactorum,2.95
+CACB090,Inoculation,Inoculation Trial One,Phytophthora cactorum,3.32
+CACB091,Inoculation,Inoculation Trial One,Phytophthora cactorum,6.12
+CAMA044,Inoculation,Inoculation Trial One,Phytophthora cambivora,6.12
+CAMA045,Inoculation,Inoculation Trial One,Phytophthora cambivora,3.56
+CAMA046,Inoculation,Inoculation Trial One,Phytophthora cambivora,8
+CAMB053,Inoculation,Inoculation Trial One,Phytophthora cambivora,14.21
+CAMB054,Inoculation,Inoculation Trial One,Phytophthora cambivora,4.24
+CAMB055,Inoculation,Inoculation Trial One,Phytophthora cambivora,9.52
 EURA62,Inoculation,Inoculation Trial One,Phytophthora europea,5.3
 EURA63,Inoculation,Inoculation Trial One,Phytophthora europea,9.9
 EURA64,Inoculation,Inoculation Trial One,Phytophthora europea,2.72
-FLEX71,Inoculation,Inoculation Trial One,Phytophthora flexuosa,5.68
-FLEX72,Inoculation,Inoculation Trial One,Phytophthora flexuosa,4.01
-FLEX73,Inoculation,Inoculation Trial One,Phytophthora flexuosa,5.96
+FLEX071,Inoculation,Inoculation Trial One,Phytophthora flexuosa,5.68
+FLEX072,Inoculation,Inoculation Trial One,Phytophthora flexuosa,4.01
+FLEX073,Inoculation,Inoculation Trial One,Phytophthora flexuosa,5.96
 GINA128,Inoculation,Inoculation Trial One,Globisporangium intermedium,6.87
 GINA129,Inoculation,Inoculation Trial One,Globisporangium intermedium,7.4
 GINA130,Inoculation,Inoculation Trial One,Globisporangium intermedium,6.75
@@ -34,25 +34,25 @@ GINC147,Inoculation,Inoculation Trial One,Globisporangium intermedium,10.51
 GINC148,Inoculation,Inoculation Trial One,Globisporangium intermedium,3.7
 NONE173,Inoculation,Inoculation Trial One,Control - No Rice,4.96
 NONE174,Inoculation,Inoculation Trial One,Control - No Rice,8.62
-NONE43,Inoculation,Inoculation Trial One,Control - No Rice,6.21
+NONE043,Inoculation,Inoculation Trial One,Control - No Rice,6.21
 OCCA100,Inoculation,Inoculation Trial One,Phytophthora occultans,4.64
-OCCA98,Inoculation,Inoculation Trial One,Phytophthora occultans,8.72
-OCCA99,Inoculation,Inoculation Trial One,Phytophthora occultans,4.86
+OCCA098,Inoculation,Inoculation Trial One,Phytophthora occultans,8.72
+OCCA099,Inoculation,Inoculation Trial One,Phytophthora occultans,4.86
 OCCB113,Inoculation,Inoculation Trial One,Phytophthora occultans,6.94
 OCCB114,Inoculation,Inoculation Trial One,Phytophthora occultans,6.35
 OCCB115,Inoculation,Inoculation Trial One,Phytophthora occultans,3.65
-PLUA25,Inoculation,Inoculation Trial One,Phytophthora plurivora,15.82
-PLUA26,Inoculation,Inoculation Trial One,Phytophthora plurivora,20.82
-PLUA27,Inoculation,Inoculation Trial One,Phytophthora plurivora,6.06
-PLUB34,Inoculation,Inoculation Trial One,Phytophthora plurivora,6.27
-PLUB35,Inoculation,Inoculation Trial One,Phytophthora plurivora,4.66
-PLUB36,Inoculation,Inoculation Trial One,Phytophthora plurivora,9.3
-SYRA1,Inoculation,Inoculation Trial One,Phytophthora syringae,5.04
-SYRA2,Inoculation,Inoculation Trial One,Phytophthora syringae,4.26
-SYRA3,Inoculation,Inoculation Trial One,Phytophthora syringae,7.11
-SYRA4,Inoculation,Inoculation Trial One,Phytophthora syringae,5.73
-SYRA5,Inoculation,Inoculation Trial One,Phytophthora syringae,9.64
-SYRA6,Inoculation,Inoculation Trial One,Phytophthora syringae,13.24
+PLUA025,Inoculation,Inoculation Trial One,Phytophthora plurivora,15.82
+PLUA026,Inoculation,Inoculation Trial One,Phytophthora plurivora,20.82
+PLUA027,Inoculation,Inoculation Trial One,Phytophthora plurivora,6.06
+PLUB034,Inoculation,Inoculation Trial One,Phytophthora plurivora,6.27
+PLUB035,Inoculation,Inoculation Trial One,Phytophthora plurivora,4.66
+PLUB036,Inoculation,Inoculation Trial One,Phytophthora plurivora,9.3
+SYRA001,Inoculation,Inoculation Trial One,Phytophthora syringae,5.04
+SYRA002,Inoculation,Inoculation Trial One,Phytophthora syringae,4.26
+SYRA003,Inoculation,Inoculation Trial One,Phytophthora syringae,7.11
+SYRA004,Inoculation,Inoculation Trial One,Phytophthora syringae,5.73
+SYRA005,Inoculation,Inoculation Trial One,Phytophthora syringae,9.64
+SYRA006,Inoculation,Inoculation Trial One,Phytophthora syringae,13.24
 SYRB13,Inoculation,Inoculation Trial One,Phytophthora syringae,4.15
 SYRB14,Inoculation,Inoculation Trial One,Phytophthora syringae,5.39
 SYRB15,Inoculation,Inoculation Trial One,Phytophthora syringae,4.56
