@@ -11,12 +11,22 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(tidyverse)
 library(kableExtra)
+library(readr)
+library(misty)
+library(stringr)
+library(BSDA)
+library(car)
+library(ggpubr)
+library(statsExpressions)
+library(RColorBrewer)
+library(pillar)
+library(readxl)
 ```
 
 
 ```{r}
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
-data <- read.csv("./data/lab/combined.results.csv")
+#setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
+data <- read.csv("~/GitHub/swordfern/data/lab/combined.results.csv")
 ```
 
 ```{r}
@@ -118,12 +128,6 @@ ggplot(species.summary,aes(Tentative.Result,n.samples,fill=Genus.x)) +geom_col()
 ```
 
 ```{r}
-
-```
-
-
-
-```{r}
 species.summary <- field.baits %>% filter(!is.na(Tentative.Result) & Tentative.Result!="") %>% group_by(site.location.description.x,Tentative.Result) %>% summarize(n.sites = n_distinct(place_guess.x,na.rm=TRUE),n.samples = n_distinct(Sample,na.rm=TRUE),n.isolates=n(),Genus.x=paste(unique(Genus.x))) 
 species.summary
 ```
@@ -146,3 +150,41 @@ ggplot(field.baits,aes(Tentative.Result,percent.of.plants..of.same.species..affe
 ```{r}
 ggplot(field.baits,aes(Tentative.Result,Dieback.percent.x,fill=Genus.x)) +geom_boxplot()+coord_flip()+theme_bw()+guides(fill="none")
 ```
+#Greenhouse data
+
+##Seward Soil Trials
+
+Visualize data for Seward soil trials by comparing weights and number of fronds (total, healthy, and unhealthy) between treatment groups (control - potting mix, sterilized, wild).
+
+```{r}
+greenhouse.data <- read.csv("~/GitHub/swordfern/data/greenhouse/Final-Greenhouse-Data-Combined.csv")
+greenhouse.data <- rename(greenhouse.data, "Weight" = "Weight..g.")
+seward.data <- greenhouse.data %>% filter(Experiment == "Seward Soil")
+
+rootsvs.plot <- ggplot(seward.data, aes(x = Treatment, y = Weight, fill = Treatment)) + geom_violin() +geom_boxplot(width = 0.1, fill = "white") + labs(title = "Root Mass Beween Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Soil Treatment") + theme(plot.title =  element_text(hjust = 0.5))
+rootsvs.plot + scale_fill_brewer(palette = "Pastel1")
+
+fronds.healthy <- ggplot(seward.data, aes(x = Treatment, y = Healthy.Fronds, fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Healthy Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
+fronds.healthy + scale_fill_brewer(palette = "Pastel1")
+
+fronds.crispy <- ggplot(seward.data, aes(x = Treatment, y = Crispy.Fronds , fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Crispy Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
+fronds.healthy + scale_fill_brewer(palette = "Pastel1")
+```
+```{r}
+leveneTest(Healthy.Fronds~as.factor(Treatment), data=seward.data, na.rm = TRUE)
+```
+There is enough evidence to reject equality of variances between treatment groups since our p-critical value of 0.03578 was greater than our p-value of 0.05. This is likely due to the potting mix group being much smaller than the sterilized and wild soil groups. Due to this discrepancy, we will explore the data comparing only the sterilized and wild groups.
+
+```{r}
+roots.nopot <- seward.data %>% filter(Treatment != "Control - Potting Mix")
+leveneTest(Healthy.Fronds~as.factor(Treatment), data=roots.nopot, na.rm = TRUE)
+```
+
+There is not enough evidence to reject equality of variances between treatment groups since our p-critical value of 0.05 is less than our p-value of 0.1843.
+
+```{r}
+t.test(`Healthy.Fronds`~Treatment,data=roots.nopot, var.equal=TRUE, conf.level = .95, na.rm =  TRUE)
+summary(roots.nopot)
+write.csv()
+```
+True difference in means between sterilized and wild soil groups is not equal to 0 since our p-value 0.03724 < p-critical 0.05. Assuming a 95 percent confidence interval, the true average difference in the number of healthy fronds between treatment groups is between 0.2000833 and 6.4895719 fronds.
