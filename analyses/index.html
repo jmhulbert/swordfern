@@ -1359,6 +1359,11 @@ leveneTest(Healthy.Fronds~as.factor(Treatment), data=roots.nopot, na.rm = TRUE)<
 ##        Df F value Pr(&gt;F)
 ## group   1  1.7767 0.1843
 ##       172</code></pre>
+<pre class="r"><code>leveneTest(Crispy.Fronds~as.factor(Treatment), data=roots.nopot, na.rm = TRUE)</code></pre>
+<pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = median: TRUE)
+##        Df F value Pr(&gt;F)
+## group   1  0.5275 0.4687
+##       172</code></pre>
 <p>There is not enough evidence to reject equality of variances between
 treatment groups since our p-critical value of 0.05 is less than our
 p-value of 0.1843.</p>
@@ -1374,38 +1379,29 @@ p-value of 0.1843.</p>
 ## sample estimates:
 ## mean in group Sterilized       mean in group Wild 
 ##                 18.50575                 15.16092</code></pre>
-<pre class="r"><code>summary(roots.nopot)</code></pre>
-<pre><code>##    Trial.x          Fern.Number        Healthy.Fronds  Crispy.Fronds  
-##  Length:174         Length:174         Min.   : 0.00   Min.   : 0.00  
-##  Class :character   Class :character   1st Qu.: 8.00   1st Qu.: 7.25  
-##  Mode  :character   Mode  :character   Median :15.00   Median :15.00  
-##                                        Mean   :16.83   Mean   :17.35  
-##                                        3rd Qu.:25.00   3rd Qu.:25.75  
-##                                        Max.   :48.00   Max.   :52.00  
-##                                                                       
-##   Fiddleheads     Root.Rating..tentative. Number.of.Weevils    Notes          
-##  Min.   :0.0000   Min.   : NA             Min.   :0.0000    Length:174        
-##  1st Qu.:0.0000   1st Qu.: NA             1st Qu.:0.0000    Class :character  
-##  Median :0.0000   Median : NA             Median :0.0000    Mode  :character  
-##  Mean   :0.7299   Mean   :NaN             Mean   :0.3488                      
-##  3rd Qu.:1.0000   3rd Qu.: NA             3rd Qu.:0.0000                      
-##  Max.   :6.0000   Max.   : NA             Max.   :3.0000                      
-##                   NA&#39;s   :174             NA&#39;s   :88                          
-##   Experiment          Trial.y           Treatment             Weight     
-##  Length:174         Length:174         Length:174         Min.   : 2.52  
-##  Class :character   Class :character   Class :character   1st Qu.:10.23  
-##  Mode  :character   Mode  :character   Mode  :character   Median :13.56  
-##                                                           Mean   :15.72  
-##                                                           3rd Qu.:19.09  
-##                                                           Max.   :43.70  
-## </code></pre>
-<pre class="r"><code>?summary()</code></pre>
-<pre><code>## starting httpd help server ... done</code></pre>
-<p>True difference in means between sterilized and wild soil groups is
-not equal to 0 since our p-value 0.03724 &lt; p-critical 0.05. Assuming
-a 95 percent confidence interval, the true average difference in the
-number of healthy fronds between treatment groups is between 0.2000833
-and 6.4895719 fronds.</p>
+<pre class="r"><code>#descript(roots.nopot)</code></pre>
+<p>True difference in mean number of healthy fronds between sterilized
+and wild soil groups is not equal to 0 since our p-value 0.03724 &lt;
+p-critical 0.05. Assuming a 95 percent confidence interval, the true
+average difference in the number of healthy fronds between treatment
+groups is between 0.2000833 and 6.4895719 fronds.</p>
+<pre class="r"><code>t.test(Crispy.Fronds~Treatment, data = roots.nopot, var.equal = TRUE, conf.level = .95, na.rm = TRUE)</code></pre>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  Crispy.Fronds by Treatment
+## t = 0.39128, df = 172, p-value = 0.6961
+## alternative hypothesis: true difference in means between group Sterilized and group Wild is not equal to 0
+## 95 percent confidence interval:
+##  -3.021843  4.516096
+## sample estimates:
+## mean in group Sterilized       mean in group Wild 
+##                 17.72414                 16.97701</code></pre>
+<p>True difference in mean number of crispy fronds between sterilized
+and wild soil groups is likely equal to 0 since our p-value 0.6961 &gt;
+p-critical 0.05. Assuming a 95 percent confidence interval, the true
+mean difference in the number of healthy fronds between treatment groups
+is between -3.021843 and 4.516096 fronds.</p>
 </div>
 
 

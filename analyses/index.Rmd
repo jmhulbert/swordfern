@@ -21,6 +21,8 @@ library(statsExpressions)
 library(RColorBrewer)
 library(pillar)
 library(readxl)
+library(gridExtra)
+library(rstatix)
 ```
 
 
@@ -159,16 +161,21 @@ Visualize data for Seward soil trials by comparing weights and number of fronds 
 ```{r}
 greenhouse.data <- read.csv("~/GitHub/swordfern/data/greenhouse/Final-Greenhouse-Data-Combined.csv")
 greenhouse.data <- rename(greenhouse.data, "Weight" = "Weight..g.")
+greenhouse.data$Total.Fronds <- greenhouse.data$Healthy.Fronds + greenhouse.data$Crispy.Fronds
+
 seward.data <- greenhouse.data %>% filter(Experiment == "Seward Soil")
 
-rootsvs.plot <- ggplot(seward.data, aes(x = Treatment, y = Weight, fill = Treatment)) + geom_violin() +geom_boxplot(width = 0.1, fill = "white") + labs(title = "Root Mass Beween Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Soil Treatment") + theme(plot.title =  element_text(hjust = 0.5))
-rootsvs.plot + scale_fill_brewer(palette = "Pastel1")
+seward.roots.plot <- ggplot(seward.data, aes(x = Treatment, y = Weight, fill = Treatment)) + geom_violin() +geom_boxplot(width = 0.1, fill = "white") + labs(title = "Root Mass Beween Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Soil Treatment") + theme(plot.title =  element_text(hjust = 0.5))
+seward.roots.plot + scale_fill_brewer(palette = "Pastel1")
 
-fronds.healthy <- ggplot(seward.data, aes(x = Treatment, y = Healthy.Fronds, fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Healthy Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
-fronds.healthy + scale_fill_brewer(palette = "Pastel1")
+seward.healthy <- ggplot(seward.data, aes(x = Treatment, y = Healthy.Fronds, fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Healthy Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
+seward.healthy + scale_fill_brewer(palette = "Pastel1")
 
-fronds.crispy <- ggplot(seward.data, aes(x = Treatment, y = Crispy.Fronds , fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Crispy Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
-fronds.healthy + scale_fill_brewer(palette = "Pastel1")
+seward.crispy <- ggplot(seward.data, aes(x = Treatment, y = Crispy.Fronds , fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Crispy Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
+seward.crispy + scale_fill_brewer(palette = "Pastel1")
+
+seward.total <- ggplot(seward.data, aes(x = Treatment, y = Total.Fronds , fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Total Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
+seward.total + scale_fill_brewer(palette = "Pastel1")
 ```
 ```{r}
 leveneTest(Healthy.Fronds~as.factor(Treatment), data=seward.data, na.rm = TRUE)
@@ -176,15 +183,88 @@ leveneTest(Healthy.Fronds~as.factor(Treatment), data=seward.data, na.rm = TRUE)
 There is enough evidence to reject equality of variances between treatment groups since our p-critical value of 0.03578 was greater than our p-value of 0.05. This is likely due to the potting mix group being much smaller than the sterilized and wild soil groups. Due to this discrepancy, we will explore the data comparing only the sterilized and wild groups.
 
 ```{r}
-roots.nopot <- seward.data %>% filter(Treatment != "Control - Potting Mix")
+seward.nopot <- seward.data %>% filter(Treatment != "Control - Potting Mix")
 leveneTest(Healthy.Fronds~as.factor(Treatment), data=roots.nopot, na.rm = TRUE)
+leveneTest(Crispy.Fronds~as.factor(Treatment), data=roots.nopot, na.rm = TRUE)
 ```
 
-There is not enough evidence to reject equality of variances between treatment groups since our p-critical value of 0.05 is less than our p-value of 0.1843.
+There is not enough evidence to reject equality of variances between the number of healthy and crispy fronds between treatment groups.
 
 ```{r}
 t.test(`Healthy.Fronds`~Treatment,data=roots.nopot, var.equal=TRUE, conf.level = .95, na.rm =  TRUE)
-summary(roots.nopot)
-write.csv()
+#descript(roots.nopot)
 ```
-True difference in means between sterilized and wild soil groups is not equal to 0 since our p-value 0.03724 < p-critical 0.05. Assuming a 95 percent confidence interval, the true average difference in the number of healthy fronds between treatment groups is between 0.2000833 and 6.4895719 fronds.
+True difference in mean number of healthy fronds between sterilized and wild soil groups is not equal to 0 since our p-value 0.03724 < p-critical 0.05. Assuming a 95 percent confidence interval, the true average difference in the number of healthy fronds between treatment groups is between 0.2000833 and 6.4895719 fronds.
+```{r}
+t.test(Crispy.Fronds~Treatment, data = roots.nopot, var.equal = TRUE, conf.level = .95, na.rm = TRUE)
+```
+True difference in mean number of crispy fronds between sterilized and wild soil groups is likely equal to 0 since our p-value 0.6961 > p-critical 0.05. Assuming a 95 percent confidence interval, the true mean difference in the number of healthy fronds between treatment groups is between -3.021843 and 4.516096 fronds.
+
+```{r}
+seward.nopot %>% group_by(Treatment) %>%  summarise(n = n(), mean = mean(Healthy.Fronds), sd = sd(Healthy.Fronds))
+seward.nopot %>% group_by(Treatment) %>%  summarise(n = n(), mean = mean(Crispy.Fronds), sd = sd(Crispy.Fronds))
+seward.nopot %>% group_by(Treatment) %>%  summarise(n = n(), mean = mean(Total.Fronds), sd = sd(Total.Fronds))
+seward.nopot %>% group_by(Treatment) %>%  summarise(n = n(), mean = mean(Weight), sd = sd(Weight))
+
+sterilized <- seward.nopot %>% filter(Treatment == "Sterilized") %>% select(-c(Trial.x, Fiddleheads, Root.Rating..tentative., Number.of.Weevils, Notes, Experiment, Trial.y, Total.Fronds))
+Wild <- seward.nopot %>% filter(Treatment == "Wild") %>% select(-c(Trial.x, Fiddleheads, Root.Rating..tentative., Number.of.Weevils, Notes, Experiment, Trial.y, Total.Fronds))
+
+sterilized.num <- sapply(sterilized, is.numeric)
+wild.num <- sapply(Wild, is.numeric)
+
+install.packages("Hotelling")
+library(Hotelling)
+hotelling.test(sterilized, Wild, na.rm = TRUE)
+
+seward.nopot <- seward.nopot %>% mutate(log_healthy = log1p(Healthy.Fronds),
+                                        log_cirspy = log1p(Crispy.Fronds),
+                                        log_weight = log1p(Weight))
+seward.test <- seward.nopot %>% dplyr::select(log_weight, log_cirspy, log_healthy)
+
+install.packages("RVAideMemoire")
+library(RVAideMemoire)
+mshapiro.test(seward.test)
+?mshapiro.test
+```
+
+```{r}
+qqPlot(seward.data$Total.Fronds)
+qqPlot(seward.data$Weight)
+qqPlot(seward.nopot$Total.Fronds)
+qqPlot(seward.nopot$Weight)
+hist(seward.nopot$Weight)
+hist(seward.nopot$Total.Fronds)
+install.packages("heplots")
+library(heplots)
+boxM(Y = seward.nopot[, c("Total.Fronds", "Weight")], group = seward.nopot$Treatment, na.rm = TRUE)
+boxM(Y = seward.data[, c("Total.Fronds", "Weight")], group = seward.data$Treatment, na.rm = TRUE)
+```
+p-value 0.002346 > 0.001 non-significant, can assume variance-covariance matrices are equal for each combination formed by each treatment group
+```{r}
+seward.data %>% group_by(Treatment) %>% shapiro_test(Total.Fronds, Weight)
+
+mahalanobis_distance(data = seward.nopot[, c("Total.Fronds","Weight")])$is.outlier
+mahalanobis_distance(data = seward.data[, c("Total.Fronds","Weight")])$is.outlier
+
+p1 <- seward.nopot  %>% group_by(Treatment) %>% filter(Treatment == "Sterilized") %>% ggplot(aes(x = Weight, y = Total.Fronds)) + geom_point() + ggtitle("Sterilized")
+p2 <- seward.nopot  %>% group_by(Treatment) %>% filter(Treatment == "Wild") %>% ggplot(aes(x = Weight, y = Total.Fronds)) + geom_point() + ggtitle("Wild") 
+grid.arrange(p1, p2, ncol=2)
+```
+```{r}
+seward.num <- seward.nopot %>% dplyr::select(Weight, Total.Fronds)
+cor.test(x = seward.num$Weight, y = seward.num$Total.Fronds, method = "pearson")$estimate
+```
+```{r}
+seward.num <- data.frame(Weight, Total.Fronds= unlist(Total.Fronds))
+dep.vars <- cbind(seward.nopot$Total.Fronds, seward.nopot$Weight)
+manova <- manova(dep.vars ~ Treatment, data = seward.nopot)
+summary(manova)
+
+dep.vars3 <- cbind(seward.data$Weight, seward.data$Total.Fronds)
+manova.3 <- manova(dep.vars3 ~ Treatment, data = seward.data)
+summary(manova.3)
+
+library(effectsize)
+effectsize::eta_squared(manova)
+```
+Pillai's trace test statistics is statistically significant[Pillai's Trace = 0.044444, F(2,171) = 3.9767, p=0.02051 < 0.05] indicating that treatment groups have a statistically significant association with combined root weight and total number of fronds. Eta-squared of 0.04 suggests there treatment group has a small effect on combined root weight and total number of fronds.
