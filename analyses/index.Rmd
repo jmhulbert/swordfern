@@ -8,7 +8,7 @@ date: "2025-11-14"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 library(kableExtra)
 library(readr)
@@ -27,6 +27,7 @@ library(Hotelling)
 library(RVAideMemoire)
 library(heplots)
 library(effectsize)
+library(npmv)
 ```
 
 
@@ -39,20 +40,14 @@ data <- read.csv("~/GitHub/swordfern/data/lab/combined.results.csv")
 data <- rename(data,Tentative.Result = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast..x)
 ```
 
-
 ```{r}
 data <- data %>% filter(common_name.x=="western sword fern")
 ```
-
-
 
 ```{r}
 data$Tentative.Result[data$Tentative.Result=="Phytophthora europaea or abietivora?"] <- "Phytophthora sp."
 data$Tentative.Result[data$Tentative.Result=="Phytophthora flexuosa?"] <- "Phytophthora sp."
 ```
-
-
-
 
 
 ```{r}
@@ -74,7 +69,7 @@ roots <- data %>% filter(Project=="Swordfern Roots")
 ### Field Baits
 
 
-## Summary Tables
+
 
 ## Number of Isolates
 
@@ -86,9 +81,9 @@ ggplot(field.baits[field.baits$Tentative.Result!="" & !is.na(field.baits$Tentati
 ```{r}
 levels(field.baits$Oomycete)
 ```
+## Summary Tables
 
-
-## Sample Collections
+### Sample Collections
 
 ```{r}
 sample.summary <- field.baits %>% summarize(n.sites = n_distinct(place_guess.x,na.rm=TRUE),n.samples=n_distinct(Sample),n.isolates=n(),n.oomycete.isolates=sum(Oomycete.x=="Oomycete",na.rm=TRUE),n.oomycete.spec=n_distinct(Tentative.Result),n.Phytoph.isolates=sum(Genus.x=="Phytophthora",na.rm=TRUE),n.Phytoph.spec=n_distinct(Tentative.Result[Genus.x=="Phytophthora" & !is.na(Tentative.Result)]),Phytoph.spp=paste(unique(Tentative.Result[Genus.x=="Phytophthora" & !is.na(Tentative.Result)]),collapse=", "))
@@ -97,7 +92,7 @@ kable(sample.summary,digits = 2) %>% kable_material(c("striped", "hover","conden
 ```
 
 
-## Phytophthora Isolates
+### Phytophthora Isolates
 
 ```{r}
 Phytophthora.summary <- field.baits %>% filter(Genus.x=="Phytophthora") %>% summarize(n.sites = n_distinct(place_guess.x,na.rm=TRUE),n.samples=n_distinct(Sample),n.isolates=n(),n.oomycete.isolates=sum(Oomycete.x=="Oomycete",na.rm=TRUE),n.oomycete.spec=n_distinct(Tentative.Result),n.Phytoph.isolates=sum(Genus.x=="Phytophthora",na.rm=TRUE),n.Phytoph.spec=n_distinct(Tentative.Result[Genus.x=="Phytophthora" & !is.na(Tentative.Result)]),Phytoph.spp=paste(unique(Tentative.Result[Genus.x=="Phytophthora" & !is.na(Tentative.Result)]),collapse=", "))
@@ -107,7 +102,7 @@ kable(Phytophthora.summary,digits = 2) %>% kable_material(c("striped", "hover","
 
 
 
-## Samples per 'place guess'
+### Samples per 'place guess'
 
 
 ```{r}
@@ -118,8 +113,9 @@ kable(site.summary,digits = 2) %>% kable_material(c("striped", "hover","condense
 
 
 ```{r}
-species.summary <- field.baits %>% filter(!is.na(Tentative.Result) & Tentative.Result!="") %>% group_by(Tentative.Result) %>% summarize(n.sites = n_distinct(place_guess.x,na.rm=TRUE),n.samples = n_distinct(Sample,na.rm=TRUE),n.isolates=n(),Genus.x=paste(unique(Genus.x))) 
-species.summary
+species.summary <- field.baits %>% filter(!is.na(Tentative.Result) & Tentative.Result!="") %>% group_by(Tentative.Result) %>% summarize(n.sites = n_distinct(place_guess.x,na.rm=TRUE),n.samples = n_distinct(Sample,na.rm=TRUE),n.isolates=n(),Genus.x=paste(unique(Genus.x)))
+
+kable(species.summary, digits = 2) %>% kable_material(c("striped", "hover","condensed")) %>% kable_styling(full_width = F) %>% scroll_box(height = "400px")
 ```
 
 
@@ -160,7 +156,7 @@ ggplot(field.baits,aes(Tentative.Result,Dieback.percent.x,fill=Genus.x)) +geom_b
 
 ## Seward Soil Trials
 
-##Data Visualization
+### Data Visualization
 
 Visualize data for Seward soil trials by comparing weights and number of fronds (total, healthy, and unhealthy) between treatment groups (control - potting mix, sterilized, wild).
 
@@ -183,32 +179,93 @@ seward.crispy + scale_fill_brewer(palette = "Pastel1")
 seward.total <- ggplot(seward.data, aes(x = Treatment, y = Total.Fronds , fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Total Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
 seward.total + scale_fill_brewer(palette = "Pastel1")
 ```
+
 ## Seward Trial 1
+
+```{r}
+seward1 <- seward.data %>% filter(Trial.x == "Seward Trial One")
+
+leveneTest(Total.Fronds ~ as.factor(Treatment), data = seward1, na.rm = TRUE)
+leveneTest(Weight ~ as.factor(Treatment), data = seward1, na.rm = TRUE)
+```
+There is not enough evidence to reject equality of vairances between treatment groups for the total number of fronds and dry root weights.
+
+### Check for normality
+
+```{r}
+qqPlot(seward1$Total.Fronds)
+qqPlot(seward1$Weight)
+hist(seward1$Total.Fronds)
+hist(seward1$Weight)
+
+seward1 %>% shapiro_test(Total.Fronds, Weight)
+```
+Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality.
+
+### Run non-parametric Inference for Multivariate Data on Seward Trial 1 data
+
+```{r}
+set.seed(123)
+seward1.npmv <- nonpartest(Total.Fronds | Weight ~ Treatment, data = seward1, permtest = TRUE, plots = F, tests = c(1, 1, 1, 1), releffects = TRUE)
+seward1.npmv
+
+seward.ss <- ssnonpartest(Total.Fronds | Weight ~ Treatment, data = seward1, test = c(0, 0, 0, 1), alpha = .05, factors.and.variables = FALSE)
+seward.ss
+```
+It is possible to run all non-parametric statistical analyses on our Seward trial 1 dataset, but we will focus on the Wilks Lambda type statistic as it is the most robust against Type I and Type II errors. Since our dataset contains over 30 samples, we can perform an F approximation to calculate a p-value for our statistical test. The Wilks Lambda type test suggests that there is a significant difference in the multivariate distributions between treatment groups for both total number of fronds and dry root weight. 
+
+The probability that a randomly chosen plant from the sterilized soil group exhibits a greater number of fronds than a randomly chosen plant from the trial is 0.61818. The probability that a randomly chosen plant from the sterilized soil group exhibits a greater root mass than a randomly chosen plant from the trial is 0.6609. 
 
 ## Seward Trial 2
 
+### Subset data and check for equality of variances
+
 ```{r}
 seward2 <- seward.data %>% filter(Trial.x == "Seward Trial Two")
+seward2.nopot <- seward2 %>% filter(Treatment != "Control - Potting Mix")
 
 leveneTest(Total.Fronds~as.factor(Treatment), data=seward2, na.rm = TRUE)
 leveneTest(Weight~as.factor(Treatment), data = seward2, na.rm = TRUE)
+leveneTest(Weight~as.factor(Treatment), data = seward2.nopot, na.rm = TRUE)
+leveneTest(Total.Fronds~as.factor(Treatment), data = seward2.nopot, na.rm = TRUE)
 ```
 There is not enough evidence to reject equality of variances between treatment groups. 
+
+### Check for normality
 
 ```{r}
 qqPlot(seward2$Weight)
 qqPlot(seward2$Total.Fronds)
+qqPlot(seward2.nopot$Weight)
 hist(seward2$Total.Fronds)
 hist(seward2$Weight)
+hist(seward2.nopot$Weight)
 
 seward2 %>% shapiro_test(Total.Fronds, Weight)
 ```
-Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram, and the Shapiro-Wilk test for normality.
+Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality.
+
+### Run non-parametric Inference for Multivariate Data on Seward Trail 2 data
 
 ```{r}
 set.seed(123)
-seward2.npmv <- nonpartest(Total.Fronds | Weight ~ Treatment, data = seward2, permtest = TRUE, plots = F, tests = c(1, 0, 0, 0), releffects = TRUE)
+seward2.npmv <- nonpartest(Total.Fronds | Weight ~ Treatment, data = seward2, permtest = TRUE, plots = F, tests = c(1, 1, 1, 1), releffects = TRUE)
 seward2.npmv
+
+seward.ss <- ssnonpartest(Total.Fronds | Weight ~ Treatment, data = seward2, test = c(0, 0, 0, 1), alpha = .05, factors.and.variables = FALSE)
+seward.ss
+```
+It is possible to run all non-parametric statistical analyses on our Seward trial 2 dataset, but we will focus on the Wilks Lambda type statistic as it is the most robust against Type I and Type II errors. Since our dataset contains over 30 samples, we can perform an F approximation to calculate a p-value for our statistical test. The Wilks Lambda type test suggests that there is no significant difference in the multivariate distributions between treatment groups.
+
+### Excluding potting soil control group
+
+```{r}
+set.seed(123)
+seward2.nopot.npmv <- nonpartest(Total.Fronds | Weight ~ Treatment, data = seward2.nopot, permtest = TRUE, plots = F, tests = c(1, 1, 1, 1), releffects = TRUE)
+seward2.nopot.npmv
+
+seward.nopot.ss <- ssnonpartest(Total.Fronds | Weight ~ Treatment, data = seward2.nopot, test = c(0, 0, 0, 1), alpha = .05, factors.and.variables = FALSE)
+seward.nopot.ss
 ```
 
 
@@ -219,7 +276,7 @@ seward2.npmv
 ```{r}
 leveneTest(Healthy.Fronds~as.factor(Treatment), data=seward.data, na.rm = TRUE)
 ```
-There is enough evidence to reject equality of variances between treatment groups since our p-critical value of 0.03578 was greater than our p-value of 0.05. This is likely due to the potting mix group being much smaller than the sterilized and wild soil groups. Due to this discrepancy, we will explore the data comparing only the sterilized and wild groups.
+There is enough evidence to reject equality of variances between treatment groups since our p-critical value of 0.03578 was greater than our p-value of 0.05. This is likely due to the potting mix group being much smaller than the sterilized and wild soil groups. Due to this discrepancy, we will explore the data comparing only the sterilized and wild groups. 
 
 ### Check equality of variances (Wild and Sterilized groups only)
 
@@ -246,9 +303,9 @@ seward.test <- seward.log %>% dplyr::select(log_weight, log_total)
 mshapiro.test(seward.test)
 seward.nopot %>% shapiro_test(Total.Fronds, Weight)
 ```
-qqPlot and histogram for the number of total fronds are visually normally distributed. qqplot and histogram for the dried root weight are visually not normally distributed, therefore we cannot perform a MANOVA. Instead, we will perform a PERMANOVA (Permutational Multivariate Analysis of Variance) as this is a non-parametric statistical test that does not require data to be normally distributed. This is further confirmed by performing the Multivariate Shapiro-Wilk normality test on the natural logarithm of one plus our sample data which suggests that our distribution of data for the dried root weight and total number of fronds is not normal (p-value = 5.389e-13 < 0.05).
+qqPlot and histogram for the number of total fronds are visually normally distributed. qqplot and histogram for the dried root weight are visually not normally distributed, therefore we cannot perform a MANOVA. Instead, we will perform a non-parametric ANOVA type test from the npmv R package (Burchett et al, 2017) as this is a non-parametric statistical test that does not require data to be normally distributed. This is further confirmed by performing the Multivariate Shapiro-Wilk normality test on the natural logarithm of one plus our sample data which suggests that our distribution of data for the dried root weight and total number of fronds is not normal (p-value = 5.389e-13 < 0.05).
 
-## Run Nonparametric Inference for Multivariate Data on Seward dataset
+### Run Nonparametric Inference for Multivariate Data on Seward dataset
 
 ```{r warning=FALSE}
 #install.packages("npmv")
@@ -258,7 +315,167 @@ set.seed(123)
 seward.npmv <- nonpartest(seward.nopot$Total.Fronds | seward.nopot$Weight ~ Treatment, data = seward.nopot, permtest = TRUE, plots = F, tests = c(1, 0, 0, 0), releffects = TRUE)
 seward.npmv
 
-seward.ss <- ssnonpartest(Total.Fronds | Weight ~ Treatment, data = seward.nopot, alpha = .05)
+seward.ss <- ssnonpartest(Total.Fronds | Weight ~ Treatment, data = seward.nopot, alpha = .05, factors.and.variables = FALSE)
 ```
-After running the ANOVA type test with F approximation for each subseet, the soil treatment has a statistically significant difference on the total number of fronds and dried root mass in our swordfern plants (p-value = 0.016 < 0.05).
+Only the ANOVA-type test was able to be performed in this instance as the rank matrix for our dataset is singular. After running the ANOVA type test with F approximation for each subset, the p-value 0.016 < 0.05, suggests there is a statistically significant difference in distributions for the total number of fronds and the dried root weight between treatment groups within our combined Seward trial datasets. 
 The probability that a randomly chosen plant from the sterilized soil group exhibits a greater number of fronds than a randomly chosen plant from the trial is 0.57292. The probability that a randomly chosen plant from the sterilized soil group exhibits a greater root mass than a randomly chosen plant from the trial is 0.60694. 
+
+## Inoculation Trials
+
+### Inoculation Data Cleaning and Filtering
+
+```{r}
+greenhouse.data <- greenhouse.data %>% 
+  mutate(Experiment = case_when(
+    str_detect(`Trial.x`, "Inoculation") ~ "Inoculation",
+    str_detect(`Trial.x`, "Seward") ~ "Seward Soil",
+    TRUE ~ NA
+  ))
+
+greenhouse.data <- greenhouse.data %>% 
+  mutate(Treatment = case_when(
+    str_detect(`Fern.Number`, "W[[:digit:]]") ~ "Wild",
+    str_detect(`Fern.Number`, "NONE") ~ "No Agar No Rice",
+    str_detect(`Fern.Number`, "BLA") ~ "Blank",
+    str_detect(`Fern.Number`, "OCC") ~ "Phytophthora Occultans",
+    str_detect(`Fern.Number`, "OBS") ~ "Phytophthora Obscura",
+    str_detect(`Fern.Number`, "SYR") ~ "Phytophthora Syringae",
+    str_detect(`Fern.Number`, "CAM") ~ "Phytophthora Cambivora",
+    str_detect(`Fern.Number`, "CAC") ~ "Phytophthora Cactorum",
+    str_detect(`Fern.Number`, "EUR") ~ "Phytophthora Europaea",
+    str_detect(`Fern.Number`, "PLU") ~ "Phytophthora Plurivora",
+    str_detect(`Fern.Number`, "CAM") ~ "Phytophthora Cambivora",
+    str_detect(`Fern.Number`, "FLE") ~ "Phytophthora Flexuosa",
+    str_detect(`Fern.Number`, "FLE") ~ "Phytophthora Flexuosa",
+    str_detect(`Fern.Number`, "GIN") ~ "Globosporangium Intermedium",
+    str_detect(`Fern.Number`, "C[[:digit:]]") ~ "Sterilized",
+    str_detect(`Fern.Number`, "P[[:digit:]]") ~ "Control - Potting Mix",
+    TRUE ~ NA
+  ))
+
+greenhouse.data <- subset(greenhouse.data, select = -c(Trial.y))
+greenhouse.data <- greenhouse.data %>%
+  mutate(Weight = replace_when(Weight,
+    Fern.Number == "EURA062" ~ 5.3,
+    Fern.Number == "EURA063" ~ 9.9,
+    Fern.Number == "EURA064" ~ 2.72,
+    Fern.Number == "SYRB013" ~ 4.15,
+    Fern.Number == "SYRB014" ~ 5.39,
+    Fern.Number == "SYRB015" ~ 4.56,
+    Fern.Number == "SYRB016" ~ 5.75,
+    Fern.Number == "SYRB017" ~ 14.75,
+    Fern.Number == "SYRB018" ~ 8.76
+      )
+  )
+
+inoc.data <- greenhouse.data %>% filter(Experiment == "Inoculation")
+inoc1 <- inoc.data %>% filter(Trial.x == "Inoculation Trial One")
+```
+
+## Visualize Data
+
+```{r, fig.width=17, fig.height=10}
+total.inoc <- ggplot(inoc.data, aes(x = Treatment, y = Total.Fronds, fill = Treatment)) + geom_violin() + geom_boxplot(width=0.1, fill = "white") +
+  labs(title = "Greenhouse Inoculation Trials Total Fronds", y = "Number of Fronds", x= "Inoculation Species") + 
+  theme(plot.title = element_text(hjust = 0.5), legend.position = "bottom", axis.text.x = element_text(face = "italic"), legend.text = element_text(face = "italic"))
+total.inoc + scale_fill_brewer(palette = "Set3") + scale_x_discrete(labels = c("Blank" = "Blank","Globosporangium Intermedium" = "G.intermedium", "No Agar No Rice" = "None", "Phytophthora Cactorum" = "P.cactorum", "Phytophthora Cambivora" = "P.cambivora", "Phytophthora Europaea" = "P.europaea", "Phytophthora Flexuosa" = "P.flexuosa", "Phytophthora Obscura" = "P.obscura", "Phytophthora Occultans" = "P.occultans", "Phytophthora Plurivora" = "P.plurivora","Phytophthora Syringae" = "P.syringae"))
+```
+
+```{r, fig.width=15, fig.height=10}
+weight.inoc1 <- ggplot(inoc1, aes(x = Treatment, y = Weight, fill = Treatment)) + geom_violin() + geom_boxplot(width=0.1, fill = "white") +
+  labs(title = "Greenhouse Inoculation Trial 1 Dry Root Weight", y = "Dry Root Weight (g)", x= "Inoculation Group") + theme(plot.title = element_text(hjust = 0.5), legend.position = "bottom")
+weight.inoc1 + scale_fill_brewer(palette = "Set3")
+```
+
+## Inoculation Trial 1
+
+### Check data for equality of variances
+
+```{r}
+leveneTest(Total.Fronds ~ as.factor(Treatment), data = inoc1, na.rm =  TRUE)
+leveneTest(Weight ~ as.factor(Treatment), data = inoc1, na.rm = TRUE)
+```
+Not enough evidence to reject equality of variances between treatments based on the total number of fronds or dry root weight.
+
+### Check normality
+
+```{r}
+qqPlot(inoc1$Total.Fronds)
+hist(inoc1$Total.Fronds)
+qqPlot(inoc1$Weight)
+hist(inoc1$Weight)
+
+inoc1 %>% shapiro_test(Total.Fronds, Weight)
+
+misty::descript(inoc1$Total.Fronds)
+misty::descript(inoc1$Weight)
+```
+After visually checking QQ plot and histogram, the distribution for the total number of fronds for our inoculation trials data appear to be normal. To confirm a Shapiro-Wilk test was performed which yielded a non-significant result, suggesting there is not enough evidence to reject the normality of the dataset. Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality.
+
+### Run One-Way ANOVA
+
+```{r}
+set.seed(123)
+seward.npmv <- nonpartest(inoc1$Total.Fronds | inoc1$Weight ~ Treatment, data = inoc1, permtest = TRUE, plots = F, tests = c(1, 1, 1, 1), releffects = TRUE)
+seward.npmv
+```
+No statistically significant difference in distributions between treatment groups for the total number of fronds and dry root weight for the first inoculation trial.
+
+## Inoculation Trail 2 Data
+
+```{r}
+inoc2 <- inoc.data %>% filter(Trial.x == "Inoculation Trial Two")
+leveneTest(Total.Fronds ~ as.factor(Treatment), data = inoc2, na.rm =  TRUE)
+```
+Not enough evidence to reject equality of variances between treatments based on the total number of fronds.
+
+### Check normality
+
+```{r}
+qqPlot(inoc2$Total.Fronds)
+hist(inoc2$Total.Fronds)
+
+inoc2 %>% shapiro_test(Total.Fronds)
+```
+After visually checking QQ plot and histogram, the distribution for the total number of fronds for our inoculation trials data appear to be normal. To confirm a Shapiro-Wilk test was performed which yielded a non-significant result, suggesting the data is normal.
+
+### Conduct ANOVA on Trial 2 Data
+
+```{r}
+anova.inoc2 <- oneway.test(`Total.Fronds` ~ Treatment, data = inoc2 ,var.equal = TRUE)
+anova.inoc2
+```
+P-value 0.2619 > p-crit 0.05, no significant difference in average number of total fronds between treatment groups. The true difference in mean total number of fronds between wild and sterilized plants is 0.
+
+## Combined Trial Data
+
+### Check data for equality of variances
+
+```{r}
+leveneTest(Total.Fronds ~ as.factor(Treatment), data = inoc.data, na.rm =  TRUE)
+```
+Not enough evidence to reject equality of variances between treatments based on the total number of fronds.
+
+### Check normality
+
+```{r}
+qqPlot(inoc.data$Total.Fronds)
+hist(inoc.data$Total.Fronds)
+
+inoc.data %>% shapiro_test(Total.Fronds)
+```
+After visually checking QQ plot and histogram, the distribution for the total number of fronds for our inoculation trials data appear to be non-normal. To confirm a Shapiro-Wilk test was performed which yielded a significant result, suggesting the data is not normal. 
+
+### Run non-parametric Kruskal-Wallis test
+
+```{r}
+kruskal.test(Total.Fronds ~ Treatment, data = inoc.data)
+
+library(FSA)
+
+dunnTest(Total.Fronds ~ Treatment,
+         data = inoc.data,
+         method = "holm")
+```
+
+Reject the null hypothesis and we conclude that at least one group is different in terms of number of total fronds (p-value = 0.001677). To determine which groups significantly differ a Dunn's pairwise comparison post-hoc test using the Holm method was conducted. The groups that have significantly different number of fronds according to this test are the no agar no rice group compared to the globosporangium intermedium group, globosporangium intermedium group compared to the phytophthora europaea group, globosporangium intermedium compared to the phytophthora obscura group, and globosporangium intermedium compared to the phytophthora occultans group.
