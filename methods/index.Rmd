@@ -116,8 +116,29 @@ Root samples were collected from healthy and unhealthy plants at 3-4 locations
 
 + Roots - NGS Lab Prep
   + Small parts of roots were cut and placed int+ 2 screw cap tubes (2 tubes per sample)
-  + Cut roots in screwcap tubes were stored in freezer (-80c) 
+  + Cut roots in screwcap tubes were stored in freezer (-80c)
 
++ Roots - eDNA Sample and Library Prep  
+  + A total of 114 root samples were taken from the -80 C freezer and transferred from 2 mL screwcap tubes to 1.5 mL tubes, parafilmed with the lid popped open and 3 holes were punched into the opening of the parafilm
+  + Roots placed in freeze dryer for ~ 72 hours
+  + Roots removed from freeze dryer, removed parafilm, capped, placed in -80 C freezer
+  + Total of 107 samples were successfully extracted using a slightly modified protocol of the Qiagen Plant Pro DNA extraction kit
+    + Lysing of root tissue was done using MP Biomedicals™ FastPrep-24™ Classic. Samples were beat with provided metal beads three times at intervals of 15 secs at 6.5 m/s
+    + Concentration was randomly checked for a few samples per batch to ensure no errors were made during extraction
+  + DNA amplified with ITS1-F (ACA CTC TTT CCC TAC ACG ACG CTC TTC CGA TCT CTT GGT CAT TTA GAG GAA GTA A) and ITS2 (GTG ACT GGA GTT CAG ACG TGT GCT CTT CCG ATC TGC TGC GTT CTT CAT CGA TGC) primers with Illumina backbone attachments. DNA was amplified using Phusion Hot Start II DNA polymerase at 0.02 U/ul concentration. The PCR mix was made up of 1X Phusion HF Buffer, 0.2 mM dNTPs, 0.5 uM ITS1-F primer, 0.5 uM ITS2 primer, 1 mg/ml BSA, and remaining volume of water to 20 ul. PCR cycles: 98C initial annealing step for 3 mins, the following three steps were repeated for a total of 30 cycles: 98C annealing step for 10 seconds, 54C extension for 30 seconds, 72C denaturing for 30 seconds, followed by a final denaturing for 72C for 5 minutes. Methods from Macia-Vicente, Nam, and Thines (2020) were followed and adapted according to Phusion Hot Start II user guide recommendations.
+  + Each batch contained 2 controls, a positive control of previously successfully amplified fungal DNA and a negative control of pure molecular water
+  + Successful amplification was checked using gel electrophoresis
+  + DNA cleaned using MagMAX Pure Bind beads following double sided size selection protocol. Right side cleaned with a 0.6x bead to DNA ratio followed by a left side cleanup with a 0.8x bead to DNA ratio. DNA was washed with 80% ethanol
+  + DNA barcodes were added to each sample using IDT xGen™ UDI Primer Pairs at a concentration of 2 uM. The same concentration of Phusion HF buffer, dNTPs, and Phusion Hot Start II Polymerase were used as the previous PCR step except the BSA concentration was reduced to 0.2 mg/ml. PCR water was added to a total reaction volume of 50 ul. PCR steps remained the same except the number of cycles was reduced from 30x to 8x.
+  + PCR product was purified using MagMAX Pure Bind beads with a left side cleanup ratio of 1.2x beads to DNA ratio. Beads were washed with 80% ethanol and eluted in 35 ul of molecular water. DNA was quantified using 1x dsDNA HS assay on the Qubit 4 Flurometer.
+
++ Roots - Illumina eDNA Sequencing
+  + Samples were then sent off to be sequenced at Signios Bio in Foster City, CA. Library QC was performed on site using a Qubit fluorometer and a TapeStation Bioanalyzer. Samples were run on an Illumina MiSeq i100 with PE300 parameters targetting 10.8M paired reads on a 600 cycle 50M flowcell with PhiX spike-in for diversity. Run was demultiplexed and raw FASTQ files were sent back for analyses.
+
++ Roots - Illumina Bioinformatics
+  + Samples analyzed using the DADA2 pipeline developed and described by Callahan et al. (2016) available at (https://github.com/benjjneb/dada2).
+  + A modified workflow was followed as descibed in (https://benjjneb.github.io/dada2/ITS_workflow.html) designed for the highly variable ITS gene region.
+  + An amplicon sequence variant (ASV) table was generated for each sample providing records of the number of times each exact amplicon sequence variant was observed in each sample. We also assign taxanomy to the output ITS sequence variants using the UNITE ITS database (https://unite.ut.ee/repository.php). 
 
 ## Greenhouse Trials
 
@@ -334,11 +355,34 @@ N+ Agar, n+ rice (NONE)	N/A	N/A	N/A
 Placed all flasks and tools for inoculation in UV light for 30 mins
 Adding 10, 3mm plugs of each culture t+ corresponding flask
 
-8/29/25: Inoculated plants with rice flasks
+8/29/25: Inoculated plants with rice flasks. Made 3 holes with plastic emitters into each plant’s soil. Placed 5-10 rice grains into each hole in each plant's soil. Plants watered after inoculation. Tools sterilized with ethanol and flame between each flask. Plants were watered to pot rim after inoculation, then again 1 day after, 3 days after, 4 days after, 5 days after, and 7 days after. Plants were then on a 72hr watering schedule with 4oz per plant. 
 
 #### Trial 2
 
+11/19/25: rice inoculation day 1, 25g rice + 18mL DI water were sterilized in 250mL flasks at LQ60 and left to cool overnight
 
+11/20/25: rice inoculation day 2; rice grains were loosened in each flask with sterilized tongs. Autoclaved at LQ60, let cool for about 30 mins-1hour before Parafilming lids
+
+11/21/25: Labeled flasks with the following inoculation plan
+Flask Species	Isolate Name	Location	Type
+Phytophthora Syringae A (SYRA)	FHL0233	Issaquah	Residential
+Phytophthora Syringae B (SYRB)	FHL0233	Issaquah	Residential
+Phytophthora Plurivora A (PLUA)	FHL0185	NRCA	Trail
+Phytophthora Plurivora B (PLUB)	FHL0185	NRCA	Trail
+Phytophthora Obscura A (OBSA)	FHL0226	Belfair	Residential
+Phytophthora Obscura B (OBSB)	FHL0266	Belfair	Residential
+Phytophthora Occultans A (OCCA)	FHL0140	Zeek’s	Urban
+Phytophthora Occultans B (OCCB)	FHL0140	Zeek’s	Urban
+Phytophthora Cambivora A (CAMA)	FHL0162	Issaquah	Residential
+Phytophthora Cambivora B (CAMB)	FHL0162	Issaquah	Residential
+Phytophthora Europaea (EURA)	FZJ079 – 2 Soil	Issaquah	Residential
+Phytophthora Europaea (EURB)	FZJ079 – 2 Soil	Issaquah	Residential
+Blank Agar A (BLAA)	N/A	N/A	N/A
+Blank Agar B (BLAB)	N/A	N/A	N/A
+None A (rice only) (NONEA)	N/A	N/A	N/A
+None B (rice only) (NONEB) 	N/A	N/A	N/A
+
+12/2/25 Inoculated plants with rice flasks. Same procedure as Trial 1 including watering.
 
 
 
