@@ -38,6 +38,8 @@ library(RVAideMemoire)
 library(heplots)
 library(effectsize)
 library(npmv)
+library(FSA)
+library(npmv)
 ```
 
 ### Import dataset and clean
@@ -290,9 +292,6 @@ qqPlot and histogram for the number of total fronds are visually normally distri
 #### Run Nonparametric Inference for Multivariate Data on Seward dataset
 
 ```{r warning=FALSE}
-#install.packages("npmv")
-library(npmv)
-
 set.seed(123)
 seward.npmv <- nonpartest(seward.nopot$Total.Fronds | seward.nopot$Weight ~ Treatment, data = seward.nopot, permtest = TRUE, plots = F, tests = c(1, 0, 0, 0), releffects = TRUE)
 seward.npmv
@@ -485,8 +484,6 @@ After visually checking QQ plot and histogram, the distribution for the total nu
 ```{r}
 kruskal.test(Total.Fronds ~ Treatment, data = inoc.data)
 
-library(FSA)
-
 dunnTest(Total.Fronds ~ Treatment,
          data = inoc.data,
          method = "holm")
@@ -494,21 +491,7 @@ dunnTest(Total.Fronds ~ Treatment,
 
 Reject the null hypothesis and we conclude that at least one group is different in terms of number of total fronds (p-value = 0.001677). To determine which groups significantly differ a Dunn's pairwise comparison post-hoc test using the Holm method was conducted. The groups that have significantly different number of fronds according to this test are the no agar no rice group compared to the globosporangium intermedium group, globosporangium intermedium group compared to the phytophthora europaea group, globosporangium intermedium compared to the phytophthora obscura group, and globosporangium intermedium compared to the phytophthora occultans group.
 
-BLAB 6-2 Root
-EURA 5-1 Root
-OCCB 2-1 Root
-BLAB 6-1 Root
-SYRA1-1 Soil
-EURB6-1 Soil
-PLUB1-1 Soil
-PLUA4-1 Soil
-EURB5-1 Soil
-W70-1 Soil
-C72-2 Soil
-C72-1 Soil
-C51-1 Soil
-W61-1 Soil
-GINA130-1 Soil
+
 
 #### Combine controls for inoculation trials
 
@@ -523,8 +506,6 @@ leveneTest(Total.Fronds ~ as.factor(Treatment), data = inoc.control, na.rm = TRU
 
 kruskal.test(Total.Fronds ~ Treatment, data = inoc.control)
 
-library(FSA)
-
 dunnTest(Total.Fronds ~ Treatment,
          data = inoc.control,
          method = "holm")
@@ -533,4 +514,35 @@ Not enough evidence to reject equality of variances.
 
 p-value = 0.001032. Globosporangium Intermedium - Phytophthora Europaea, Control - Globosporangium Intermedium, Globosporangium Intermedium - Phytophthora Obscura, Globosporangium Intermedium - Phytophthora Occultans. Not different than without combining control groups
 
+```{r}
+greenhouse.data$cryptogea <- "No"
+  
+greenhouse.data <- greenhouse.data %>% 
+  mutate(cryptogea = replace_when(cryptogea,
+    str_detect(`Fern.Number`, "BLAB6") ~ "Yes",
+    str_detect(`Fern.Number`, "OCCB2") ~ "Yes",
+    str_detect(`Fern.Number`, "EURA5") ~ "Yes",
+    str_detect(`Fern.Number`, "SYRA1") ~ "Yes",
+    str_detect(`Fern.Number`, "EURB6") ~ "Yes",
+    str_detect(`Fern.Number`, "PLUB1") ~ "Yes",
+    str_detect(`Fern.Number`, "PLUA4") ~ "Yes",
+    str_detect(`Fern.Number`, "EURB5") ~ "Yes",
+    str_detect(`Fern.Number`, "W70") ~ "Yes",
+    str_detect(`Fern.Number`, "W72") ~ "Yes",
+    str_detect(`Fern.Number`, "C72") ~ "Yes",
+    str_detect(`Fern.Number`, "C51") ~ "Yes",
+    str_detect(`Fern.Number`, "W61") ~ "Yes",
+    str_detect(`Fern.Number`, "GINA130") ~ "Yes",
+  ))
 
+qqPlot(greenhouse.data$Total.Fronds)
+hist(greenhouse.data$Total.Fronds)
+
+greenhouse.data %>% shapiro_test(Total.Fronds)
+```
+Enough evidence to reject normality from visual inspection of QQ plot and histogram as well as a significant result from the Shapiro-Wilk test.
+
+```{r}
+wilcox.test(Total.Fronds ~ cryptogea, data=greenhouse.data)
+```
+At .05 significance level, within all greenhouse samples, we conclude that the distribution of total number of fronds in samples infected with Phytophthora cryptogea compared to samples not infected with Phytophthora cryptogea are nonidentical populations.
