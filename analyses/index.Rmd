@@ -27,18 +27,13 @@ library(stringr)
 library(BSDA)
 library(car)
 library(ggpubr)
-library(statsExpressions)
 library(RColorBrewer)
 library(pillar)
 library(readxl)
 library(gridExtra)
 library(rstatix)
-library(Hotelling)
-library(RVAideMemoire)
-library(heplots)
 library(effectsize)
-library(npmv)
-library(FSA)
+install.packages("npmv")
 library(npmv)
 ```
 
@@ -47,6 +42,7 @@ library(npmv)
 ```{r}
 #setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
 data <- read.csv("~/GitHub/swordfern/data/lab/combined.results.csv")
+data <- read_csv("data/lab/combined.results.csv")
 data <- rename(data,Tentative.Result = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast..x)
 data <- data %>% filter(common_name.x=="western sword fern")
 data$Tentative.Result[data$Tentative.Result=="Phytophthora europaea or abietivora?"] <- "Phytophthora sp."
@@ -137,6 +133,7 @@ ggplot(field.baits,aes(Tentative.Result,Dieback.percent.x,fill=Genus.x)) +geom_b
 
 ```{r}
 greenhouse.data <- read.csv("~/GitHub/swordfern/data/greenhouse/Final-Greenhouse-Data-Combined.csv")
+greenhouse.data <- greenhouse_data
 greenhouse.data <- rename(greenhouse.data, "Weight" = "Weight..g.")
 greenhouse.data$Total.Fronds <- greenhouse.data$Healthy.Fronds + greenhouse.data$Crispy.Fronds
 ```
@@ -186,21 +183,29 @@ hist(seward1$Total.Fronds)
 hist(seward1$Weight)
 
 seward1 %>% shapiro_test(Total.Fronds, Weight)
+misty::descript(seward1$Total.Fronds)
+misty::descript(seward1$Weight)
 ```
-Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality.
+Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality. Since sample size is > 20 for each group, due to the CLT and the robustness of one-way ANOVA tests, we will proceed with running an ANOVA and accept the risk of increasing type I error rate.
 
-#### Run non-parametric Inference for Multivariate Data on Seward Trial 1 data
+#### Run ANOVA on Seward Trial 1 weight data
 
 ```{r}
-set.seed(123)
-seward1.npmv <- nonpartest(Total.Fronds | Weight ~ Treatment, data = seward1, permtest = TRUE, plots = F, tests = c(1, 1, 1, 1), releffects = TRUE)
-seward1.npmv
-
-seward.ss <- ssnonpartest(Total.Fronds | Weight ~ Treatment, data = seward1, test = c(0, 0, 0, 1), alpha = .05, factors.and.variables = FALSE)
+anova.seward1 <- oneway.test(`Weight` ~ Treatment, data = seward1 ,var.equal = TRUE)
+anova.seward1
 ```
-It is possible to run all non-parametric statistical analyses on our Seward trial 1 dataset, but we will focus on the Wilks Lambda type statistic as it is the most robust against Type I and Type II errors. Since our dataset contains over 30 samples, we can perform an F approximation to calculate a p-value for our statistical test. The Wilks Lambda type test suggests that there is a significant difference in the multivariate distributions between treatment groups for both total number of fronds and dry root weight. 
+p-val = 0.01207
 
-The probability that a randomly chosen plant from the sterilized soil group exhibits a greater number of fronds than a randomly chosen plant from the trial is 0.61818. The probability that a randomly chosen plant from the sterilized soil group exhibits a greater root mass than a randomly chosen plant from the trial is 0.6609. 
+#### Run Chi-Squared test on Seward Trial 1 frond count data
+
+```{r}
+misty::descript(inoc1$Total.Fronds)
+
+chisq.seward1 <- chisq.test(table(seward1$Treatment, seward1$Total.Fronds))
+chisq.seward1
+```
+Our Chi-Squared test result p-value = 0.6199 suggests there is not a significant relationship between soil treatmeant group and the total number of fronds on sword fern plants.
+
 
 ### Seward Trial 2
 
@@ -228,19 +233,30 @@ hist(seward2$Weight)
 hist(seward2.nopot$Weight)
 
 seward2 %>% shapiro_test(Total.Fronds, Weight)
+seward2.nopot %>% shapiro_test(Total.Fronds, Weight)
+misty::descript(seward2.nopot$Weight)
+misty::descript(seward2.nopot$Total.Fronds)
 ```
-Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality.
+Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality. Since sample size is > 20 for each group, due to the CLT and the robustness of one-way ANOVA tests, we will proceed with running an ANOVA and accept the risk of increasing type I error rate.
 
-#### Run non-parametric Inference for Multivariate Data on Seward Trail 2 data
+#### Run ANOVA on Seward Trail 2 weight data excluding potting soil control group
 
 ```{r}
-set.seed(123)
-seward2.npmv <- nonpartest(Total.Fronds | Weight ~ Treatment, data = seward2, permtest = TRUE, plots = F, tests = c(1, 1, 1, 1), releffects = TRUE)
-seward2.npmv
-
-seward.ss <- ssnonpartest(Total.Fronds | Weight ~ Treatment, data = seward2, test = c(0, 0, 0, 1), alpha = .05, factors.and.variables = FALSE)
+anova.seward2 <- oneway.test(`Weight` ~ Treatment, data = seward2.nopot ,var.equal = TRUE)
+anova.seward2
 ```
-It is possible to run all non-parametric statistical analyses on our Seward trial 2 dataset, but we will focus on the Wilks Lambda type statistic as it is the most robust against Type I and Type II errors. Since our dataset contains over 30 samples, we can perform an F approximation to calculate a p-value for our statistical test. The Wilks Lambda type test suggests that there is no significant difference in the multivariate distributions between treatment groups.
+
+Our ANOVA suggests that the true difference in distributions between weight data and treatment groups is likely equal to 0. P-value = 0.4364
+
+#### Run Chi-Squared test on Seward Trial 1 frond count data
+
+```{r}
+misty::descript(seward2.nopot$Total.Fronds)
+
+chisq.seward2 <- chisq.test(table(seward2.nopot$Treatment, seward2.nopot$Total.Fronds))
+chisq.seward2
+```
+Our Chi-Squared test result p-value = 0.1614 suggests there is not a significant relationship between soil treatmeant group and the total number of fronds on sword fern plants.
 
 #### Excluding potting soil control group
 
