@@ -33,7 +33,6 @@ library(readxl)
 library(gridExtra)
 library(rstatix)
 library(effectsize)
-install.packages("npmv")
 library(npmv)
 ```
 
@@ -193,14 +192,19 @@ Dry swordfern root weight data not normally distributed according to visual insp
 ```{r}
 anova.seward1 <- oneway.test(`Weight` ~ Treatment, data = seward1 ,var.equal = TRUE)
 anova.seward1
+seward1.aov <- aov(Weight~Treatment, data = seward1)
+summary(seward1.aov)
+
+TukeyHSD(seward1.aov, conf.level = .95)
 ```
-p-val = 0.01207
+Our one-way ANOVA to compare the effect of soil sterilization on root weight suggests that there was a statistically significant difference in root weights between the treatment groups (F(1, 84) = 6.5836, p = 0.01207. After performing a Tukey's HSD post-hoc test, the true difference in mean dry root weight between wild and sterilized soil treatment groups is between -9.087724 g and -1.151811 g at a 95% confidence interval.
 
 #### Run Chi-Squared test on Seward Trial 1 frond count data
 
 ```{r}
 misty::descript(inoc1$Total.Fronds)
 
+table(seward1$Treatment, seward1$Total.Fronds)
 chisq.seward1 <- chisq.test(table(seward1$Treatment, seward1$Total.Fronds))
 chisq.seward1
 ```
@@ -242,11 +246,11 @@ Dry swordfern root weight data not normally distributed according to visual insp
 #### Run ANOVA on Seward Trail 2 weight data excluding potting soil control group
 
 ```{r}
-anova.seward2 <- oneway.test(`Weight` ~ Treatment, data = seward2.nopot ,var.equal = TRUE)
+anova.seward2 <- oneway.test(`Weight` ~ Treatment, data = seward2.nopot, var.equal = TRUE)
 anova.seward2
 ```
 
-Our ANOVA suggests that the true difference in distributions between weight data and treatment groups is likely equal to 0. P-value = 0.4364
+Our one-way ANOVA suggests that there is not a statistically significant difference in dry root weights between soil treatment groups (F(1, 86) = 0.61133, p = 0.4364). The true difference in means between dry root weights between treatment groups is likely equal to 0.
 
 #### Run Chi-Squared test on Seward Trial 1 frond count data
 
@@ -256,17 +260,7 @@ misty::descript(seward2.nopot$Total.Fronds)
 chisq.seward2 <- chisq.test(table(seward2.nopot$Treatment, seward2.nopot$Total.Fronds))
 chisq.seward2
 ```
-Our Chi-Squared test result p-value = 0.1614 suggests there is not a significant relationship between soil treatmeant group and the total number of fronds on sword fern plants.
-
-#### Excluding potting soil control group
-
-```{r}
-set.seed(123)
-seward2.nopot.npmv <- nonpartest(Total.Fronds | Weight ~ Treatment, data = seward2.nopot, permtest = TRUE, plots = F, tests = c(1, 1, 1, 1), releffects = TRUE)
-seward2.nopot.npmv
-
-seward.nopot.ss <- ssnonpartest(Total.Fronds | Weight ~ Treatment, data = seward2.nopot, test = c(0, 0, 0, 1), alpha = .05, factors.and.variables = FALSE)
-```
+Our Chi-Squared test result p-value = 0.1614 suggests there is not a significant relationship between soil treatment group and the total number of fronds on sword fern plants.
 
 
 ### Seward Combined Trials (1 and 2)
@@ -295,27 +289,50 @@ qqPlot(seward.nopot$Weight)
 hist(seward.nopot$Weight)
 hist(seward.nopot$Total.Fronds)
 
-
-seward.log <- seward.nopot %>% mutate(log_total = log1p(Total.Fronds),
-                                        log_weight = log1p(Weight))
-
-seward.test <- seward.log %>% dplyr::select(log_weight, log_total)
-mshapiro.test(seward.test)
+misty::descript(seward.nopot)
 seward.nopot %>% shapiro_test(Total.Fronds, Weight)
 ```
-qqPlot and histogram for the number of total fronds are visually normally distributed. qqplot and histogram for the dried root weight are visually not normally distributed, therefore we cannot perform a MANOVA. Instead, we will perform a non-parametric ANOVA type test from the npmv R package (Burchett et al, 2017) as this is a non-parametric statistical test that does not require data to be normally distributed. This is further confirmed by performing the Multivariate Shapiro-Wilk normality test on the natural logarithm of one plus our sample data which suggests that our distribution of data for the dried root weight and total number of fronds is not normal (p-value = 5.389e-13 < 0.05).
+qqPlot and histogram for the number of total fronds are visually normally distributed. Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality. Since sample size is > 20 for each group, due to the CLT and the robustness of one-way ANOVA tests, we will proceed with running an ANOVA and accept the risk of increasing type I error rate.
 
-#### Run Nonparametric Inference for Multivariate Data on Seward dataset
+#### Run ANOVA on Seward root weight
 
 ```{r warning=FALSE}
-set.seed(123)
-seward.npmv <- nonpartest(seward.nopot$Total.Fronds | seward.nopot$Weight ~ Treatment, data = seward.nopot, permtest = TRUE, plots = F, tests = c(1, 0, 0, 0), releffects = TRUE)
-seward.npmv
+anova.seward <- oneway.test(`Weight` ~ Treatment, data = seward.nopot, var.equal = TRUE)
+anova.seward
 
-seward.ss <- ssnonpartest(Total.Fronds | Weight ~ Treatment, data = seward.nopot, alpha = .05, factors.and.variables = FALSE)
+seward.aov <- aov(Weight~Treatment, data = seward.nopot)
+summary(seward.aov)
+
+TukeyHSD(seward.aov, conf.level = .95)
 ```
-Only the ANOVA-type test was able to be performed in this instance as the rank matrix for our dataset is singular. After running the ANOVA type test with F approximation for each subset, the p-value 0.016 < 0.05, suggests there is a statistically significant difference in distributions for the total number of fronds and the dried root weight between treatment groups within our combined Seward trial datasets. 
-The probability that a randomly chosen plant from the sterilized soil group exhibits a greater number of fronds than a randomly chosen plant from the trial is 0.57292. The probability that a randomly chosen plant from the sterilized soil group exhibits a greater root mass than a randomly chosen plant from the trial is 0.60694. 
+Our one-way ANOVA to compare the effect of soil sterilization on root weight suggests that there was a statistically significant difference in root weights between the treatment groups (F(1, 172) = 6.1499, p = 0.0141. After performing a Tukey's HSD post-hoc test, the true difference in mean dry root weight between wild and sterilized soil treatment groups is between -5.668766 g and -0.6441075 g at a 95% confidence interval.
+
+# Run Chi-Squared test on total number of fronds between treatment groups
+
+```{r}
+freq.seward <- table(seward.nopot$Treatment, seward.nopot$Total.Fronds)
+freq.seward <- seward.nopot %>% group_by(Treatment, Total.Fronds) %>% summarise(Frequency = n(), .groups = 'drop')
+
+seward.nopot.merge <- seward.nopot
+seward.nopot.merge$Total.Fronds <- cut(seward.nopot$Total.Fronds, 
+                                       breaks = c(-1, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, Inf), 
+                                       labels = c("< 11", "11-15", "16-20", "21-25", "26-30", "31-35", "36-40",
+                                                  "41-45", "46-50", "51-55", "> 55"))
+
+#freq.seward.merge <- freq.seward %>%
+#  group_by(Treatment, Total.Fronds) %>%
+#  summarise(across(c(Frequency), sum))
+
+chisq.seward <- chisq.test(table(seward.nopot.merge$Treatment, seward.nopot.merge$Total.Fronds))
+chisq.seward
+
+chisq.seward$expected
+
+ncol(freq.seward)
+54
+sum(col(freq.seward))
+```
+A Pearson's Chi-squared test suggested that there was not a statistically significant difference in the number of fronds on sword fern plants between soil treatment groups, X^2(53, N = 88) =  58.81, p = 0.2712.
 
 ## Inoculation Trials
 
