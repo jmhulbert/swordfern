@@ -1,0 +1,523 @@
+﻿Sample Extraction Number,Isolate Name,Sample Number (Soil or Tissue),Secondary Isolation Number,Field or Greenhouse Sample,Sample Substrate,Project,Experiment,Priority,Date Extracted,Extraction Kit,Qubit (ng/ul),Notes,PCR Amplification Date,Primer Pair,Successful Amplification?,Sequenced?,Sequence Type,Sequence Date,Tentative Results (Internal NCBI Oomcycete including voucher blast),Comment,Genus,Oomycete,Top BLAST accession,Joey July 2026 Sort,Phytophthora Clade,Tentative ID (old ITS Internal Database),Genbank July 26,Abad 2023 Database,Tree Result,August Final Result
+FHL0069,FZJ056-3 ROOT,FZJ056,3,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,4/2/25,Prepman,4.63,,"5/2/2025, 5/7/25",,Y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0070,FZJ118-2 ROOT,FZJ118,2,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,4/2/25,Prepman,24.5,,"5/2/2025, 5/7/25",,Y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0071,FZJ051-2 ROOT,FZJ051,2,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,4/2/25,Prepman,3.32,,"5/2/2025, 5/7/25",,Y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0072,T2W1-2,T2W1,2,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,4/2/25,Prepman,3.37,,"5/2/2025, 5/7/25",,Y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0073,FZJ068-3 ROOT,FZJ068,3,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,4/2/25,Prepman,1.35,,"5/2/2025, 5/7/25",,Y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0074,FZJ132-1 ROOT,FZJ132,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,0.115,,6/10/25,,n,,,,,,,,,,,,,,,
+FHL0075,FZJ118-1 ROOT,FZJ118,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,22.7,,"5/8/2025, 5/13/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0077,FZJ070-1 ROOT,FZJ070,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,6.02,faint band in gel; low quality sequence,"5/8/2025, 5/13/25",,y,Y,,,,,,,,Fungal,,,,,,
+FHL0078,FZJ106-2 ROOT,FZJ106,2,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,3.89,,"5/8/2025, 5/13/25, 5/16/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0079,FZJ115-3 ROOT,FZJ115,3,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,8.86,,"5/8/2025, 5/13/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0080,T1W2-1,T1W2,1,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,4/2/25,Prepman,2.58,,"5/2/2025, 5/7/25",,Y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0081,FZJ56-2 ROOT,FZJ56,2,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,27.1,faint band in gel,"5/8/2025, 5/13/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0082,T1W3-1 A,T1W3,1A,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,4/2/25,Prepman,40.4,,"5/2/2025, 5/7/25",,Y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0083,T1W2-2,T1W2,2,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,4/2/25,Prepman,6.94,,"5/2/2025, 5/7/25",,Y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0084,FZJ070-2 ROOT,FZJ070,2,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,18.2,,"5/8/2025, 5/13/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0085,FZJ081-1 ROOT,FZJ081,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,16.9,,"5/8/2025, 5/13/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0086,Control rhody petiole 3,Control rhody petiole 3,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,4/2/25,Prepman,10.4,low quality sequence,"5/2/2025, 5/7/25",,Y,Y,,,,,,,,Fungal,,,,,,
+FHL0087,FZJ115-2 ROOT,FZJ115,2,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,8.64,,"5/8/2025, 5/13/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0088,FZJ068-2 ROOT,FZJ068,2,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,4.08,,"5/8/2025, 5/13/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0089,FZJ115-1 ROOT,FZJ115,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,5.54,faint band in gel; Not Sequenced,"5/8/2025, 5/13/25",,y,Y,,,,,,,,Poor Sequence,,,,,,
+FHL0090,FZJ060-1 ROOT,FZJ060,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,8.29,,"5/8/2025, 5/13/25, 5/16/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0091,T1W3-1 B,T1W3,1B,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,4/2/25,Prepman,6.25,,"5/2/2025, 5/7/25",,Y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0092,FZJ054-2 ROOT,FZJ054,2,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/2/25,Prepman,5.65,,"5/8/2025, 5/13/25, 5/16/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0093,FZJ001-1 Soil,FZJ001,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,5.39,,6/10/25,,y,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0094,FZJ001-2 Soil,FZJ001,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,0.774,,"5/16/2025, 5/20/25",,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0095,FZJ001-3 Soil,FZJ001,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,0.657,,"5/16/2025, 5/20/25",,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0096,FZJ001-4 Soil,FZJ001,4,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,11.1,,6/10/25,,y,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0097,FZJ002-1 Soil,FZJ002,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,6.92,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0098,FZJ003-1 Soil,FZJ003,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,9.94,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0099,FZJ004-2 Soil,FZJ004,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,12.6,,6/10/25,,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0099,FZJ004-2 Soil,FZJ004,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,out of range,,,,,Y,,,,,,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0100,FZJ004-3 Soil,FZJ004,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,1.3,,"5/16/2025, 5/20/25",,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0101,FZJ005-1 Soil,FZJ005,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,1.93,,6/10/25,,y,Y,,,Phytopythium sp. 1,,Phytopythium,Oomycete,,Phytopythium,,,,,,Phytopythium sp.
+FHL0102,FZJ006-1 Soil,FZJ006,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,6.67,,6/10/25,,y,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0103,FZJ007-1 Soil,FZJ007,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,6.58,,5/16/25,,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0104,FZJ008-1 Soil,FZJ008,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,2,,"5/16/2025, 5/20/25",,y,Y,,,Phytophthora europaea or abietivora?,,Phytophthora,Oomycete,,Phytophthora,7,Phytophthora flexuosa,,P. abietivora,Phytophthora clade 7 sp. 1,Phytophthora clade 7 sp. 1
+FHL0105,FZJ010-1 Soil,FZJ010,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,7.97,Not Sequenced,"5/16/2025, 5/20/25",,y,Y,,,,,,,,Fungal,,,,,,
+FHL0106,FZJ010-2 Soil,FZJ010,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/25/25,Prepman,0.598,Not Sequenced,"5/16/2025, 5/20/25",,y,Y,,,,,,,,Fungal,,,,,,
+FHL0107,FZJ011-1 Soil,FZJ011,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/25/25,Prepman,1.16,,"5/8/2025, 5/13/25, 5/16/25, 5/22/25",,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0108,FZJ011-2 Soil,FZJ011,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/25/25,Prepman,2.68,,"5/8/2025, 5/13/25, 5/16/25, 5/22/25",,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0109,FZJ012-1 Soil,FZJ012,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/25/25,Prepman,10.8,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0110,FZJ012-2 Soil,FZJ012,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/25/25,Prepman,1.17,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0111,FZJ013-1 Soil,FZJ013,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/25/25,Prepman,9.07,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0112,FZJ013-2 Soil,FZJ013,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/25/25,Prepman,5,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0113,FZJ013-3 Soil,FZJ013,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/25/25,Prepman,0.733,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0114,FZJ014-3 Soil,FZJ014,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/25/25,Prepman,1.22,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0115,FZJ015-1 Soil,FZJ015,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/25/25,Prepman,1.02,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0116,FZJ019-1 Soil,FZJ019,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/25/25,Prepman,1.05,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0117,FZJ020-1 Soil,FZJ020,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,4.33,,6/10/25,,y,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0118,FZJ022-1 Soil,FZJ022,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,3.4,"faint band in gel, low quality sequence",5/16/25,,y,Y,,,,,,,,Fungal,,,,,,
+FHL0119,FZJ022-3 Soil,FZJ022,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,2.89,,5/20/25,,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0120,FZJ026-1 Soil,FZJ026,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,8.59,,6/10/25,,y,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0121,FZJ026-2 Soil,FZJ026,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,7.59,,6/10/25,,y,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0122,FZJ026-3 Soil,FZJ026,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,4.19,,6/10/25,,y,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0123,FZJ028-1 Soil,FZJ028,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,9.22,,6/10/25,,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0124,FZJ030-1 Soil,FZJ030,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,6.64,,6/10/25,,y,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0125,FZJ032-1 Soil,FZJ032,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,2.14,,5/20/25,,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0126,FZJ032-2 Soil,FZJ032,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,8.14,,6/10/25,,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0127,FZJ034-2 Soil,FZJ034,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,9.93,,"5/20/2025, 5/22/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0128,FZJ036-1 Soil,FZJ036,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,11.9,,6/10/25,,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0129,FZJ038-1 Soil,FZJ038,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,8.89,,6/10/25,,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0129,FZJ038-1 Soil,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,0.524,,,,,Y,,,,,,,,,,,,,,
+FHL0130,FZJ040-1 Soil,FZJ040,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,4.73,,6/10/25,,y,Y,,,Phytophthora megasperma,,Phytophthora,Oomycete,,Phytophthora,6,Phytophthora megasperma,,P. megasperma,Phytophthora chlamydospora,Phytophthora chlamydospora
+FHL0131,FZJ041-1 Soil,FZJ041,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,9.39,,6/10/25,,y,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0132,FZJ042-1 Soil,FZJ042,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,7.57,,6/10/25,,y,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0133,FZJ042-2 Soil,FZJ042,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,9.99,,6/10/25,,y,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0134,FZJ044-1 Soil,FZJ044,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,5.68,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0135,FZJ044-3 Soil,FZJ044,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,1.89,,5/20/25,,y,Y,,,Phytophthora plurivora,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora plurivora,,P. citricola,Phytophthora plurivora,Phytophthora plurivora
+FHL0136,FZJ045-1 Soil,FZJ045,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,1.57,,5/20/25,,y,Y,,,Phytophthora plurivora,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora plurivora,,P. plurivora,Phytophthora plurivora,Phytophthora plurivora
+FHL0137,FZJ045-2 Soil,FZJ045,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,9.52,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0138,FZJ045-3 Soil,FZJ045,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,1,,5/20/25,,y,Y,,,Phytophthora plurivora,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora plurivora,,P. citricola,Phytophthora plurivora,Phytophthora plurivora
+FHL0139,FZJ047-1 Soil,FZJ047,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,2.39,,6/10/25,,y,Y,,,Phytophthora occultans,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans complex,Phytophthora occultans,Phytophthora occultans
+FHL0140,FZJ047-2 Soil,FZJ047,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/29/25,Prepman,3.2,,6/10/25,,y,Y,,,Phytophthora occultans,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans complex,Phytophthora occultans,Phytophthora occultans
+FHL0141,FZJ052-1 Soil,FZJ052,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,8.91,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0142,FZJ053-2 Soil,FZJ053,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,9.83,,6/10/25,,y,Y,,,Pythium senticosum,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0143,FZJ054-1 Soil,FZJ054,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,1.8,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0144,FZJ055-1 Soil,FZJ055,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,8.08,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0145,FZJ055-2 Soil,FZJ055,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,9.05,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0146,FZJ056-1 Soil,FZJ056,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,4.79,,6/10/25,,y,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0147,FZJ058-1 Soil,FZJ058,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,11.9,low quality sequence,6/10/25,,y,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0148,FZJ060-1 Soil,FZJ060,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,3.83,,5/20/25,,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0149,FZJ063-1 Soil,FZJ063,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,8.82,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0150,FZJ065-1 Soil,FZJ065,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,4.41,,6/10/25,,y,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0151,FZJ066-1 Soil,FZJ066,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,0.919,,5/20/25,,y,Y,,,Phytophthora plurivora,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora plurivora,,P. plurivora,Phytophthora plurivora,Phytophthora plurivora
+FHL0152,FZJ066-2 Soil,FZJ066,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,1.54,,5/20/25,,y,Y,,,Phytophthora cactorum,,Phytophthora,Oomycete,,Phytophthora,1,Phytophthora cactorum,,P. alpina,Phytophthora alpina,Phytophthora alpina
+FHL0153,FZJ067-1 Soil,FZJ067,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,6.35,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0154,FZJ068-1 Root,FZJ068,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/30/25,Prepman,5.91,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0155,FZJ068-3 Root,FZJ068,3,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/30/25,Prepman,5.51,,"5/8/2025, 5/16/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0156,FZJ070-1 Soil,FZJ070,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,1.85,,5/22/25,,y,Y,,,Phytophthora plurivora,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora plurivora,,P. plurivora,Phytophthora plurivora,Phytophthora plurivora
+FHL0157,FZJ071-1 Soil,FZJ071,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,6.72,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0158,FZJ073-1 Root,FZJ073,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/30/25,Prepman,6.68,,"5/8/2025, 5/16/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0159,FZJ074-1 Root,FZJ074,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/30/25,Prepman,7.95,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0160,FZJ074-1 Soil,FZJ074,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,9.18,,6/10/25,,y,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0161,FZJ074-2 Soil,FZJ074,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,3.83,,5/22/25,,y,Y,,,Phytophthora cambivora,,Phytophthora,Oomycete,,Phytophthora,7,Phytophthora cambivora,,P. abietivora,Phytophthora cambivora,Phytophthora cambivora
+FHL0162,FZJ074-3 Soil,FZJ074,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,3.78,,5/22/25,,y,Y,,,Phytophthora cambivora,,Phytophthora,Oomycete,,Phytophthora,7,Phytophthora cambivora,,P. abietivora,Phytophthora cambivora,Phytophthora cambivora
+FHL0163,FZJ075-1 Soil,FZJ075,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,4.52,,5/22/25,,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0164,FZJ076-1 Soil,FZJ076,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,5.97,Not Sequenced,5/22/25,,y,Y,,,,,,Oomycete,,Phytophthora,7,,,P. abietivora,Phytophthora cambivora,Phytophthora cambivora
+FHL0165,FZJ078-1 Soil,FZJ078,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,53.9,,6/10/25,,y,Y,,,Pythium senticosum,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0166,FZJ079-3 Soil,FZJ079,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,14.5,,5/22/25,,y,Y,,,Phytophthora flexuosa?,,Phytophthora,Oomycete,,Phytophthora,7,Phytophthora flexuosa,,P. abietivora,Phytophthora clade 7 sp. 1,Phytophthora clade 7 sp. 1
+FHL0167,FZJ080-1 Soil,FZJ080,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,9.05,May have been two isolates with same number or two plates of same isolate,5/22/25,,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0168,FZJ080-1 Soil,FZJ080,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,20.1,May have been two isolates with same number or two plates of same isolate,5/22/25,,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0169,FZJ081-2 Soil,FZJ081,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,22.5,,6/10/25,,y,Y,,,Pythium senticosum,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0170,FZJ082-1 Soil,FZJ082,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,27.2,,6/10/25,,y,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0171,FZJ082-2 Soil,FZJ082,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,3.03,,6/10/25,,y,Y,,,Phytophthora pseudosyringae,,Phytophthora,Oomycete,,Phytophthora,3,Phytophthora pseudosyringae,,P. pseudosyringae,Phytophthora pseudosyringae,Phytophthora pseudosyringae
+FHL0172,FZJ082-3 Soil,FZJ082,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,11.2,,6/10/25,,y,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0173,FZJ083-2 Soil,FZJ083,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,16.5,,6/10/25,,y,Y,,,Pythium senticosum,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0174,FZJ084-2 Soil,FZJ084,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,12.2,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0174,FZJ084-2 Soil,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,0.315,,,,,,,,,,,,,,,,,,,
+FHL0175,FZJ085-1 Soil,FZJ085,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,35,,6/10/25,,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0175,FZJ085-1 Soil,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,out of range,,,,,,,,,,,,,,,,,,,
+FHL0176,FZJ086-1 Soil,FZJ086,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,18.2,,6/10/25,,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0176,FZJ006-1 Soil,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,0.298,,,,,,,,,,,,,,,,,,,
+FHL0177,FZJ087-1 Soil,FZJ087,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,22.3,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0178,FZJ088-1 Soil,FZJ088,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,23.1,,6/10/25,,y,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0179,FZJ088-2 Soil,FZJ088,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,14,,5/22/25,,y,Y,,,Phytophthora plurivora,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora plurivora,,P. citricola,Phytophthora plurivora,Phytophthora plurivora
+FHL0180,FZJ089-1 Soil,FZJ089,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,9.34,,5/22/25,,y,Y,,,Phytophthora attenuata,,Phytophthora,Oomycete,,Phytophthora,7,Phytophthora cambivora,,P. abietivora,Phytophthora attenuata,Phytophthora attenuata
+FHL0181,FZJ090-2 Soil,FZJ090,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,24.7,,6/10/25,,y,Y,,,Pythium senticosum,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0182,FZJ090-3 Soil,FZJ090,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,10.5,,6/10/25,,y,Y,,,Phytopythium sp. 1,,Phytopythium,Oomycete,,Phytopythium,,,,,,Phytopythium sp.
+FHL0183,FZJ091-1 Soil,FZJ091,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,20.2,,6/10/25,,y,Y,,,Pythium senticosum,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0184,FZJ095-1 Soil,FZJ095,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,32.4,,6/10/25,,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0185,FZJ096-1 Soil,FZJ096,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,9.43,,5/22/25,,y,Y,,,Phytophthora plurivora,,Phytophthora,Oomycete,,Phytophthora ,2,Phytophthora plurivora,,P. plurivora,Phytophthora plurivora,Phytophthora plurivora
+FHL0186,FZJ097-3,FZJ097,3,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,34.6,,6/12/25,,,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0186,FZJ097-3 Soil,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,0.146,,,,,,,,,,,,,,,,,,,
+FHL0187,FZJ098-1 Soil,FZJ098,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,22.3,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0187,FZJ098-2 Soil,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,0.398,,,,,,,,,,,,,,,,,,,
+FHL0188,FZJ100-1 Soil,FZJ100,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,22.7,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0189,FZJ100-2 Soil,FZJ100,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,9.87,,6/12/25,,y,Y,,,Phytophthora nemrosa,,Phytophthora,Oomycete,,Phytophthora,3,Phytophthora pseudosyringae,,P. pseudosyringae,Phytophthora nemorosa,Phytophthora nemorosa
+FHL0190,FZJ104-1 Soil,FZJ104,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,35.8,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0191,FZJ104-2 Soil,FZJ104,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,11.5,,5/22/25,,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0192,FZJ105-1 Soil,FZJ105,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,26.1,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0193,FZJ105-2 Soil,FZJ105,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,29.3,,5/22/25,,y,Y,,,Phytophthora flexuosa?,,Phytophthora,Oomycete,,Phytophthora,7,Phytophthora flexuosa,,P. abietivora,Phytophthora clade 7 sp. 1,Phytophthora clade 7 sp. 1
+FHL0194,FZJ105-3 Soil,FZJ105,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,33.2,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0195,FZJ106-1 Root,FZJ106,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,5/6/25,Prepman,5.13,,"5/8/2025, 5/16/25",,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0196,FZJ109-2 Soil,FZJ109,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,31.6,,6/12/25,,,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0197,FZJ112-1 Soil,FZJ112,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,33.3,,6/12/25,,,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0198,FZJ112-2 Soil,FZJ112,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,43.2,,6/12/25,,,Y,,,Elongisporangium anandrum ,,Elongisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0199,FZJ115-1 Soil,FZJ115,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,17.4,,5/22/25,,y,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0200,FZJ118-1 Soil,FZJ118,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,57.8,,6/12/25,,,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0201,FZJ119-1 Soil,FZJ119,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,23,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0202,FZJ119-2 Soil,FZJ119,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,18.3,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0203,FZJ120-1 Soil,FZJ120,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,23.3,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0203,FZJ120-1 Soil,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,0.123,,,,,,,,,,,,,,,,,,,
+FHL0204,FZJ121-1 Soil,FZJ121,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,18,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0205,FZJ121-2 Soil,FZJ121,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,16.1,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0206,FZJ122-1 Soil,FZJ122,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,20.6,,6/12/25,,,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporganium intermedium,,,,Pythium sp.
+FHL0207,FZJ123-1 Soil,FZJ123,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,14.2,,6/12/25,,,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporganium intermedium,,,,Pythium sp.
+FHL0208,FZJ125-1 Soil,FZJ125,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,5/6/25,Prepman,2.93,,"5/8/2025, 5/16/25, 5/22/25",,y,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0208,FZJ125-1 Soil,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,0.162,,,,,,,,,,,,,,,,,,,
+FHL0209,FZJ127-1 Soil,FZJ127,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,5/6/25,Prepman,3.29,,"5/8/2025, 5/16/25, 5/22/25",,y,,,,Globisporangium intermedium,,Globisporangium,Oomycete,,,,,,,,
+FHL0209,FZJ127-1 Soil,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,out of range,,,,,Y,,,,,,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0210,FZJ128-1 Soil,FZJ128,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,5/6/25,Prepman,3.46,faint band in gel; Not Sequenced,"5/8/2025, 5/16/25",,y,Y,,,,,,,,Fungal,,,,,,
+FHL0211,FZJ129-1 Root,FZJ129,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,5/6/25,Prepman,5.58,faint band in gel; Not Sequenced,"5/8/2025, 5/16/25",,y,Y,,,,,,,,Poor Sequence,,,,,,
+FHL0212,FZJ132-1 Soil,FZJ132,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,5/6/25,Prepman,11.3,,6/12/25,,,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0213,FZJ134-1 Soil,FZJ134,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,5/23/25,Prepman,7.85,,6/12/25,,,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0214,FZJ138-2 Soil,FZJ138,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,5/23/25,Prepman,16.3,,6/12/25,,,Y,,,Globisporangium debaryanum,,Globisporangium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0215,FZJ139-2 Soil,FZJ139,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/23/25,Prepman,17.8,,6/12/25,,,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0216,FZJ140-1 Soil,FZJ140,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/23/25,Prepman,12,,6/12/25,,y,Y,,,Phytophthora cambivora,,Phytophthora,Oomycete,,Phytophthora,7,Phytophthora cambivora,,P. abietivora,Phytophthora cambivora,Phytophthora cambivora
+FHL0217,FZJ141-2 Soil,FZJ141,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/23/25,Prepman,17.8,10 ul aliquot of DNA sent with David from Bellermine as a positive control for stram baiting PCR (15Jan25),6/12/25,,y,Y,,,Phytophthora cambivora,,Phytophthora,Oomycete,,Phytophthora,7,Phytophthora cambivora,,P. abietivora,Phytophthora cambivora,Phytophthora cambivora
+FHL0218,FZJ142-1 Soil,FZJ142,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/23/25,Prepman,3.45,,6/12/25,,y,Y,,,Phytopythium citrinum,,Phytopythium,Oomycete,,Phytopythium,,,,,,Phytopythium sp.
+FHL0219,FZJ142-2 Soil,FZJ142,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/23/25,Prepman,6.8,,6/12/25,,y,Y,,,Phytophthora cactorum,,Phytophthora,Oomycete,,Phytophthora,1,Phytophthora cactorum,,P. x_serendipita,Phytophthora cactorum,Phytophthora cactorum
+FHL0220,FZJ142-3 Soil,FZJ142,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/23/25,Prepman,12.4,,6/12/25,,,Y,,,Pythium macrosporum,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0221,T1W3-2,T1W3,2,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,5/23/25,Prepman,10.3,,6/12/25,,,Y,,,Pythium macrosporum,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0222,T1C2-1,T1C2,1,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,5/23/25,Prepman,7.2,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0223,T1W1-1,T1W1,1,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,5/23/25,Prepman,6.01,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0224,T1W1-2,T1W1,2,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,5/23/25,Prepman,6.2,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0225,FZJ038-2 Soil,FZJ038,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/23/25,Prepman,10.5,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0226,FZJ081-3 Soil,FZJ081,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,0.894,,6/12/25,,y,Y,,,Phytophthora obscura,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora obscura,,P. obscura,Phytophthora obscura,Phytophthora obscura
+FHL0227,FZJ069-1 Soil,FZJ069,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,0.515,,6/12/25,,y,Y,,,Phytophthora pseudosyringae,,Phytophthora,Oomycete,,Phytophthora,3,Phytophthora pseudosyringae,,P. pseudosyringae,Phytophthora pseudosyringae,Phytophthora pseudosyringae
+FHL0228,FZJ102-1 Soil,FZJ102,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,1.67,,6/12/25,,,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0229,FZJ132-1 Root,FZJ132,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,0.419,,6/12/25,,,Y,,,Globisporangium intermedium,,Globisporangium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0229,FZJ132-1 Root,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,3/4/26,Zymo Fungal/Bacterial,1.61,,,,,,,,,,,,,,,,,,,
+FHL0230,FZJ018-2 Soil,FZJ018,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,0.511,,6/12/25,,,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0231,FZJ090-1 Soil,FZJ090,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,0.345,,6/12/25,,y,Y,,,Phytophthora pseudosyringae,,Phytophthora,Oomycete,,Phytophthora,3,Phytophthora pseudosyringae,,P. pseudosyringae,Phytophthora pseudosyringae,Phytophthora pseudosyringae
+FHL0232,FZJ018-1 Soil,FZJ018,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,0.985,not alligning,6/12/25,,y,Y,,,,,,Oomycete,,Phytopythium,,,,,,Phytopythium sp.
+FHL0233,FZJ076-3 Soil,FZJ076,3,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,0.561,,6/12/25,,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0234,FZJ014-1 Soil,FZJ014,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,1.76,,6/12/25,,y,Y,,,Phytophthora europaea or abietivora?,,Phytophthora,Oomycete,,Phytophthora,7,Phytophthora flexuosa,,P. abietivora,Phytophthora clade 7 sp. 1,Phytophthora clade 7 sp. 1
+FHL0235,FZJ014-2 Soil,FZJ014,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,0.443,,6/12/25,,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0236,T2W3-1,T2W3,1,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,6/4/25,Prepman,0.378,,6/12/25,,y,Y,,,Phytophthora syringae,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora syringae,,P. syringae,Phytophthora syringae,Phytophthora syringae
+FHL0238,T2W3-2,T2W3,2,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,6/4/25,Prepman,0.522,low quality sequence,6/12/25,,,Y,,,,,,,,Poor Sequence,,,,,,
+FHL0239,FZJ033-1 Soil,FZJ033,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,0.812,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0240,FZJ118-2 Root,FZJ118,2,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,2.22,,6/12/25,,,Y,,,Pythium attrantheridium,,Pythium,Oomycete,,Pythium,,Pythium attrantheridium,,,,Pythium sp.
+FHL0241,FZJ060-2 Soil,FZJ060,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,0.677,,6/12/25,,,Y,,,,,,Fungi,,Fungal,,,,,,
+FHL0271,Weed mat #5 sword fern leaf 2,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,12/15/25,Prepman,1.06,,1/23/26,,,Y,,,phoma herbarum,,,,,Fungal,,,,,,
+FHL0272,Weed mat sample #2 sword fern leaf 2,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,12/15/25,Prepman,1.25,,3/9/26,,,Y,,,diaporthe rudis,,,,,Fungal,,,,,,
+FHL0273,Weed mat #5 sword fern leaf 1,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,1/14/26,Prepman,1.17,,3/20/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0274,Weed mat #2 sword fern leaf 1,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,1/14/26,Prepman,1.32,,2/2/26,,,Y,,,Botrytis sp.,,,Fungi,,Fungal,,,,,,
+FHL0275,Weed mat #4 sword fern leaf 1,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,1/14/26,Prepman,1.29,,2/2/26,,,Y,,,cladosporium sp.,,,Fungi,,Fungal,,,,,,
+FHL0276,Weed mat #3 sword fern leaf 2,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,1/14/26,Prepman,1.38,,2/2/26,,,Y,,,cladosporium sp.,,,Fungi,,Fungal,,,,,,
+FHL0277,Weed mat #1 sword fern leaf 3,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,1/14/26,Prepman,1.67,,2/2/26,,,Y,,,didymella,,,Fungi,,Fungal,,,,,,
+FHL0278,Weed mat #2 sword fern leaf 3,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,12/15/25,Prepman,1.14,,3/20/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0279,Weed mat sample/sword fern leaf 2,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,1/14/26,Prepman,1.26,,1/23/26,,,Y,,,?,,,,,Fungal,,,,,,
+FHL0280,PO2 sword fern leaf 1,,,Greenhouse,Leaf,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,12/15/25,Prepman,1.03,,3/20/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0281,Weed mat #3 sword fern leaf 1,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,12/15/25,Prepman,1.13,,1/23/26,,,Y,,,plectosphaerella,,,Fungi,,Fungal,,,,,,
+FHL0282,Weed mat #4 sword fern leaf 2,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,12/15/25,Prepman,1.12,,1/23/26,,,Y,,,?,,,,,Fungal,,,,,,
+FHL0285,Weed mat sample sword fern leaf 1,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial Prelim,,12/15/25,Prepman,1.46,,3/9/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0290,W29 sword fern leaf 3,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 1,,1/14/26,Prepman,1.22,,2/9/26,,,Y,,,?,,,,,Fungal,,,,,,
+FHL0291,W29 sword fern leaf 1,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 1,,1/9/26,Prepman,1.05,,2/9/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0292,W29 sword fern leaf 2,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 1,,1/14/26,Prepman,1.25,,1/23/26,,,Y,,,fusarium,,,Fungi,,Fungal,,,,,,
+FHL0295,C20-1 sword fern leaf,,,Greenhouse,Leaf,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 1,,1/14/26,Prepman,1.41,,3/26/26,,,,,,,,,,,,,,,,,
+FHL0296,CAMA 6-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.53,,3/2/26,,,Y,,,pythium dissotocum,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0297,OBSB 2-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.05,,3/2/26,,,Y,,,pythium dissotocum,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0298,OBSB 5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.57,,3/2/26,,,Y,,,pythium dissotocum,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0299,BLAB 6-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.36,,3/2/26,,,Y,,,phytophthora cryptogea,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. kelmanii,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0300,CAMA 6-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.58,,3/20/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0301,PLUA 6-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.51,,3/2/26,,,Y,,,pythium dissotocum,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0302,OBSB 3-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.51,,3/2/26,,,Y,,,pythium dissotocum,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0303,BLAB 3-3 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.42,,3/5/26,,,Y,,,?,,,,,Fungal,,,,,,
+FHL0304,BLAA 2-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.39,,3/5/26,,,Y,,,phoma herbarum,Pathogen,,Fungi,,Fungal,,,,,,
+FHL0305,BLAA 6-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.46,,3/5/26,,,Y,,,phoma herbarum,Pathogen,,Fungi,,Fungal,,,,,,
+FHL0306,BLAB 3-2 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.68,potentially contaminted,3/5/26,,,Y,,,trichoderma,Contaminant,,Fungi,,Fungal,,,,,,
+FHL0307,BLAB 4-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.81,,3/5/26,,,Y,,,?,,,,,Fungal,,,,,,
+FHL0308,BLAB 1-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.62,,3/5/26,,,Y,,,?,,,,,Fungal,,,,,,
+FHL0309,BLAB 5-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,2.36,,3/5/26,,,Y,,,?,,,,,Fungal,,,,,,
+FHL0310,BLAA 5-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.39,,3/5/26,,,Y,,,pyrenophora sp,Pathogen,,Fungi,,Fungal,,,,,,
+FHL0311,BLAA 1-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.25,,3/5/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0312,BLAB 6-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.42,,3/5/26,,,Y,,,,,,,,Poor Sequence,,,,,,
+FHL0313,BLAA 6-2 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.75,,3/5/26,,,Y,,,?,,,,,Fungal,,,,,,
+FHL0314,BLAB 2-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,2.35,potentially contaminated,3/5/26,,,Y,,,trichoderma,Contaminant,,Fungi,,Fungal,,,,,,
+FHL0315,BLAA 2-2 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.95,,3/5/26,,,Y,,,?,,,,,Fungal,,,,,,
+FHL0316,EURA 5-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.9,,3/5/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0317,OBSB 3-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.99,,3/6/26,,,Y,,,pythium dissotocum,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0318,OBSA 3-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.81,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0319,EURA 5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.58,,3/6/26,,,Y,,,phytophthora cryptogea,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. cryptogea,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0320,BLAB 2-3 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.41,,,,,,,,,,,,,,,,,,,
+FHL0321,BLAB 1-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.37,,3/6/26,,,Y,,,Boeremia sp.,,,Fungi,,Fungal,,,,,,
+FHL0322,NONEB 5-3 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.71,,3/6/26,,,Y,,,pythium dissotocum/macrosporum,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0323,NONEB 5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.81,,3/6/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0324,EURB 1-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,2.08,,3/6/26,,,Y,,,pythium macrosporum,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0325,OCCB 2-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.47,,3/6/26,,,Y,,,phytophthora cryptogea,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. cryptogea,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0326,BLAB 6-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/20/26,Prepman,1.72,,3/6/26,,,Y,,,phytophthora cryptogea,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. cryptogea,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0327,W10 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,2/23/26,Prepman,1.06,,3/6/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0328,BLAB 3-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.39,potentially contaminated,3/6/26,,,Y,,,trichoderma,Contaminant,,Fungi,,Fungal,,,,,,
+FHL0329,BLAB 2-2 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.36,,3/6/26,,,Y,,,trichoderma,Contaminant,,Fungi,,Fungal,,,,,,
+FHL0330,NONEB 6-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.43,potentially contaminated,3/6/26,,,Y,,,trichoderma,,,Fungi,,Fungal,,,,,,
+FHL0331,NONEB 2-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.59,potentially contaminated,3/9/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0332,NONEB 4-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.56,potentially contaminated,3/9/26,,,Y,,,trichoderma,,,Fungi,,Fungal,,,,,,
+FHL0333,OBSA 2-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.48,potentially contaminated,3/9/26,,,Y,,,trichoderma,,,Fungi,,Fungal,,,,,,
+FHL0334,BLAB 4-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.25,,3/9/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0335,OBSB 1-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.41,,3/9/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0336,OBSB 1-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.07,,3/9/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0337,PLUA 3-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.4,,3/9/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0338,EURB 6-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.42,potentially contaminated,3/9/26,,,Y,,,trichoderma,,,Fungi,,Fungal,,,,,,
+FHL0339,SYRB 5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.49,potentially contaminated,3/9/26,,,Y,,,trichoderma,,,Fungi,,Fungal,,,,,,
+FHL0340,BLAA 5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.27,,3/9/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0341,BLAA 1-2 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.13,,3/9/26,,,Y,,,cladosporium sp.,Contaminant,,Fungi,,Fungal,,,,,,
+FHL0342,NONEB 3-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.69,potentially contaminated,3/9/26,,,Y,,,trichoderma,,,Fungi,,Fungal,,,,,,
+FHL0343,BLAA 3-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.27,,3/9/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0344,NONEB 3-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.53,potentially contaminated,3/9/26,,,Y,,,umbelopsis,,,Fungi,,Fungal,,,,,,
+FHL0345,BLAA 4-1 Stalk,,,Greenhouse,Stalk,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,2/23/26,Prepman,1.23,,3/9/26,,,Y,,,,,,,,Poor Sequence,,,,,,
+FHL0391,SYRB4-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,17,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0392,SYRA1-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,6.48,,3/20/26,,,Y,,,phytophthora cryptogea,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. kelmanii,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0393,OCCB6-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,6.98,,3/20/26,,,Y,,,phytophthora occultans,,,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans complex,Phytophthora occultans,Phytophthora occultans
+FHL0394,OCCA5-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,13.1,,3/20/26,,,Y,,,phytophthora occultans,,,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans complex,Phytophthora occultans,Phytophthora occultans
+FHL0395,EURB6-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,4.41,,3/20/26,,,Y,,,phytophthora cryptogea,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. kelmanii,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0396,PLUB1-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,5.69,,3/20/26,,,Y,,,phytophthora cryptogea,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. kelmanii,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0397,OCCB4-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,0.89,,3/20/26,,,Y,,,phytophthora occultans,,,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans complex,Phytophthora occultans,Phytophthora occultans
+FHL0398,OCCB5-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,5,,3/20/26,,,Y,,,phytophthora occultans,,,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans complex,Phytophthora occultans,Phytophthora occultans
+FHL0399,PLUA4-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,5.53,,3/20/26,,,Y,,,phytophthora cryptogea,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. cryptogea,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0400,EURB5-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,5.83,,3/20/26,,,Y,,,phytophthora cryptogea,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. cryptogea,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0401,NONEA3-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,20.9,,3/20/26,,,Y,,,pythium macrosporum,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0402,PLUB2-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,6.26,,3/20/26,,,Y,,,phytophthora plurivora,,,Oomycete,,Phytophthora,2,Phytophthora plurivora,,P. plurivora,Phytophthora plurivora,Phytophthora plurivora
+FHL0403,OCCA3-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,34.1,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0404,EURA3-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,32.2,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0405,PLUB6-3 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,21.7,,3/20/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0406,EURA5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,4.31,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Phytophthora,8,,,P. sansomeana,,
+FHL0407,OBSA3-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,14.8,,3/20/26,,,,,,phytophthora cryptogea,,,Oomycete,,,,,,,,
+FHL0408,SYRA4-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,32,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0409,OBSA5-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,32.1,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0410,SYRA4-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,47.2,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0411,OBSB 5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/12/26,Prepman,38.4,,3/20/26,,,Y,,,pythium dissotocum,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0412,CAMB4-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,25,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0413,BLAB5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,28.5,,3/20/26,,,Y,,,,,,,,Fungal,,,Mortierella,,,
+FHL0414,CAMA2-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,15.3,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0415,SYRB4-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,33.1,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0416,EUR2-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,54.1,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0417,OCCA5-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,21.3,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0418,PLUA5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,46.7,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0419,PLUB3-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,25.4,,3/20/26,,,Y,,,mortierella sp.,,,Fungi,,Fungal,,,,,,
+FHL0420,OCCB4-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,5.35,,3/20/26,,,Y,,,phytophthora occultans,,,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans,Phytophthora occultans,Phytophthora occultans
+FHL0421,OBSB3-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,21.6,,3/20/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0422,OCCA4-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,4.67,,3/20/26,,,Y,,,,,,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans complex,Phytophthora occultans,Phytophthora occultans
+FHL0423,SYRB4-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,8.33,,3/20/26,,,Y,,,,,,Oomycete,,Phytophthora,7,Phytophthora flexuosa,,P. abietivora,Phytophthora clade 7 sp. 1,Phytophthora clade 7 sp. 1
+FHL0424,OCCA2-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,5.13,,3/20/26,,,Y,,,,,,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans complex,Phytophthora occultans,Phytophthora occultans
+FHL0425,OCCB1-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,4.39,,3/20/26,,,Y,,,,,,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans complex,Phytophthora occultans,Phytophthora occultans
+FHL0426,OBSB3-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,3/16/26,Prepman,16.5,,3/20/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0448,FZJ125-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/13/26,Qiagen PlantPro,2.59,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0449,FZJ115-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/13/26,Qiagen PlantPro,2.34,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0450,FZJ119-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/13/26,Qiagen PlantPro,1.07,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0451,FZJ091-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/13/26,Qiagen PlantPro,2.31,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0452,FZJ090-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/13/26,Qiagen PlantPro,2.04,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0453,FZJ123-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/13/26,Qiagen PlantPro,0.866,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0454,FZJ116-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/13/26,Qiagen PlantPro,1.47,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0455,FZJ099-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,0.905,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0456,FZJ102-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,1.99,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0457,FZJ093-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,2.78,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0458,FZJ100-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,1.03,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0459,FZJ098-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,0.771,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0460,FZJ112-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,1.04,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0461,FZJ094-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,1.05,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0462,FZJ066-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,1.46,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0463,FZJ088-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,0.805,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0464,FZJ082-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,1.74,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0465,FZJ061-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,1.01,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0466,FZJ114-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,1.61,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0467,FZJ064-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0468,FZJ108-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,0.865,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0469,FZJ085-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,0.749,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0470,FZJ089-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,1.71,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0471,FZJ087-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Qiagen PlantPro,0.553,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0472,FZJ062-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,Out of range,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0473,FZJ067-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,2.4,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0474,FZJ068-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,1.83,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0475,FZJ070-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,0.986,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0476,FZJ071-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,2.93,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0477,FZJ072-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,1.3,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0478,FZJ073-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,2.53,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0479,FZJ074-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,1.57,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0480,FZJ077-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,2.5,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0481,FZJ084-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,0.387,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0482,FZJ096-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,1.59,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0483,FZJ097-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,1.73,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0484,FZJ104-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,2.03,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0485,FZJ105-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,1.45,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0486,FZJ106-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,0.67,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0487,FZJ110-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,1.19,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0488,FZJ118-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,2.01,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0489,FZJ121-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,0.948,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0490,FZJ122-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Qiagen PlantPro,1.2,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0491,FZJ001-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,1.45,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0492,FZJ003-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,8.7,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0493,FZJ004-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,2.69,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0494,FZJ005-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,1.68,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0495,FZJ007-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,2.13,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0496,FZJ008-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,1.84,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0497,FZJ009-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,2.31,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0498,FZJ010-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,2.34,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0499,FZJ011-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,2.75,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0500,FZJ012-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,2,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0501,FZJ016-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,2.44,,6/10/26,,,,,,,,,,,,,,,,,
+FHL0502,FZJ017-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,4.82,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0503,FZJ018-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,1.14,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0504,FZJ019-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,4.17,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0505,FZJ024-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,1.8,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0506,FZJ025-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,1.1,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0507,FZJ032-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,2.23,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0508,FZJ037-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,1.84,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0509,FZJ038-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/21/26,Qiagen PlantPro,1.77,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0510,FZJ052-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0511,FZJ053-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,1.1,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0512,FZJ014-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,1.33,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0513,FZJ013-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,3.05,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0514,FZJ002-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,2.22,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0515,FZJ039-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,1.27,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0516,FZJ051-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,13.6,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0517,FZJ034-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,6.16,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0518,FZJ049-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,3.46,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0519,FZJ050-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,4.51,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0520.,FZJ043-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,1.92,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0521,FZJ048-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,3.25,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0522,FZJ006-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,1.68,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0523,FZJ031-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,1.28,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0524,FZJ028-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,1.68,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0525,FZJ021-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,0.599,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0526,FZJ027-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,0.565,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0527,FZJ015-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,5.22,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0528,FZJ020-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/22/26,Qiagen PlantPro,2.32,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0529,W75-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,0.98,,5/27/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0530,W70-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.47,,5/27/26,,,Y,,,,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. kelmanii,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0531,W68-2 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.75,,5/27/26,,,Y,,,,,,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0532,W68-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.87,,5/27/26,,,Y,,,,,,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0533,W67-2 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.59,,5/27/26,,,Y,,,,,,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0534,W67-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,2.03,,5/27/26,,,Y,,,,,,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0535,W60-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,2.25,,5/27/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0536,W59-2 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,2.9,,5/27/26,,,Y,,,,,,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0537,W59-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,2.08,,5/27/26,,,Y,,,,,,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0538,W59-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.12,,,,,,,,,,,,,,,,,,,
+FHL0539,W58-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,2.46,,5/27/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0540,W55-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.22,,5/27/26,,,Y,,,,,,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0541,W53-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,0.561,,,,,,,,,,,,,,,,,,,
+FHL0542,W52-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,2.16,,5/27/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0543,W52-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.89,,5/27/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0544,W47-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,0.507,,,,,,,,,,,,,,,,,,,
+FHL0545,W78-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,3.39,,5/27/26,,,Y,,,,,,Oomycete,,Pythium,,Globisporangium intermedium,,,,Pythium sp.
+FHL0546,W77-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,0.294,,5/27/26,,,Y,,,,,,Oomycete,,Phytophthora,8,Phytophthora crypotgea,,P. kelmanii,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0547,CAMB053-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,5/19/26,Prepman,1.57,,5/27/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0548,CACA-083-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,5/19/26,Prepman,0.529,,5/27/26,,,Y,,,,,,Oomycete,,Phytophthora,1,Phytophthora cactorum,,P. alpina,Phytophthora alpina,Phytophthora alpina
+FHL0550,FLEX072-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,5/19/26,Prepman,2.1,,5/27/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0551,BLAA155-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,5/19/26,Prepman,2.55,,5/27/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0552,C81-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.65,,,,,,,,,,,,,,,,,,,
+FHL0553,C72-2 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,0.89,,5/27/26,,,Y,,,,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. kelmanii,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0554,C72-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,2.21,,5/27/26,,,Y,,,,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. cryptogea,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0555,C57-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.74,,,,,,,,,,,,,,,,,,,
+FHL0556,C56-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.45,,5/27/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0557,C53-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,0.513,,,,,,,,,,,,,,,,,,,
+FHL0558,C53-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,0.966,,,,,,,,,,,,,,,,,,,
+FHL0559,C52-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,2.54,,6/10/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0560,C52-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,0.906,,6/10/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0561,C51-4 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,2.41,,6/10/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0562,C51-3 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,2.17,,6/10/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0563,C51-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,3.18,,6/10/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0564,C51-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,5.86,,6/10/26,,,Y,,,,,,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. kelmanii,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0565,C50-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.09,,6/10/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0566,C48-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.77,,6/10/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0567,C1-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 1,,5/19/26,Prepman,3.76,,6/10/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0568,C14-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 1,,5/19/26,Prepman,3.4,,6/10/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0569,C46-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,0.836,,6/10/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0570,GINA130-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,5/19/26,Prepman,0.53,,6/10/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0571,P03-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,0.811,,6/10/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0572,PI4-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,1.47,,6/10/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0573,C47-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,5/19/26,Prepman,4.51,,,,,,,,,,,,,,,,,,,
+FHL0574,NONEB4-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/19/26,Prepman,1.46,,6/17/26,,,Y,,,,,,,,Fungal,,,,,,
+FHL0577,SWT 1-1,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,2.85,,,ITS1-F/LR3,,Y,,7/17/26,Colletotrichum sp.,,Fungi,Fungi,,Fungal,,,,,,
+FHL0578,SWT 2-1,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,13.4,,,ITS1-F/LR3,,Y,,7/17/26,Microsphaeropsis sp./Pleosporales sp.,,Fungi,Fungi,,Fungal,,,,,,
+FHL0580,Seward Windfall Low 2-9-2,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,4.68,,,,,,,,,,,,,,,,,,,
+FHL0581,Seward Windfall 1-3-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,8.04,,6/17/26,,,Y,,,Diaporthe rudis,Pathogen,,,,Fungal,,,,,,
+FHL0583,BBBH Fern 1-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,5.83,,,,,,,,,,,,,,,,,,,
+FHL0584,Seward Windall 1-1-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,0.591,,,ITS1-F/LR3,,Y,,7/17/26,Trichoderma sp.,Contaminant,Fungi,Fungi,,Fungal,,,,,,
+FHL0585,C3-1 Control Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 1,,5/19/26,Prepman,1.62,,,ITS1-F/LR3,,Y,,7/17/26,Phialocephala fortinii ,,Fungi,Fungi,,Fungal,,,,,,
+FHL0587,BLT RBP 9-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,1.66,,,ITS1-F/LR3,,Y,,7/17/26,,,,,,Poor Sequence,,,,,,
+FHL0588,BLT RBP 5-2,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,19,,6/17/26,ITS1-F/LR3,,Y,,7/17/26,Biscogniauxia,Endophyte,Fungi,Fungi,,Fungal,,,Phialocephala fortinii,,,
+FHL0589,BLT RBP 6-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,12.1,,,ITS1-F/LR3,,Y,,7/17/26,Linnemannia gamsii,Contaminant,Fungi,Fungi,,Fungal,,,,,,
+FHL0590,Seward Windfall 1-2-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,13.1,,,,,,,,,,,,,,,,,,,
+FHL0591,Seward Windall 1-2-2,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,4.48,,,ITS1-F/LR3,,Y,,7/17/26,Paraphaeosphaeria sporulosa,,Fungi,Fungi,,Fungal,,,,,,
+FHL0593,BBBH Fern 3-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,12,,,,,,,,,,,,,,,,,,,
+FHL0594,BLT RBP 10,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/16,Prepman,4.04,,,,,,,,,,,,,,,,,,,
+FHL0595,C7-1 Control Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 1,,5/19/26,Prepman,2.24,,,ITS1-F/LR3,,Y,,7/17/26,Paraphaeosphaeria sporulosa,Forward sequence poor quality,Fungi,Fungi,,Fungal,,,,,,
+FHL0596,Seward Windfall Low 2-6-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,13.7,,,,,,,,,,,,,,,,,,,
+FHL0597,Seward Windfall 1-5-2,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,4.67,,,ITS1-F/LR3,,Y,,7/17/26,,,,,,Poor sequence,,,,,,
+FHL0598,BLT RBP 7-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/19/26,Prepman,4.84,,6/17/26,,,Y,,,Mortriella sp. ,Contaminant,,,,Fungal,,,,,,
+FHL0599,BBBH Fern 9-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,12.1,,,,,,,,,,,,,,,,,,,
+FHL0600,BLT RBP 1-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,2.18,,,,,,,,,,,,,,,,,,,
+FHL0602,BLT RBP 4-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,20.9,,,ITS1-F/LR3,,Y,,7/17/26,Microsphaeropsis sp./Ascochyta sp./Epicoccum sp./Didymellaceae sp.,,Fungi,Fungi,,Fungal,,,,,,
+FHL0603,BLT RBP 8-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,11.2,,,ITS1-F/LR3,,Y,,7/17/26,,,,,,Poor sequence,,,,,,
+FHL0604,BLT RBP 3-2,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,7.19,,,,,,,,,,,,,,,,,,,
+FHL0605,BLT RBP 3-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,4.03,,,,,,,,,,,,,,,,,,,
+FHL0606,Seward Windfall 1-5-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,9.63,,,ITS1-F/LR3,,Y,,7/17/26,Pezicula radicicola,Endophyte,Fungi,Fungi,,Fungal,,,,,,
+FHL0607,Seward Windfall Low 2-9-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,10.2,,6/17/26,,,Y,,,Nemania serpens,,Fungi,Fungi,,Fungal,,,,,,
+FHL0608,BLT RBP 1-2,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,6.12,,,ITS1-F/LR3,,Y,,7/17/26,Nemania serpens,,,,,Fungal,,,,,,
+FHL0609,BLT RBP 2-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,7.48,,,,,,,,,,,,,,,,,,,
+FHL0610,BLT RBP 5-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,6.68,,,ITS1-F/LR3,,Y,,7/17/26,,,,,,Poor Sequence,,,,,,
+FHL0611,BBBH Fern 4-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,8.94,,,ITS1-F/LR3,,Y,,7/17/26,Colletotrichum sp.,Reverse sequence poor quality,Fungi,Fungi,,Fungal,,,,,,
+FHL0612,SWT-3-1 ,,,Field,,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,2.1,,,ITS1-F/LR3,,Y,,7/17/26,,,,,,Poor sequence,,,,,,
+FHL0613,BBBH Fern 1-2,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,14.9,,,,,,,,,,,,,,,,,,,
+FHL0614,BBBH Fern 2-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,7.4,,,ITS1-F/LR3,,Y,,7/17/26,,,,,,Poor sequence,,,,,,
+FHL0615,Seward Windfall Low 2-10-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,3.77,,,ITS1-F/LR3,,Y,,7/17/26,Nemania serpens,,Fungi,Fungi,,Fungal,,,,,,
+FHL0616,Seward Windfall Low 2-8-1,,,Field,Stalk,Sword Fern Mortalilty,Sword Fern Field Samples,,5/20/26,Prepman,6.9,,,,,,,,,,,,,,,,,,,
+FHL0617,FZJ035-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,0.854,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0618,FZJ054-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,5.77,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0619,FZJ055-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,46.8,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0620,FZJ056-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,12.4,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0621,FZJ057-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,2.24,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0622,FZJ058-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,8,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0623,FZJ059-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,2.69,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0624,FZJ060-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,2.27,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0625,FZJ127-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,0.98,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0626,FZJ128-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,1.68,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0627,FZJ129-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,1.45,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0628,FZJ131-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,1.23,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0629,FZJ132-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,1.84,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0631,FZJ135-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0632,FZJ136-1 Root,,,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,5/28/26,Qiagen PlantPro,1.3,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0633,PLUB2-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,1.62,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0634,OCCA5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,1.21,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0635,EURA5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,2.06,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0636,OBSA3-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,5.06,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0637,OCCB2-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,1.14,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0638,OBSB5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,3.15,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0639,PLUA6-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,2.92,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0640,OBSB3-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,3.92,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0641,CAMA6-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,2.05,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0642,OBSB2-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,2.06,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0643,OCCB5-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,5/29/26,Qiagen PlantPro,2.79,,6/11/26,,,,,,,,,,,,,,,,,
+FHL0644,C82-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0645,PLUA027-2 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,6/16/26,,,Y,,,,,,Oomycete,,Phytophthora,2,Phytophthora plurivora,,P. plurivora,Phytophthora plurivora,Phytophthora plurivora
+FHL0646,OCCB113-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,6/16/26,,,Y,,,,,,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans complex,Phytophthora occultans,Phytophthora occultans
+FHL0647,CAMA045-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,6/16/26,,,Y,,,,,,Oomycete,,Phytophthora,7,Phytophthora cambivora,,P. abietivora,Phytophthora cambivora,Phytophthora cambivora
+FHL0648,W47-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0649,W49-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0650,GINB138-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0651,NONE173-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,6/17/26,,,Y,,,,,,,,Fungal,,Mortriella,,,,
+FHL0652,C69-2 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,6/4/26,Prepman,,,6/16/26,,,Y,,,,,,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0653,PLUA027-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,6/16/26,,,Y,,,,,,Oomycete,,Phytophthora,2,Phytophthora plurivora,,P. plurivora,Phytophthora plurivora,Phytophthora plurivora
+FHL0654,CACB090-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0655,GINA129-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0656,GINB139-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0657,BLAB166-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0658,W69-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0659,PLUA025-1 Soil,,,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,6/16/26,,,Y,,,,,,Oomycete,,Phytophthora,2,Phytophthora plurivora,,P. citricola,Phytophthora plurivora,Phytophthora plurivora
+FHL0662,SYRA006-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 2,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0663,W49-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0664,CAMB053-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0665,GINB137-2 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0666,OCCA098-1 Root,,,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0667,GINB137-1 Root,,,Greenhouse ,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,6/4/26,Prepman,,,,,,,,,,,,,,,,,,,,
+N/A,FZJ024-2 Soil,FZJ024,2,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,,appears contaminated,,,,,,,,,,,,,,,,,,
+N/A,FZJ049-1 Soil,FZJ049,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,,not enough mycelia growth to extract,,,,,,,,,,,,,,,,,,
+N/A,FZJ054-1 Root,FZJ054,1,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,,6/4/25,Prepman,,Not enough mycelia growth to extract,,,,,,,,,,,,,,,,,,
+N/A,FZJ060-3 Root,FZJ060,3,Field,Root,Sword Fern Mortalilty,Sword Fern Field Samples,Y,4/30/25,Prepman,,not enough mycelia growth to extract,,,,,,,,,,,,,,,,,,
+N/A,FZJ068-1 Soil,FZJ068,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,4/30/25,Prepman,,not enough mycelia growth to extract,,,,,,,,,,,,,,,,,,
+N/A,FZJ081-1 Soil,FZJ081,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/1/25,Prepman,,not enough mycelia growth to extract,,,,,,,,,,,,,,,,,,
+N/A,FZJ107-1 Soil,FZJ107,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,,5/6/25,Prepman,,Not enough mycelia growth to extract,,,,,,,,,,,,,,,,,,
+N/A,FZJ130 Soil,FZJ130,1,Field,Soil,Sword Fern Mortalilty,Sword Fern Field Samples,Y,5/6/25,Prepman,,not enough mycelia growth to extract,,,,,,,,,,,,,,,,,,
+FHL0668,W61-1 Soil,W61,1,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/6/26,Prepman,2.12,,7/13/26,ITS6/ITS4,y,Y,,7/17/26,Phytophthora psuedocryptogea,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. kelmanii,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0669,GINA130-1 Soil,GINA130,1,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,7/6/26,Prepman,0.453,,7/13/26,ITS6/ITS4,y,Y,,7/17/26,Phytophthora psuedocryptogea,,Phytophthora,Oomycete,,Phytophthora,8,Phytophthora cryptogea,,P. kelmanii,Phytophthora pseudocryptogea likely,Phytophthora pseudocryptogea likely
+FHL0670,C69-1 Soil,C69,1,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/6/26,Prepman,0.598,,7/13/26,ITS6/ITS4,y,Y,,7/17/26,Phytophthora chlamydospora,,Phytophthora,Oomycete,,Phytophthora,6,Phytophthora chlamydospora,,P. chlamydospora,Phytophthora chlamydospora,Phytophthora chlamydospora
+FHL0672,C63-1 Soil,C63,1,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/9/26,Prepman,2.45,,7/13/26,ITS6/ITS4,y,Y,,7/17/26,Pythium sp.,Reverse sequence poor quality,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0674,C57-1 Soil,C57,1,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/9/26,Prepman,3.63,,7/13/26,ITS6/ITS4,y,Y,,7/17/26,Pythium sp.,,Pythium,Oomycete,,Pythium,,,,,,Pythium sp.
+FHL0683,C56-3 Root,C56,3,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/9/26,Prepman,1.81,,7/13/26,ITS6/ITS4,y,Y,,7/17/26,,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. occultans,Phytophthora occultans,Phytophthora occultans
+FHL0684,WM FERN 8-1 Soil,WM FERN 8,1,,Soil,Sword Fern Mortalilty,Weed Mat Ferns,,7/9/26,Prepman,0.714,,7/13/26,ITS6/ITS4,y,Y,,7/17/26,Phytophthora occultans,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. citrophthora,Phytophthora occultans,Phytophthora occultans
+FHL0685,NONE043-1 Root,NONE043,1,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse 1,,7/14/26,Prepman,,,7/14/26,ITS6/ITS4,y,Y,,7/17/26,,,Fungi,,,Poor Sequence,,,,,,
+FHL0686,P09-1 Soil,P09,1,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/9/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0687,GINB138-1 Root,GINB138,1,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse 1,,7/14/26,Prepman,,,,,,Y,,7/17/26,,239 bp sequence length matches with P. occultans,,,,Poor sequence,2,Phytophthora occultans,,,,
+FHL0688,GINA129-1 Soil,GINA129,1,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse 1,,7/9/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0690,CACB089-1 Soil,CACB089,1,Greenhouse,Soil,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse 1,,7/14/26,Prepman,4.97,,,,,,,,,,,,,,,,,,,
+FHL0691,CACA082-1 Soil,CACA082,1,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse 1,,7/14/26,Prepman,,,7/14/26,ITS6/ITS4,y,Y,,7/17/26,Mortierella sp.,,Fungi,Fungi,,Fungal,,,,,,
+FHL0692,W65-1 Root,W65,1,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/14/26,Prepman,,,7/14/26,ITS6/ITS4,y,Y,,7/17/26,Phytophthora occultans,,Phytophthora,Oomycete,,Phytophthora,2,Phytophthora occultans,,P. citrophthora,Phytophthora occultans,Phytophthora occultans
+FHL0693,W66-1 Soil,W66,1,Greenhouse,Soil,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/14/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0694,C52-1 Root,C52,1,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/9/26,Prepman,4.67,,,,,,,,,,,,,,,,,,,
+FHL0695,C69-1 Root,C69,1,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/14/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0696,C81-1 Root,C81,1,Greenhouse,Root,Sword Fern Mortalilty,Seward Soil Greenhouse Trial 2,,7/14/26,Prepman,,,,,,,,,,,,,,,,,,,,
+FHL0707,OCCA099-1 Root,OCCA099,1,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse Trial 1,,7/14/26,Prepman,,,7/14/26,ITS6/ITS4,y,Y,,7/17/26,,142 bp sequence length matches with clade 2 phytophthora,Phytophthora,Oomycete,,Poor Sequence,2,,,,Phytophthora occultans,Phytophthora occultans
+FHL0712,CAMA044-1 Root,CAMA044,1,Greenhouse,Root,Sword Fern Mortalilty,Sword Fern Inoculation Greenhouse 1,,7/23/26,Prepman,2.36,,,,,,,,,,,,,,,,,,,

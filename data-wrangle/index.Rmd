@@ -20,7 +20,7 @@ library(tidyverse)
 setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
 sites <- read.csv("./data/field/sword.fern.field.sample.data.csv")
 isolates <- read.csv("./data/lab/sword.fern.isolates.csv")
-extractions <- read.csv("./data/lab/sword.fern.isolate.extractions.csv")
+extractions <- read.csv("./data/lab/sword.fern.isolate.extractions.august.csv")
 #greenhouse.weights <- read.csv("./data/greenhouse/Final.Root.Weights.csv")
 #greenhouse.fronds <- read.csv("./data/greenhouse/Final.Frond.Counts.csv")
 #write.csv(greenhouse,"Final-Greenhouse-Data-Combined.csv",row.names=FALSE)
@@ -55,7 +55,7 @@ results <- left_join(results,sites,join_by("Sample"=="Sample.ID"))
 
 
 ```{r}
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
-write.csv(results,file="./data/lab/combined.results.csv")
+#setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
+#write.csv(results,file="./data/lab/combined.results.csv")
 ```
 
