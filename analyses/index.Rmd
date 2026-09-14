@@ -202,14 +202,24 @@ Our one-way ANOVA to compare the effect of soil sterilization on root weight sug
 #### Run Chi-Squared test on Seward Trial 1 frond count data
 
 ```{r}
-misty::descript(inoc1$Total.Fronds)
-
 table(seward1$Treatment, seward1$Total.Fronds)
 chisq.seward1 <- chisq.test(table(seward1$Treatment, seward1$Total.Fronds))
 chisq.seward1
-```
-Our Chi-Squared test result p-value = 0.6199 suggests there is not a significant relationship between soil treatmeant group and the total number of fronds on sword fern plants.
 
+freq.seward1 <- table(seward1$Treatment, seward1$Total.Fronds)
+freq.seward1 <- seward1 %>% group_by(Treatment, Total.Fronds) %>% summarise(Frequency = n(), .groups = 'drop')
+
+seward1.chi <- seward1
+seward1.chi$Total.Fronds <- cut(seward1.chi$Total.Fronds, 
+                                       breaks = c(-1, 15, 25, 35, 45, 50), 
+                                       labels = c("< 15", "15-25", "26-35", "35-35", "45-50"))
+
+chisq.seward1 <- chisq.test(table(seward1.chi$Treatment, seward1.chi$Total.Fronds))
+chisq.seward1
+
+chisq.seward1$expected
+```
+Groups were split up to create expected values > 5 for at least 80% of our groups. A Pearson's Chi-squared test suggested that there was not a statistically significant difference in the number of fronds on sword fern plants between soil treatment groups, X^2(4, N = 86) = 7.634, p = 0.1059. 
 
 ### Seward Trial 2
 
@@ -259,8 +269,23 @@ misty::descript(seward2.nopot$Total.Fronds)
 
 chisq.seward2 <- chisq.test(table(seward2.nopot$Treatment, seward2.nopot$Total.Fronds))
 chisq.seward2
+
+freq.seward2 <- table(seward2.nopot$Treatment, seward2.nopot$Total.Fronds)
+freq.seward2 <- seward2.nopot %>% group_by(Treatment, Total.Fronds) %>% summarise(Frequency = n(), .groups = 'drop')
+
+seward2.chi <- seward2.nopot
+seward2.chi$Total.Fronds <- cut(seward2.chi$Total.Fronds, 
+                                       breaks = c(-1, 25, 30, 35, 40, 45, 50, Inf), 
+                                       labels = c("< 25", "26-30", "31-35", "36-40", "41-45", "46-50", "> 50"))
+
+chisq.seward2 <- chisq.test(table(seward2.chi$Treatment, seward2.chi$Total.Fronds))
+chisq.seward2
+
+chisq.seward2$expected
+
+2/7
 ```
-Our Chi-Squared test result p-value = 0.1614 suggests there is not a significant relationship between soil treatment group and the total number of fronds on sword fern plants.
+A Pearson's Chi-squared test suggested that there was not a statistically significant difference in the number of fronds on sword fern plants between soil treatment groups, X^2(6, N = 88) =  8.6318, p = 0.1954.
 
 
 ### Seward Combined Trials (1 and 2)
@@ -315,24 +340,26 @@ freq.seward <- seward.nopot %>% group_by(Treatment, Total.Fronds) %>% summarise(
 
 seward.nopot.merge <- seward.nopot
 seward.nopot.merge$Total.Fronds <- cut(seward.nopot$Total.Fronds, 
-                                       breaks = c(-1, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, Inf), 
-                                       labels = c("< 11", "11-15", "16-20", "21-25", "26-30", "31-35", "36-40",
-                                                  "41-45", "46-50", "51-55", "> 55"))
+                                       breaks = c(-1, 10, 15, 20, 25, 30, 35, 40, 45, 50, Inf), 
+                                       labels = c("< 10", "10-15", "16-20", "21-25", "26-30", "31-35", "36-40",
+                                                  "41-45", "46-50", "> 50"))
 
-#freq.seward.merge <- freq.seward %>%
-#  group_by(Treatment, Total.Fronds) %>%
-#  summarise(across(c(Frequency), sum))
+freq.seward.merge <- freq.seward %>%
+  group_by(Treatment, Total.Fronds) %>%
+  summarise(across(c(Frequency), sum))
 
 chisq.seward <- chisq.test(table(seward.nopot.merge$Treatment, seward.nopot.merge$Total.Fronds))
 chisq.seward
 
 chisq.seward$expected
+1/10
 
 ncol(freq.seward)
 54
 sum(col(freq.seward))
+
 ```
-A Pearson's Chi-squared test suggested that there was not a statistically significant difference in the number of fronds on sword fern plants between soil treatment groups, X^2(53, N = 88) =  58.81, p = 0.2712.
+A Pearson's Chi-squared test suggested that there was not a statistically significant difference in the number of fronds on sword fern plants between soil treatment groups, X^2(9, N = 174) =  13.468, p = 0.1426.
 
 ## Inoculation Trials
 
@@ -424,18 +451,20 @@ inoc1 %>% shapiro_test(Total.Fronds, Weight)
 misty::descript(inoc1$Total.Fronds)
 misty::descript(inoc1$Weight)
 ```
-After visually checking QQ plot and histogram, the distribution for the total number of fronds for our inoculation trials data appear to be normal. To confirm a Shapiro-Wilk test was performed which yielded a non-significant result, suggesting there is not enough evidence to reject the normality of the dataset. Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality.
+After visually checking QQ plot and histogram, the distribution for the total number of fronds for our inoculation trials data appear to be normal. To confirm a Shapiro-Wilk test was performed which yielded a non-significant result, suggesting there is not enough evidence to reject the normality of the dataset. Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality. Since sample size is > 20, due to the CLT and the robustness of one-way ANOVA tests, we will proceed with running an ANOVA and accept the risk of increasing type I error rate.
 
-#### Run non-parametric inference for multivariate data
+#### Run ANOVA on inoculation trial 1 dry root weight data
 
 ```{r}
-set.seed(123)
-inoc1.npmv <- nonpartest(inoc1$Total.Fronds | inoc1$Weight ~ Treatment, data = inoc1, permtest = TRUE, plots = F, tests = c(1, 1, 1, 1), releffects = TRUE)
-inoc1.npmv
-```
-No statistically significant difference in distributions between treatment groups for the total number of fronds and dry root weight for the first inoculation trial.
+anova.inoc1 <- oneway.test(`Weight` ~ Treatment, data = inoc1, var.equal = TRUE)
+anova.inoc1
 
-#### Combined control data
+inoc1.aov <- aov(Weight~Treatment, data = inoc1)
+summary(inoc1.aov)
+```
+No statistically significant difference in distributions between treatment groups for the total number of fronds and dry root weight for the first inoculation trial (F(9, 60) = 1.1877, p = 0.3235). The true difference in means between treatment groups is likely 0.
+
+#### Try combined control data to determine if difference
 
 ```{r}
 inoc1.ctrl <- inoc1 %>% 
@@ -447,11 +476,29 @@ inoc1.ctrl <- inoc1 %>%
 
 leveneTest(Weight ~ as.factor(Treatment), data = inoc1.ctrl, na.rm = TRUE)
 
-set.seed(123)
-inoc1.ctrl.npmv <- nonpartest(inoc1.ctrl$Total.Fronds | inoc1.ctrl$Weight ~ Treatment, data = inoc1.ctrl, plots = F, tests = c(1,1,1,1), releffects = TRUE)
-inoc1.ctrl.npmv
+anova.inoc1.ctrl <- oneway.test(`Weight` ~ Treatment, data = inoc1.ctrl, var.equal = TRUE)
+anova.inoc1.ctrl
 ```
-No significant difference
+No statistically significant difference in distributions between treatment groups for the total number of fronds and dry root weight for the first inoculation trial (F(8, 60) = 1.3492, p = 0.2414). The true difference in means between treatment groups is likely 0.
+
+### Inoculation trial 1 Chi-Squared test on total number of fronds
+try another statistical test
+
+```{r}
+freq.inoc1 <- table(inoc1$Treatment, inoc1$Total.Fronds)
+freq.inoc1 <- inoc1 %>% group_by(Treatment, Total.Fronds) %>% summarise(Frequency = n(), .groups = 'drop')
+
+inoc1.chisq <- inoc1
+inoc1.chisq$Total.Fronds <- cut(inoc1.chisq$Total.Fronds, 
+                                       breaks = c(-1, 30, 40, 50, 60, Inf), 
+                                       labels = c("< 30", "31-40", "41-50","51-60","> 60"))
+
+chisq.inoc1 <- chisq.test(table(inoc1.chisq$Treatment, inoc1.chisq$Total.Fronds))
+chisq.inoc1
+
+chisq.inoc1$expected
+```
+
 
 ### Inoculation Trail 2 Data
 
@@ -474,8 +521,8 @@ After visually checking QQ plot and histogram, the distribution for the total nu
 #### Conduct ANOVA on Trial 2 Data
 
 ```{r}
-anova.inoc2 <- oneway.test(`Total.Fronds` ~ Treatment, data = inoc2 ,var.equal = TRUE)
-anova.inoc2
+
+
 ```
 P-value 0.2619 > p-crit 0.05, no significant difference in average number of total fronds between treatment groups. The true difference in mean total number of fronds between wild and sterilized plants is 0.
 
@@ -488,8 +535,6 @@ inoc2.ctrl <- inoc2 %>%
     str_detect(`Treatment`, "Blank") ~ "Control"
   ))
 
-anova.inoc2ctrl <- oneway.test(`Total.Fronds` ~ Treatment, data = inoc2.ctrl ,var.equal = TRUE)
-anova.inoc2ctrl
 ```
 No significant difference 
 
@@ -512,18 +557,11 @@ inoc.data %>% shapiro_test(Total.Fronds)
 ```
 After visually checking QQ plot and histogram, the distribution for the total number of fronds for our inoculation trials data appear to be non-normal. To confirm a Shapiro-Wilk test was performed which yielded a significant result, suggesting the data is not normal. 
 
-#### Run non-parametric Kruskal-Wallis test
+#### Run 
 
 ```{r}
-kruskal.test(Total.Fronds ~ Treatment, data = inoc.data)
 
-dunnTest(Total.Fronds ~ Treatment,
-         data = inoc.data,
-         method = "holm")
 ```
-
-Reject the null hypothesis and we conclude that at least one group is different in terms of number of total fronds (p-value = 0.001677). To determine which groups significantly differ a Dunn's pairwise comparison post-hoc test using the Holm method was conducted. The groups that have significantly different number of fronds according to this test are the no agar no rice group compared to the globosporangium intermedium group, globosporangium intermedium group compared to the phytophthora europaea group, globosporangium intermedium compared to the phytophthora obscura group, and globosporangium intermedium compared to the phytophthora occultans group.
-
 
 
 #### Combine controls for inoculation trials
@@ -537,15 +575,11 @@ inoc.control <- inoc.data %>%
 
 leveneTest(Total.Fronds ~ as.factor(Treatment), data = inoc.control, na.rm = TRUE)
 
-kruskal.test(Total.Fronds ~ Treatment, data = inoc.control)
 
-dunnTest(Total.Fronds ~ Treatment,
-         data = inoc.control,
-         method = "holm")
 ```
 Not enough evidence to reject equality of variances.
 
-p-value = 0.001032. Globosporangium Intermedium - Phytophthora Europaea, Control - Globosporangium Intermedium, Globosporangium Intermedium - Phytophthora Obscura, Globosporangium Intermedium - Phytophthora Occultans. Not different than without combining control groups
+
 
 ```{r}
 greenhouse.data$cryptogea <- "No"
