@@ -21,10 +21,10 @@ library(DESeq2)
 devtools::install_github("gmteunisse/fantaxtic")
 library(fantaxtic)
 library(edgeR)
+library(stringr)
+library(ggpubr)
 
 
-track <- readRDS("track.rds")
-mergers <- readRDS("mergers.rds")
 seqtab.nochim <- readRDS("seqtab_nochim.rds")
 taxonomy.test <- read.csv("taxonomy_test.csv")
 
@@ -64,30 +64,16 @@ tax <- t(seqtab.nochim) %>%
 
 dna <- DNAStringSet(getSequences(seqtab.nochim))
 
-#load("C:/Users/zarina.gallardo/OneDrive - Washington State University (email.wsu.edu)/Documents/Swordfern Illumina eDNA Data/Fungal_LSU_v11.RData")
-#ids <- IdTaxa(dna, trainingSet, strand = "both", processors = NULL, verbose = TRUE)
-#ids
-#ranks <- c("domain", "phylum", "class", "order", "family", "genus", "species")
-#taxid <- t(sapply(ids, function(x) {
-#  m <- match(ranks, x$rank)
-#  taxa <- x$taxon[m]
-#  taxa[startsWith(taxa, "unclassified_")] <- NA
-#  taxa
-#}))
-
 samples.out <- rownames(seqtab.nochim)
 location <- sapply(strsplit(samples.out, "-"), `[`, 1)
 health <- sapply(strsplit(samples.out, "-"), `[`, 2)
-health
 fhl.num <- sapply(strsplit(samples.out, "[[:digit:]]-"), `[`, 2)
-fhl.num
 fhl.num <- sapply(strsplit(fhl.num, "_R1.fastq.gz"), `[`, 1)
-fhl.num
 
 
 sample.info <- data.frame(Location = location, Health = health, FHL = fhl.num)
 rownames(sample.info) <- samples.out
-sample.info <- sample.info %>% filter(str_detect(Health, "Dying|Dead|Healthy"))
+sample.info <- sample.info %>% filter(stringr::str_detect(Health, "Dying|Dead|Healthy"))
 
 
 samples.2health <- sample.info %>% 
@@ -107,7 +93,6 @@ dna <- Biostrings::DNAStringSet(taxa_names(ps))
 names(dna) <- taxa_names(ps)
 ps <- merge_phyloseq(ps, dna)
 taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
-ps
 theme_set(theme_bw())
 
 otu.table <- as.data.frame(otu_table(ps))
@@ -135,7 +120,7 @@ topbyhealth <- tax.table.count %>%
   group_by(Health) %>%
   summarize(Taxa = list(unique(Genus)))
 
-topbyhealt.species <- tax.table.count %>%
+topbyhealth.species <- tax.table.count %>%
   filter(Abundance > 0) %>%
   group_by(Health) %>%
   summarize(Taxa = list(unique(Species)))
@@ -166,6 +151,7 @@ ordplot <- plot_ordination(expt, ord, "samples", color = "Health", shape = "Heal
 ordplot + stat_ellipse(geom = "polygon", type = "norm", linetype = 2, alpha = 0.2, aes(fill=Health)) +
   stat_ellipse(type = "t", level = 0.95) + theme_bw()
 
+#explore this but species lvl
 ps.2sub <- subset_samples(ps.2health, !is.na(Health))
 expt2 <- prune_taxa(names(sort(taxa_sums(ps.2sub), TRUE)[1:50]), ps.2sub)
 ord2 <- ordinate(expt2, formula = ~Health, "NMDS", "bray")
@@ -173,14 +159,25 @@ ordplot2 <- plot_ordination(expt2, ord2, "samples", color = "Health", shape = "H
 ordplot2 + stat_ellipse(geom = "polygon", type = "norm", linetype = 2, alpha = 0.2, aes(fill = Health)) +
   stat_ellipse(type = "t", level = 0.95) +theme_bw()
 
+#NMDS at species level
+ps.species <- tax_glom(ps.2health, taxrank = "Species")
+ps.speciesrel <- transform_sample_counts(ps.species, function(otu) otu/sum(otu))
+species.ord <- ordinate(ps.speciesrel, method = "NMDS", distance = "bray")
+speciesordplot <- plot_ordination(ps.speciesrel, species.ord, "samples", color = "Health", shape = "Health")
+speciesordplot + stat_ellipse(geom = "polygon", type = "norm", linetype = 2, alpha = 0.2, aes(fill = Health)) + theme_bw() + stat_ellipse(type = "t", level = 0.95)
+
+
+#top 20
 ps.2top20 <- subset_taxa(ps.2health, !is.na(Species) & !is.na(Phylum) & !is.na(Genus) & !is.na(Class) & !is.na(Family) & !is.na(Order) & !is.na(Kingdom))
 ps.2top20 <- subset_taxa(ps.2top20, !Genus %in% c("gen_incertae_sedis"))
-top20.2 <- names(sort(taxa_sums(ps.2top20), decreasing = TRUE)) [1:20]
+top20.2 <- names(sort(taxa_sums(ps.2top20), decreasing = TRUE)) [1:40]
+top20.2
+?taxa_sums
 ps.2top20 <- transform_sample_counts(ps.2top20, function(otu) otu/sum(otu))
+?transform_sample_counts()
 ps.2top20 <- prune_taxa(top20.2, ps.2top20)
-sample_variables(ps.2top20)
-plot_bar(ps.2top20, x = "Species", fill = "Species") + facet_wrap(~Health, scales = "free_x") + coord_flip() + theme_bw() + guides(fill = "none")
-otu_table(ps.2top20)
+plot_bar(ps.2top20, x = "Genus", fill = "Species") + facet_wrap(~Health, scales = "free_x") + coord_flip() + theme_bw()
+
 
 top20 <- names(sort(taxa_sums(ps), decreasing = TRUE)) [1:20]
 ps.top20 <- transform_sample_counts(ps, function(otu) otu/sum(otu))
@@ -191,8 +188,8 @@ plot_bar(ps.top20, x = "Health", fill = "Phylum") + facet_wrap(~Health, scales =
 
 ps.healthy <- subset_samples(ps, Health == "Healthy")
 ps.unhealthy <- subset_samples(ps, Health %in% c("Dead", "Dying"))
-taxa.healthy <- taxa_names(prune_taxa(taxa_sums(taxa.healthy) > 0, taxa.healthy))
-taxa.unhealthy <- taxa_names(prune_taxa(taxa_sums(taxa.unhealthy) > 0, taxa.unhealthy))
+taxa.healthy <- taxa_names(prune_taxa(taxa_sums(ps.healthy) > 0, ps.healthy))
+taxa.unhealthy <- taxa_names(prune_taxa(taxa_sums(ps.unhealthy) > 0, ps.unhealthy))
 
 unique.healthy <- setdiff(taxa.healthy, taxa.unhealthy)
 unique.unhealthy <- setdiff(taxa.unhealthy, taxa.healthy)
@@ -211,39 +208,32 @@ unique.unhealthy.table <- as.data.frame(unique.unhealthy.table)
 otu.healthy <- as.data.frame(otu_table(ps.healthy))
 otu.unhealthy <- as.data.frame(otu_table(ps.unhealthy))
 
-unique.unhealthy.table["ASV18",]
-
-
-
-seqtab.nochim[,"CTTGGTCATTTAGGAGGAAGGTGAAGTCGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCATTACCACACCTAAAAAACTTTCCACGTGAACCGTATCAACCTTTTTAAATTGGGGGCTCCCGTCTGGCCGGCCGGTTCTCGGCTGGCTGGGTGGCGGCTCTATCATGGCGACCGCTTGGGCCTCGGCCTGGGCTAGTAGCGTATTTTTTAAACCCATTCCTAATTACTGAATATACTGTGGGGACGAAAGTCTCTGCTTTTAACTAGATAGCAACTTTCAGCAGTGGATGTCTAGGCTC"]
-seqtab.nochim[,"GTCGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCATTACCACACCTAAAAACTTTCCACGTGAACTGTCGTTATTTGTTGTGCGCTCTCTGCGGTGTCGGTGGCGTCTGCTGGCTTTGTTGCTGGCGGGTGCGAGCCGGATGCGGAGGCTGAACGAAGGTCGAGTTGCTTTGCTCTCGGCTGACTTATTTTTCAAACCCAATACCAAACTTACTGATTATACTGTGAGAACGAAAGTTCTTGCTTTTAACTAGATAACAACTTTCAGCAGTGGATGTCTAGGCTC"]
 
 #Phytophthora custom BLAST
 blastoutre <- read.csv("blastoutre.csv")
 blastoutre <- blastoutre %>% mutate(qseqid = if_else(
-  str_detect(qseqid, ";size"),
-  str_replace(qseqid, ";size", ",size"),
+  stringr::str_detect(qseqid, ";size"),
+  stringr::str_replace(qseqid, ";size", ",size"),
   qseqid))
 
 blastoutsplit <- blastoutre %>%
   separate_wider_delim(qseqid, ";", names = c("qseqid", "sseqid", "pident", "length", "mismatch", "gapopen", "qstart", "qend", "sstart", "send", "evalue", "bitscore"), too_few = "align_start")
 
-##DESeq2
+##DESeq2 - differential abundance
 health2.noNA <- subset_taxa(ps.2health, !is.na(Species) & !is.na(Phylum) & !is.na(Genus) & !is.na(Class) & !is.na(Family) & !is.na(Order) & !is.na(Kingdom))
-health2.noNA <- subset_taxa(ps.2top20, !Genus %in% c("gen_incertae_sedis"))
-diagdds <- phyloseq_to_deseq2(ps.2health, ~Health)
+health2.noNA <- subset_taxa(health2.noNA, !Genus %in% c("gen_incertae_sedis"))
+diagdds <- phyloseq_to_deseq2(health2.noNA, ~Health)
 diagdds <- estimateSizeFactors(diagdds, type = "poscounts")
 diagdds <- DESeq(diagdds, test = "Wald", fitType = "parametric")
 
 res <- results(diagdds, cooksCutoff = FALSE)
 alpha <- 0.05
 sigtab <- res[which(res$padj < alpha),]
-sigtab <- cbind(as(sigtab, "data.frame"), as(tax_table(psno0)[rownames(sigtab),],"matrix"))
+sigtab <- cbind(as(sigtab, "data.frame"), as(tax_table(health2.noNA)[rownames(sigtab),],"matrix"))
 head(sigtab)
-
 dim(sigtab)
 
-scale_fill_discrete <- function(palname = "Set1", ...){
+colorfunc <- function(palname = "Set1", ...){
   scale_fill_brewer(palatte = palname, ...)
 }
 x <- tapply(sigtab$log2FoldChange, sigtab$Phylum, function(x) max (x))
@@ -257,13 +247,5 @@ ggplot(sigtab, aes(x = Genus, y=log2FoldChange, color = Phylum)) + geom_point(si
 
 #alpha diversity
 health2prune <- prune_species(speciesSums(ps.2health) > 0, ps.2health)
-
 theme_set(theme_bw())
-pal <- "Set1"
-scale_colour_discrete <-  function(palname=pal, ...){
-  scale_colour_brewer(palette=palname, ...)
-}
-scale_fill_discrete <-  function(palname=pal, ...){
-  scale_fill_brewer(palette=palname, ...)
-}
-plot_richness(health2prune, measures = "Shannon") + facet_wrap(~Health, scales = "free_x") 
+plot_richness(health2prune, x = "Health", measures = "Shannon") + facet_wrap(~Health, scales = "free_x")
