@@ -1,0 +1,102 @@
+---
+title: "illumina-analyses"
+output: html_document
+date: "2026-09-25"
+---
+
+#Load Packages
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(tidyverse)
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+#BiocManager::install("ShortRead")
+#BiocManager::install("dada2")
+#BiocManager::install("DECIPHER")
+#BiocManager::install("phyloseq")
+#BiocManager::install("rBLAST")
+library(tibble)
+library(Biostrings)
+library(DECIPHER)
+library(dada2)
+library(ShortRead)
+library(phyloseq)
+library(rBLAST)
+library(ggplot2)
+#devtools::install_github("gmteunisse/fantaxtic")
+library(fantaxtic)
+```
+
+After running DADA2 pipeline through Kamiak (WSU's HPC) rds and csv files were saved to be imported into RStudio for further statistical analyses. 
+
+#Import datasets 
+
+```{r}
+seqtab.nochim <- readRDS("seqtab_nochim.rds")
+taxonomy.test <- read.csv("taxonomy_test.csv")
+```
+
+## Create sample information dataframe for phyloseq object
+
+```{r, echo=FALSE}
+
+samples.out <- rownames(seqtab.nochim)
+location <- sapply(strsplit(samples.out, "-"), `[`, 1)
+health <- sapply(strsplit(samples.out, "-"), `[`, 2)
+fhl.num <- sapply(strsplit(samples.out, "[[:digit:]]-"), `[`, 2)
+fhl.num <- sapply(strsplit(fhl.num, "_R1.fastq.gz"), `[`, 1)
+
+sample.info <- data.frame(Location = location, Health = health, FHL = fhl.num)
+rownames(sample.info) <- samples.out
+sample.info <- sample.info %>% filter(str_detect(Health, "Dying|Dead|Healthy"))
+```
+
+Simplify sample info dataframe to recategorize health condition score to only contain "unhealthy" and "healthy" classifications by combining the "dying" and "dead" conditions.
+
+```{r}
+samples.2health <- sample.info %>% 
+  mutate(Health = case_when(
+    Health == "Dying" ~ "Unhealthy",
+    Health == "Dead" ~ "Unhealthy",
+    TRUE ~ "Healthy"
+))
+```
+
+## Create phyloseq object
+Create phyloseq object for 2 and 3 health classification group and add column to count how many reads each ASV got.
+
+```{r}
+ps <- phyloseq(
+  otu_table(seqtab_matched, taxa_are_rows = FALSE),
+  sample_data(sample.info),
+  tax_table(taxa_matched)
+)
+
+dna <- Biostrings::DNAStringSet(taxa_names(ps))
+names(dna) <- taxa_names(ps)
+ps <- merge_phyloseq(ps, dna)
+taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
+ps
+theme_set(theme_bw())
+
+otu.table <- as.data.frame(otu_table(ps))
+taxa_matched$Count <- colSums(otu.table)
+
+taxa_matched <- as.matrix(taxa_matched)
+
+ps.count <- phyloseq(
+  otu_table(seqtab_matched, taxa_are_rows = FALSE),
+  sample_data(sample.info),
+  tax_table(taxa_matched)
+)
+
+ps.2health <- phyloseq(
+  otu_table(seqtab_matched, taxa_are_rows = FALSE),
+  sample_data(samples.2health),
+  tax_table(taxa_matched)
+)
+```
+
