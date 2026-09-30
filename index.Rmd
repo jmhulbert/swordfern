@@ -1,8 +1,7 @@
 ---
 title: "Swordfern Mortality Analyses"
 output: html_document
-date: "`r Sys.Date()`"
----
+date: ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

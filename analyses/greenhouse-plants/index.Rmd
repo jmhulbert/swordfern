@@ -1,0 +1,536 @@
+---
+title: "Greenhouse plant analyses"
+output: 
+    html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+    toc_depth: 4
+    number_sections: true
+    fig_width: 10
+    fig_height: 6
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Load required packages
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(readr)
+library(misty)
+library(stringr)
+library(BSDA)
+library(car)
+library(ggpubr)
+library(RColorBrewer)
+library(pillar)
+library(readxl)
+library(gridExtra)
+library(rstatix)
+library(effectsize)
+library(npmv)
+```
+
+
+|            |            |            |            |            |            |
+|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
+|[Welcome](https://jmhulbert.github.io/swordfern)|[Data](https://jmhulbert.github.io/swordfern/data)|[Methods](https://jmhulbert.github.io/swordfern/methods)|[Analyses](https://jmhulbert.github.io/swordfern/analyses)|[Discussion](https://jmhulbert.github.io/swordfern/discussion)|[Maps](https://jmhulbert.github.io/swordfern/maps)
+|             |           |            |            |            |            |
+
+|            |            |            |            |
+|:----------:|:----------:|:----------:|:----------:|
+|[oomycete](https://jmhulbert.github.io/swordfern/analyses/oomycete)|[illumina](https://jmhulbert.github.io/swordfern/analyses/illumina)|[greenhouse-plants](https://jmhulbert.github.io/swordfern/plants)|[iNaturalist](https://jmhulbert.github.io/swordfern/analyses/inaturalist/)|
+|             |           |            |            |
+
+### Import dataset and clean
+
+
+## Greenhouse data
+
+```{r}
+greenhouse.data <- read.csv("https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/greenhouse/Final-Greenhouse-Data-Combined.csv")
+greenhouse.data <- rename(greenhouse.data, "Weight" = "Weight..g.")
+greenhouse.data$Total.Fronds <- greenhouse.data$Healthy.Fronds + greenhouse.data$Crispy.Fronds
+```
+
+
+## Seward Soil Trials
+
+```{r}
+seward.data <- greenhouse.data %>% filter(Experiment == "Seward Soil")
+```
+
+
+### Data Visualization
+
+Visualize data for Seward soil trials by comparing weights and number of fronds (total, healthy, and unhealthy) between treatment groups (control - potting mix, sterilized, wild).
+
+```{r}
+seward.roots.plot <- ggplot(seward.data, aes(x = Treatment, y = Weight, fill = Treatment)) + geom_violin() +geom_boxplot(width = 0.1, fill = "white") + labs(title = "Root Mass Beween Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Soil Treatment") + theme(plot.title =  element_text(hjust = 0.5))
+seward.roots.plot + scale_fill_brewer(palette = "Pastel1")
+
+seward.healthy <- ggplot(seward.data, aes(x = Treatment, y = Healthy.Fronds, fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Healthy Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
+seward.healthy + scale_fill_brewer(palette = "Pastel1")
+
+seward.crispy <- ggplot(seward.data, aes(x = Treatment, y = Crispy.Fronds , fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Crispy Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
+seward.crispy + scale_fill_brewer(palette = "Pastel1")
+
+seward.total <- ggplot(seward.data, aes(x = Treatment, y = Total.Fronds , fill = Treatment)) + geom_violin() + geom_boxplot(width = 0.1, fill = "white") + labs(title = "Number of Total Fronds between Soil Treatments (Trial 1 and 2)", y = "Mass (g)", x = "Number of Fronds") + theme(plot.title = element_text(hjust = 0.5))
+seward.total + scale_fill_brewer(palette = "Pastel1")
+```
+
+### Seward Trial 1
+
+```{r}
+seward1 <- seward.data %>% filter(Trial.x == "Seward Trial One")
+
+leveneTest(Total.Fronds ~ as.factor(Treatment), data = seward1, na.rm = TRUE)
+leveneTest(Weight ~ as.factor(Treatment), data = seward1, na.rm = TRUE)
+```
+There is not enough evidence to reject equality of vairances between treatment groups for the total number of fronds and dry root weights.
+
+#### Check for normality
+
+```{r message=FALSE, warning=FALSE}
+qqPlot(seward1$Total.Fronds)
+qqPlot(seward1$Weight)
+hist(seward1$Total.Fronds)
+hist(seward1$Weight)
+
+seward1 %>% shapiro_test(Total.Fronds, Weight)
+misty::descript(seward1$Total.Fronds)
+misty::descript(seward1$Weight)
+```
+Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality. Since sample size is > 20 for each group, due to the CLT and the robustness of one-way ANOVA tests, we will proceed with running an ANOVA and accept the risk of increasing type I error rate.
+
+#### Run ANOVA on Seward Trial 1 weight data
+
+```{r}
+anova.seward1 <- oneway.test(`Weight` ~ Treatment, data = seward1 ,var.equal = TRUE)
+anova.seward1
+seward1.aov <- aov(Weight~Treatment, data = seward1)
+summary(seward1.aov)
+
+TukeyHSD(seward1.aov, conf.level = .95)
+```
+Our one-way ANOVA to compare the effect of soil sterilization on root weight suggests that there was a statistically significant difference in root weights between the treatment groups (F(1, 84) = 6.5836, p = 0.01207. After performing a Tukey's HSD post-hoc test, the true difference in mean dry root weight between wild and sterilized soil treatment groups is between -9.087724 g and -1.151811 g at a 95% confidence interval.
+
+#### Run Chi-Squared test on Seward Trial 1 frond count data
+
+```{r}
+table(seward1$Treatment, seward1$Total.Fronds)
+chisq.seward1 <- chisq.test(table(seward1$Treatment, seward1$Total.Fronds))
+chisq.seward1
+
+freq.seward1 <- table(seward1$Treatment, seward1$Total.Fronds)
+freq.seward1 <- seward1 %>% group_by(Treatment, Total.Fronds) %>% summarise(Frequency = n(), .groups = 'drop')
+
+seward1.chi <- seward1
+seward1.chi$Total.Fronds <- cut(seward1.chi$Total.Fronds, 
+                                       breaks = c(-1, 15, 25, 35, 45, 50), 
+                                       labels = c("< 15", "15-25", "26-35", "35-35", "45-50"))
+
+chisq.seward1 <- chisq.test(table(seward1.chi$Treatment, seward1.chi$Total.Fronds))
+chisq.seward1
+
+chisq.seward1$expected
+```
+Groups were split up to create expected values > 5 for at least 80% of our groups. A Pearson's Chi-squared test suggested that there was not a statistically significant difference in the number of fronds on sword fern plants between soil treatment groups, X^2(4, N = 86) = 7.634, p = 0.1059. 
+
+### Seward Trial 2
+
+#### Subset data and check for equality of variances
+
+```{r}
+seward2 <- seward.data %>% filter(Trial.x == "Seward Trial Two")
+seward2.nopot <- seward2 %>% filter(Treatment != "Control - Potting Mix")
+
+leveneTest(Total.Fronds~as.factor(Treatment), data=seward2, na.rm = TRUE)
+leveneTest(Weight~as.factor(Treatment), data = seward2, na.rm = TRUE)
+leveneTest(Weight~as.factor(Treatment), data = seward2.nopot, na.rm = TRUE)
+leveneTest(Total.Fronds~as.factor(Treatment), data = seward2.nopot, na.rm = TRUE)
+```
+There is not enough evidence to reject equality of variances between treatment groups. 
+
+#### Check for normality
+
+```{r}
+qqPlot(seward2$Weight)
+qqPlot(seward2$Total.Fronds)
+qqPlot(seward2.nopot$Weight)
+hist(seward2$Total.Fronds)
+hist(seward2$Weight)
+hist(seward2.nopot$Weight)
+
+seward2 %>% shapiro_test(Total.Fronds, Weight)
+seward2.nopot %>% shapiro_test(Total.Fronds, Weight)
+misty::descript(seward2.nopot$Weight)
+misty::descript(seward2.nopot$Total.Fronds)
+```
+Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality. Since sample size is > 20 for each group, due to the CLT and the robustness of one-way ANOVA tests, we will proceed with running an ANOVA and accept the risk of increasing type I error rate.
+
+#### Run ANOVA on Seward Trail 2 weight data excluding potting soil control group
+
+```{r}
+anova.seward2 <- oneway.test(`Weight` ~ Treatment, data = seward2.nopot, var.equal = TRUE)
+anova.seward2
+```
+
+Our one-way ANOVA suggests that there is not a statistically significant difference in dry root weights between soil treatment groups (F(1, 86) = 0.61133, p = 0.4364). The true difference in means between dry root weights between treatment groups is likely equal to 0.
+
+#### Run Chi-Squared test on Seward Trial 1 frond count data
+
+```{r}
+misty::descript(seward2.nopot$Total.Fronds)
+
+chisq.seward2 <- chisq.test(table(seward2.nopot$Treatment, seward2.nopot$Total.Fronds))
+chisq.seward2
+
+freq.seward2 <- table(seward2.nopot$Treatment, seward2.nopot$Total.Fronds)
+freq.seward2 <- seward2.nopot %>% group_by(Treatment, Total.Fronds) %>% summarise(Frequency = n(), .groups = 'drop')
+
+seward2.chi <- seward2.nopot
+seward2.chi$Total.Fronds <- cut(seward2.chi$Total.Fronds, 
+                                       breaks = c(-1, 25, 30, 35, 40, 45, 50, Inf), 
+                                       labels = c("< 25", "26-30", "31-35", "36-40", "41-45", "46-50", "> 50"))
+
+chisq.seward2 <- chisq.test(table(seward2.chi$Treatment, seward2.chi$Total.Fronds))
+chisq.seward2
+
+chisq.seward2$expected
+
+2/7
+```
+A Pearson's Chi-squared test suggested that there was not a statistically significant difference in the number of fronds on sword fern plants between soil treatment groups, X^2(6, N = 88) =  8.6318, p = 0.1954.
+
+
+### Seward Combined Trials (1 and 2)
+
+#### Check equality of variances (all treatment groups)
+
+```{r}
+leveneTest(Healthy.Fronds~as.factor(Treatment), data=seward.data, na.rm = TRUE)
+```
+There is enough evidence to reject equality of variances between treatment groups since our p-critical value of 0.03578 was greater than our p-value of 0.05. This is likely due to the potting mix group being much smaller than the sterilized and wild soil groups. Due to this discrepancy, we will explore the data comparing only the sterilized and wild groups. 
+
+#### Check equality of variances (Wild and Sterilized groups only)
+
+```{r}
+seward.nopot <- seward.data %>% filter(Treatment != "Control - Potting Mix")
+leveneTest(Healthy.Fronds~as.factor(Treatment), data=seward.nopot, na.rm = TRUE)
+leveneTest(Crispy.Fronds~as.factor(Treatment), data=seward.nopot, na.rm = TRUE)
+```
+There is not enough evidence to reject equality of variances between the number of healthy and crispy fronds between treatment groups.
+
+#### Check normality
+
+```{r}
+qqPlot(seward.nopot$Total.Fronds)
+qqPlot(seward.nopot$Weight)
+hist(seward.nopot$Weight)
+hist(seward.nopot$Total.Fronds)
+
+misty::descript(seward.nopot)
+seward.nopot %>% shapiro_test(Total.Fronds, Weight)
+```
+qqPlot and histogram for the number of total fronds are visually normally distributed. Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality. Since sample size is > 20 for each group, due to the CLT and the robustness of one-way ANOVA tests, we will proceed with running an ANOVA and accept the risk of increasing type I error rate.
+
+#### Run ANOVA on Seward root weight
+
+```{r warning=FALSE}
+anova.seward <- oneway.test(`Weight` ~ Treatment, data = seward.nopot, var.equal = TRUE)
+anova.seward
+
+seward.aov <- aov(Weight~Treatment, data = seward.nopot)
+summary(seward.aov)
+
+TukeyHSD(seward.aov, conf.level = .95)
+```
+Our one-way ANOVA to compare the effect of soil sterilization on root weight suggests that there was a statistically significant difference in root weights between the treatment groups (F(1, 172) = 6.1499, p = 0.0141. After performing a Tukey's HSD post-hoc test, the true difference in mean dry root weight between wild and sterilized soil treatment groups is between -5.668766 g and -0.6441075 g at a 95% confidence interval.
+
+# Run Chi-Squared test on total number of fronds between treatment groups
+
+```{r}
+freq.seward <- table(seward.nopot$Treatment, seward.nopot$Total.Fronds)
+freq.seward <- seward.nopot %>% group_by(Treatment, Total.Fronds) %>% summarise(Frequency = n(), .groups = 'drop')
+
+seward.nopot.merge <- seward.nopot
+seward.nopot.merge$Total.Fronds <- cut(seward.nopot$Total.Fronds, 
+                                       breaks = c(-1, 10, 15, 20, 25, 30, 35, 40, 45, 50, Inf), 
+                                       labels = c("< 10", "10-15", "16-20", "21-25", "26-30", "31-35", "36-40",
+                                                  "41-45", "46-50", "> 50"))
+
+freq.seward.merge <- freq.seward %>%
+  group_by(Treatment, Total.Fronds) %>%
+  summarise(across(c(Frequency), sum))
+
+chisq.seward <- chisq.test(table(seward.nopot.merge$Treatment, seward.nopot.merge$Total.Fronds))
+chisq.seward
+
+chisq.seward$expected
+1/10
+
+ncol(freq.seward)
+54
+sum(col(freq.seward))
+
+```
+A Pearson's Chi-squared test suggested that there was not a statistically significant difference in the number of fronds on sword fern plants between soil treatment groups, X^2(9, N = 174) =  13.468, p = 0.1426.
+
+## Inoculation Trials
+
+### Inoculation Data Cleaning and Filtering
+
+```{r}
+greenhouse.data <- greenhouse.data %>% 
+  mutate(Experiment = case_when(
+    str_detect(`Trial.x`, "Inoculation") ~ "Inoculation",
+    str_detect(`Trial.x`, "Seward") ~ "Seward Soil",
+    TRUE ~ NA
+  ))
+
+greenhouse.data <- greenhouse.data %>% 
+  mutate(Treatment = case_when(
+    str_detect(`Fern.Number`, "W[[:digit:]]") ~ "Wild",
+    str_detect(`Fern.Number`, "NONE") ~ "No Agar No Rice",
+    str_detect(`Fern.Number`, "BLA") ~ "Blank",
+    str_detect(`Fern.Number`, "OCC") ~ "Phytophthora Occultans",
+    str_detect(`Fern.Number`, "OBS") ~ "Phytophthora Obscura",
+    str_detect(`Fern.Number`, "SYR") ~ "Phytophthora Syringae",
+    str_detect(`Fern.Number`, "CAM") ~ "Phytophthora Cambivora",
+    str_detect(`Fern.Number`, "CAC") ~ "Phytophthora Cactorum",
+    str_detect(`Fern.Number`, "EUR") ~ "Phytophthora Europaea",
+    str_detect(`Fern.Number`, "PLU") ~ "Phytophthora Plurivora",
+    str_detect(`Fern.Number`, "CAM") ~ "Phytophthora Cambivora",
+    str_detect(`Fern.Number`, "FLE") ~ "Phytophthora Flexuosa",
+    str_detect(`Fern.Number`, "FLE") ~ "Phytophthora Flexuosa",
+    str_detect(`Fern.Number`, "GIN") ~ "Globosporangium Intermedium",
+    str_detect(`Fern.Number`, "C[[:digit:]]") ~ "Sterilized",
+    str_detect(`Fern.Number`, "P[[:digit:]]") ~ "Control - Potting Mix",
+    TRUE ~ NA
+  ))
+
+greenhouse.data <- subset(greenhouse.data, select = -c(Trial.y))
+greenhouse.data <- greenhouse.data %>%
+  mutate(Weight = replace_when(Weight,
+    Fern.Number == "EURA062" ~ 5.3,
+    Fern.Number == "EURA063" ~ 9.9,
+    Fern.Number == "EURA064" ~ 2.72,
+    Fern.Number == "SYRB013" ~ 4.15,
+    Fern.Number == "SYRB014" ~ 5.39,
+    Fern.Number == "SYRB015" ~ 4.56,
+    Fern.Number == "SYRB016" ~ 5.75,
+    Fern.Number == "SYRB017" ~ 14.75,
+    Fern.Number == "SYRB018" ~ 8.76
+      )
+  )
+
+inoc.data <- greenhouse.data %>% filter(Experiment == "Inoculation")
+inoc1 <- inoc.data %>% filter(Trial.x == "Inoculation Trial One")
+```
+
+### Visualize Data
+
+```{r}
+total.inoc <- ggplot(inoc.data, aes(x = Treatment, y = Total.Fronds, fill = Treatment)) + geom_violin() + geom_boxplot(width=0.1, fill = "white") +
+  labs(title = "Greenhouse Inoculation Trials Total Fronds", y = "Number of Fronds", x= "Inoculation Species") + 
+  theme(plot.title = element_text(hjust = 0.5), legend.position = "bottom", axis.text.x = element_text(face = "italic"), legend.text = element_text(face = "italic"))
+total.inoc + scale_fill_brewer(palette = "Set3") + scale_x_discrete(labels = c("Blank" = "Blank","Globosporangium Intermedium" = "G.intermedium", "No Agar No Rice" = "None", "Phytophthora Cactorum" = "P.cactorum", "Phytophthora Cambivora" = "P.cambivora", "Phytophthora Europaea" = "P.europaea", "Phytophthora Flexuosa" = "P.flexuosa", "Phytophthora Obscura" = "P.obscura", "Phytophthora Occultans" = "P.occultans", "Phytophthora Plurivora" = "P.plurivora","Phytophthora Syringae" = "P.syringae"))
+```
+
+```{r}
+weight.inoc1 <- ggplot(inoc1, aes(x = Treatment, y = Weight, fill = Treatment)) + geom_violin(scale = "width") + geom_boxplot(width=0.1, fill = "white") +
+  labs(title = "Greenhouse Inoculation Trial 1 Dry Root Weight", y = "Dry Root Weight (g)", x= "Inoculation Group") + theme(plot.title = element_text(hjust = 0.5), legend.position = "bottom",  axis.text.x = element_text(face = "italic"), legend.text = element_text(face = "italic"))
+weight.inoc1 + scale_fill_brewer(palette = "Set3") + scale_x_discrete(labels = c("Blank" = "Blank","Globosporangium Intermedium" = "G.intermedium", "No Agar No Rice" = "None", "Phytophthora Cactorum" = "P.cactorum", "Phytophthora Cambivora" = "P.cambivora", "Phytophthora Europaea" = "P.europaea", "Phytophthora Flexuosa" = "P.flexuosa", "Phytophthora Occultans" = "P.occultans", "Phytophthora Plurivora" = "P.plurivora","Phytophthora Syringae" = "P.syringae"))
+```
+
+### Inoculation Trial 1
+
+#### Check data for equality of variances
+
+```{r}
+leveneTest(Total.Fronds ~ as.factor(Treatment), data = inoc1, na.rm =  TRUE)
+leveneTest(Weight ~ as.factor(Treatment), data = inoc1, na.rm = TRUE)
+```
+Not enough evidence to reject equality of variances between treatments based on the total number of fronds or dry root weight.
+
+#### Check normality
+
+```{r}
+qqPlot(inoc1$Total.Fronds)
+hist(inoc1$Total.Fronds)
+qqPlot(inoc1$Weight)
+hist(inoc1$Weight)
+
+inoc1 %>% shapiro_test(Total.Fronds, Weight)
+
+misty::descript(inoc1$Total.Fronds)
+misty::descript(inoc1$Weight)
+```
+After visually checking QQ plot and histogram, the distribution for the total number of fronds for our inoculation trials data appear to be normal. To confirm a Shapiro-Wilk test was performed which yielded a non-significant result, suggesting there is not enough evidence to reject the normality of the dataset. Dry swordfern root weight data not normally distributed according to visual inspection using qqPlot and histogram and the Shapiro-Wilk test for normality. Since sample size is > 20, due to the CLT and the robustness of one-way ANOVA tests, we will proceed with running an ANOVA and accept the risk of increasing type I error rate.
+
+#### Run ANOVA on inoculation trial 1 dry root weight data
+
+```{r}
+anova.inoc1 <- oneway.test(`Weight` ~ Treatment, data = inoc1, var.equal = TRUE)
+anova.inoc1
+
+inoc1.aov <- aov(Weight~Treatment, data = inoc1)
+summary(inoc1.aov)
+```
+No statistically significant difference in distributions between treatment groups for the total number of fronds and dry root weight for the first inoculation trial (F(9, 60) = 1.1877, p = 0.3235). The true difference in means between treatment groups is likely 0.
+
+#### Try combined control data to determine if difference
+
+```{r}
+inoc1.ctrl <- inoc1 %>% 
+  mutate(Treatment = replace_when(Treatment,
+    str_detect(`Treatment`, "No Agar No Rice") ~ "Control",
+    str_detect(`Treatment`, "Blank") ~ "Control"
+  ))
+
+
+leveneTest(Weight ~ as.factor(Treatment), data = inoc1.ctrl, na.rm = TRUE)
+
+anova.inoc1.ctrl <- oneway.test(`Weight` ~ Treatment, data = inoc1.ctrl, var.equal = TRUE)
+anova.inoc1.ctrl
+```
+No statistically significant difference in distributions between treatment groups for the total number of fronds and dry root weight for the first inoculation trial (F(8, 60) = 1.3492, p = 0.2414). The true difference in means between treatment groups is likely 0.
+
+### Inoculation trial 1 Chi-Squared test on total number of fronds
+try another statistical test
+
+```{r}
+freq.inoc1 <- table(inoc1$Treatment, inoc1$Total.Fronds)
+freq.inoc1 <- inoc1 %>% group_by(Treatment, Total.Fronds) %>% summarise(Frequency = n(), .groups = 'drop')
+
+inoc1.chisq <- inoc1
+inoc1.chisq$Total.Fronds <- cut(inoc1.chisq$Total.Fronds, 
+                                       breaks = c(-1, 30, 40, 50, 60, Inf), 
+                                       labels = c("< 30", "31-40", "41-50","51-60","> 60"))
+
+chisq.inoc1 <- chisq.test(table(inoc1.chisq$Treatment, inoc1.chisq$Total.Fronds))
+chisq.inoc1
+
+chisq.inoc1$expected
+```
+
+
+### Inoculation Trail 2 Data
+
+```{r}
+inoc2 <- inoc.data %>% filter(Trial.x == "Inoculation Trial Two")
+leveneTest(Total.Fronds ~ as.factor(Treatment), data = inoc2, na.rm =  TRUE)
+```
+Not enough evidence to reject equality of variances between treatments based on the total number of fronds.
+
+#### Check normality
+
+```{r}
+qqPlot(inoc2$Total.Fronds)
+hist(inoc2$Total.Fronds)
+
+inoc2 %>% shapiro_test(Total.Fronds)
+```
+After visually checking QQ plot and histogram, the distribution for the total number of fronds for our inoculation trials data appear to be normal. To confirm a Shapiro-Wilk test was performed which yielded a non-significant result, suggesting the data is normal.
+
+#### Conduct ANOVA on Trial 2 Data
+
+```{r}
+
+
+```
+P-value 0.2619 > p-crit 0.05, no significant difference in average number of total fronds between treatment groups. The true difference in mean total number of fronds between wild and sterilized plants is 0.
+
+#### Combined control data
+
+```{r}
+inoc2.ctrl <- inoc2 %>% 
+  mutate(Treatment = replace_when(Treatment,
+    str_detect(`Treatment`, "No Agar No Rice") ~ "Control",
+    str_detect(`Treatment`, "Blank") ~ "Control"
+  ))
+
+```
+No significant difference 
+
+### Combined Trial Data
+
+#### Check data for equality of variances
+
+```{r}
+leveneTest(Total.Fronds ~ as.factor(Treatment), data = inoc.data, na.rm =  TRUE)
+```
+Not enough evidence to reject equality of variances between treatments based on the total number of fronds.
+
+#### Check normality
+
+```{r}
+qqPlot(inoc.data$Total.Fronds)
+hist(inoc.data$Total.Fronds)
+
+inoc.data %>% shapiro_test(Total.Fronds)
+```
+After visually checking QQ plot and histogram, the distribution for the total number of fronds for our inoculation trials data appear to be non-normal. To confirm a Shapiro-Wilk test was performed which yielded a significant result, suggesting the data is not normal. 
+
+#### Run 
+
+```{r}
+
+```
+
+
+#### Combine controls for inoculation trials
+
+```{r}
+inoc.control <- inoc.data %>% 
+  mutate(Treatment = replace_when(Treatment,
+    str_detect(`Treatment`, "No Agar No Rice") ~ "Control",
+    str_detect(`Treatment`, "Blank") ~ "Control"
+  ))
+
+leveneTest(Total.Fronds ~ as.factor(Treatment), data = inoc.control, na.rm = TRUE)
+
+
+```
+Not enough evidence to reject equality of variances.
+
+
+
+```{r}
+greenhouse.data$cryptogea <- "No"
+  
+greenhouse.data <- greenhouse.data %>% 
+  mutate(cryptogea = replace_when(cryptogea,
+    str_detect(`Fern.Number`, "BLAB6") ~ "Yes",
+    str_detect(`Fern.Number`, "OCCB2") ~ "Yes",
+    str_detect(`Fern.Number`, "EURA5") ~ "Yes",
+    str_detect(`Fern.Number`, "SYRA1") ~ "Yes",
+    str_detect(`Fern.Number`, "EURB6") ~ "Yes",
+    str_detect(`Fern.Number`, "PLUB1") ~ "Yes",
+    str_detect(`Fern.Number`, "PLUA4") ~ "Yes",
+    str_detect(`Fern.Number`, "EURB5") ~ "Yes",
+    str_detect(`Fern.Number`, "W70") ~ "Yes",
+    str_detect(`Fern.Number`, "W72") ~ "Yes",
+    str_detect(`Fern.Number`, "C72") ~ "Yes",
+    str_detect(`Fern.Number`, "C51") ~ "Yes",
+    str_detect(`Fern.Number`, "W61") ~ "Yes",
+    str_detect(`Fern.Number`, "GINA130") ~ "Yes",
+  ))
+
+qqPlot(greenhouse.data$Total.Fronds)
+hist(greenhouse.data$Total.Fronds)
+
+greenhouse.data %>% shapiro_test(Total.Fronds)
+```
+Enough evidence to reject normality from visual inspection of QQ plot and histogram as well as a significant result from the Shapiro-Wilk test.
+
+```{r}
+wilcox.test(Total.Fronds ~ cryptogea, data=greenhouse.data)
+```
+At .05 significance level, within all greenhouse samples, we conclude that the distribution of total number of fronds in samples infected with Phytophthora cryptogea compared to samples not infected with Phytophthora cryptogea are nonidentical populations.

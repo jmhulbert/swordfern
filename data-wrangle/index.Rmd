@@ -13,44 +13,54 @@ library(tidyverse)
 ```
 
 
+|            |            |            |            |            |            |
+|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
+|[Welcome](https://jmhulbert.github.io/swordfern)|[Data](https://jmhulbert.github.io/swordfern/data)|[Methods](https://jmhulbert.github.io/swordfern/methods)|[Analyses](https://jmhulbert.github.io/swordfern/analyses)|[Discussion](https://jmhulbert.github.io/swordfern/discussion)|[Maps](https://jmhulbert.github.io/swordfern/maps)
+|             |           |            |            |            |            |
+
+|            |            |            |            |
+|:----------:|:----------:|:----------:|:----------:|
+|[oomycete](https://jmhulbert.github.io/swordfern/analyses/oomycete)|[illumina](https://jmhulbert.github.io/swordfern/analyses/illumina)|[greenhouse-plants](https://jmhulbert.github.io/swordfern/plants)|[iNaturalist](https://jmhulbert.github.io/swordfern/analyses/inaturalist/)|
+|             |           |            |            |
+
 
 ## Data Wrangle
 
 ```{r}
 setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern")
-sites <- read.csv("./data/field/sword.fern.field.sample.data.csv")
-isolates <- read.csv("./data/lab/sword.fern.isolates.csv")
-extractions <- read.csv("./data/lab/sword.fern.isolate.extractions.august.csv")
+#sites <- read.csv("./data/field/sword.fern.field.sample.data.csv")
+#isolates <- read.csv("./data/lab/sword.fern.isolates.csv")
+#extractions <- read.csv("./data/lab/sword.fern.isolate.extractions.august.csv")
 #greenhouse.weights <- read.csv("./data/greenhouse/Final.Root.Weights.csv")
 #greenhouse.fronds <- read.csv("./data/greenhouse/Final.Frond.Counts.csv")
 #write.csv(greenhouse,"Final-Greenhouse-Data-Combined.csv",row.names=FALSE)
 #greenhouse <- left_join(greenhouse.fronds,greenhouse.weights,by="Fern.Number")
-greenhouse <- read.csv("./data/greenhouse/Final-Greenhouse-Data-Combined.csv")
+#greenhouse <- read.csv("./data/greenhouse/Final-Greenhouse-Data-Combined.csv")
 ```
 
 
 
 ```{r}
-extractions <- extractions[1:15]
+#extractions <- extractions[1:15]
 ```
 
 
 ```{r}
-extractions <- extractions %>% filter(Sample.Extraction.Number!="FHL0167")
+#extractions <- extractions %>% filter(Sample.Extraction.Number!="FHL0167")
 ```
 
 
 ```{r}
-results <- left_join(isolates,extractions,join_by("Isolate.ID"=="Isolate.Name"))
+#results <- left_join(isolates,extractions,join_by("Isolate.ID"=="Isolate.Name"))
 ```
 
 ```{r}
-results <- results %>% mutate(Isolate.ID2=Isolate.ID) %>% separate(Isolate.ID2, into=c("Sample", "Isolate Number"), sep="-")
+#results <- results %>% mutate(Isolate.ID2=Isolate.ID) %>% separate(Isolate.ID2, into=c("Sample", "Isolate Number"), sep="-")
 ```
 
 
 ```{r}
-results <- left_join(results,sites,join_by("Sample"=="Sample.ID"))
+#results <- left_join(results,sites,join_by("Sample"=="Sample.ID"))
 ```
 
 

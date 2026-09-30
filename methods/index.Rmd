@@ -9,6 +9,16 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+|            |            |            |            |            |            |
+|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
+|[Welcome](https://jmhulbert.github.io/swordfern)|[Data](https://jmhulbert.github.io/swordfern/data)|[Methods](https://jmhulbert.github.io/swordfern/methods)|[Analyses](https://jmhulbert.github.io/swordfern/analyses)|[Discussion](https://jmhulbert.github.io/swordfern/discussion)|[Maps](https://jmhulbert.github.io/swordfern/maps)
+|             |           |            |            |            |            |
+
+|            |            |            |            |
+|:----------:|:----------:|:----------:|:----------:|
+|[oomycete](https://jmhulbert.github.io/swordfern/analyses/oomycete)|[illumina](https://jmhulbert.github.io/swordfern/analyses/illumina)|[greenhouse-plants](https://jmhulbert.github.io/swordfern/plants)|[iNaturalist](https://jmhulbert.github.io/swordfern/analyses/inaturalist/)|
+|             |           |            |            |
+
 ## Field Collections
 
 ### iNat Questions

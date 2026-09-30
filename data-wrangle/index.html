@@ -366,27 +366,72 @@ display: none;
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><a href="https://jmhulbert.github.io/swordfern">Welcome</a></td>
+<td align="center"><a href="https://jmhulbert.github.io/swordfern/data">Data</a></td>
+<td align="center"><a href="https://jmhulbert.github.io/swordfern/methods">Methods</a></td>
+<td align="center"><a href="https://jmhulbert.github.io/swordfern/analyses">Analyses</a></td>
+<td align="center"><a href="https://jmhulbert.github.io/swordfern/discussion">Discussion</a></td>
+<td align="center"><a href="https://jmhulbert.github.io/swordfern/maps">Maps</a></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><a href="https://jmhulbert.github.io/swordfern/analyses/oomycete">oomycete</a></td>
+<td align="center"><a href="https://jmhulbert.github.io/swordfern/analyses/illumina">illumina</a></td>
+<td align="center"><a href="https://jmhulbert.github.io/swordfern/plants">greenhouse-plants</a></td>
+<td align="center"><a href="https://jmhulbert.github.io/swordfern/analyses/inaturalist/">iNaturalist</a></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
 <div id="data-wrangle" class="section level2">
 <h2>Data Wrangle</h2>
 <pre class="r"><code>setwd(&quot;~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern&quot;)
-sites &lt;- read.csv(&quot;./data/field/sword.fern.field.sample.data.csv&quot;)
-isolates &lt;- read.csv(&quot;./data/lab/sword.fern.isolates.csv&quot;)
-extractions &lt;- read.csv(&quot;./data/lab/sword.fern.isolate.extractions.august.csv&quot;)
+#sites &lt;- read.csv(&quot;./data/field/sword.fern.field.sample.data.csv&quot;)
+#isolates &lt;- read.csv(&quot;./data/lab/sword.fern.isolates.csv&quot;)
+#extractions &lt;- read.csv(&quot;./data/lab/sword.fern.isolate.extractions.august.csv&quot;)
 #greenhouse.weights &lt;- read.csv(&quot;./data/greenhouse/Final.Root.Weights.csv&quot;)
 #greenhouse.fronds &lt;- read.csv(&quot;./data/greenhouse/Final.Frond.Counts.csv&quot;)
 #write.csv(greenhouse,&quot;Final-Greenhouse-Data-Combined.csv&quot;,row.names=FALSE)
 #greenhouse &lt;- left_join(greenhouse.fronds,greenhouse.weights,by=&quot;Fern.Number&quot;)
-greenhouse &lt;- read.csv(&quot;./data/greenhouse/Final-Greenhouse-Data-Combined.csv&quot;)</code></pre>
-<pre class="r"><code>extractions &lt;- extractions[1:15]</code></pre>
-<pre class="r"><code>extractions &lt;- extractions %&gt;% filter(Sample.Extraction.Number!=&quot;FHL0167&quot;)</code></pre>
-<pre class="r"><code>results &lt;- left_join(isolates,extractions,join_by(&quot;Isolate.ID&quot;==&quot;Isolate.Name&quot;))</code></pre>
-<pre><code>## Warning in left_join(isolates, extractions, join_by(&quot;Isolate.ID&quot; == &quot;Isolate.Name&quot;)): Detected an unexpected many-to-many relationship between `x` and `y`.
-## ℹ Row 10 of `x` matches multiple rows in `y`.
-## ℹ Row 92 of `y` matches multiple rows in `x`.
-## ℹ If a many-to-many relationship is expected, set `relationship =
-##   &quot;many-to-many&quot;` to silence this warning.</code></pre>
-<pre class="r"><code>results &lt;- results %&gt;% mutate(Isolate.ID2=Isolate.ID) %&gt;% separate(Isolate.ID2, into=c(&quot;Sample&quot;, &quot;Isolate Number&quot;), sep=&quot;-&quot;)</code></pre>
-<pre class="r"><code>results &lt;- left_join(results,sites,join_by(&quot;Sample&quot;==&quot;Sample.ID&quot;))</code></pre>
+#greenhouse &lt;- read.csv(&quot;./data/greenhouse/Final-Greenhouse-Data-Combined.csv&quot;)</code></pre>
+<pre class="r"><code>#extractions &lt;- extractions[1:15]</code></pre>
+<pre class="r"><code>#extractions &lt;- extractions %&gt;% filter(Sample.Extraction.Number!=&quot;FHL0167&quot;)</code></pre>
+<pre class="r"><code>#results &lt;- left_join(isolates,extractions,join_by(&quot;Isolate.ID&quot;==&quot;Isolate.Name&quot;))</code></pre>
+<pre class="r"><code>#results &lt;- results %&gt;% mutate(Isolate.ID2=Isolate.ID) %&gt;% separate(Isolate.ID2, into=c(&quot;Sample&quot;, &quot;Isolate Number&quot;), sep=&quot;-&quot;)</code></pre>
+<pre class="r"><code>#results &lt;- left_join(results,sites,join_by(&quot;Sample&quot;==&quot;Sample.ID&quot;))</code></pre>
 <pre class="r"><code>#setwd(&quot;~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern&quot;)
 #write.csv(results,file=&quot;./data/lab/combined.results.csv&quot;)</code></pre>
 </div>
