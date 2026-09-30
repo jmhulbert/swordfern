@@ -7,7 +7,6 @@ BiocManager::install("ShortRead")
 BiocManager::install("dada2")
 BiocManager::install("DECIPHER")
 BiocManager::install("phyloseq")
-BiocManager::install("rBLAST")
 BiocManager::install("DESeq2")
 BiocManager::install("edgeR")
 library(Biostrings)
@@ -15,14 +14,15 @@ library(DECIPHER)
 library(dada2)
 library(ShortRead)
 library(phyloseq)
-library(rBLAST)
 library(ggplot2)
 library(DESeq2)
 devtools::install_github("gmteunisse/fantaxtic")
+devtools::install_github("kassambara/rstatix")
 library(fantaxtic)
 library(edgeR)
 library(stringr)
 library(ggpubr)
+library(DESeq2)
 
 
 seqtab.nochim <- readRDS("seqtab_nochim.rds")
@@ -151,7 +151,7 @@ ordplot <- plot_ordination(expt, ord, "samples", color = "Health", shape = "Heal
 ordplot + stat_ellipse(geom = "polygon", type = "norm", linetype = 2, alpha = 0.2, aes(fill=Health)) +
   stat_ellipse(type = "t", level = 0.95) + theme_bw()
 
-#explore this but species lvl
+#NMDS overall taxa
 ps.2sub <- subset_samples(ps.2health, !is.na(Health))
 expt2 <- prune_taxa(names(sort(taxa_sums(ps.2sub), TRUE)[1:50]), ps.2sub)
 ord2 <- ordinate(expt2, formula = ~Health, "NMDS", "bray")
@@ -166,18 +166,13 @@ species.ord <- ordinate(ps.speciesrel, method = "NMDS", distance = "bray")
 speciesordplot <- plot_ordination(ps.speciesrel, species.ord, "samples", color = "Health", shape = "Health")
 speciesordplot + stat_ellipse(geom = "polygon", type = "norm", linetype = 2, alpha = 0.2, aes(fill = Health)) + theme_bw() + stat_ellipse(type = "t", level = 0.95)
 
-
 #top 20
 ps.2top20 <- subset_taxa(ps.2health, !is.na(Species) & !is.na(Phylum) & !is.na(Genus) & !is.na(Class) & !is.na(Family) & !is.na(Order) & !is.na(Kingdom))
-ps.2top20 <- subset_taxa(ps.2top20, !Genus %in% c("gen_incertae_sedis"))
+ps.2top20 <- subset_taxa(ps.2top20, !apply(tax_table(ps.2top20), 1, function(x) any(grepl("Incertae_sedis", x, ignore.case = TRUE))))
 top20.2 <- names(sort(taxa_sums(ps.2top20), decreasing = TRUE)) [1:40]
-top20.2
-?taxa_sums
 ps.2top20 <- transform_sample_counts(ps.2top20, function(otu) otu/sum(otu))
-?transform_sample_counts()
 ps.2top20 <- prune_taxa(top20.2, ps.2top20)
 plot_bar(ps.2top20, x = "Genus", fill = "Species") + facet_wrap(~Health, scales = "free_x") + coord_flip() + theme_bw()
-
 
 top20 <- names(sort(taxa_sums(ps), decreasing = TRUE)) [1:20]
 ps.top20 <- transform_sample_counts(ps, function(otu) otu/sum(otu))
@@ -185,9 +180,34 @@ ps.top20 <- prune_taxa(top20, ps.top20)
 sample_variables(ps.top20)
 plot_bar(ps.top20, x = "Health", fill = "Phylum") + facet_wrap(~Health, scales = "free_x")  
 
+moreunhealthy <- names(sort(taxa_sums(ps.2top20), decreasing = TRUE))
 
+
+##Get OTUs that were more present in unhealthy than healthy samples
+health2.noNA <- subset_taxa(ps.2health, !is.na(Species) & !is.na(Phylum) & !is.na(Genus) & !is.na(Class) & !is.na(Family) & !is.na(Order) & !is.na(Kingdom))
+health2.noNA <- subset_taxa(health2.noNA, !apply(tax_table(health2.noNA), 1, function(x) any(grepl("Incertae_sedis", x, ignore.case = TRUE))))
+
+names.healthy <- sample_names(subset_samples(ps.2health, Health == "Healthy"))
+names.unhealthy <- sample_names(subset_samples(ps.2health, Health == "Unhealthy"))
+
+otu.matrix <- as(otu_table(ps.2health), "matrix")
+if (taxa_are_rows(ps.2health) == FALSE) {otu.matrix <- t(otu.matrix)}
+sum.healthy <- rowSums(otu.matrix[, names.healthy, drop = FALSE])
+sum.unhealthy <- rowSums(otu.matrix[, names.unhealthy, drop = FALSE])
+moreunhealthy <- sum.unhealthy > sum.healthy
+ps.moreunhealthy <- prune_taxa(moreunhealthy, ps.2health)
+moreunhealthytable <- psmelt(ps.moreunhealthy)
+
+
+plot_bar(ps.moreunhealthy, x = "Genus", fill = "Species") + facet_wrap(~Health, scales = "free_x") + coord_flip() + theme_bw()
+top20unhealthy <- names(sort(taxa_sums(ps.moreunhealthy), decreasing = TRUE)) [1:40]
+ps.unhealthy40 <- prune_taxa(top20unhealthy, ps.moreunhealthy)
+plot_bar(ps.unhealthy40, x = "Genus", fill = "Species") + facet_wrap(~Health) + coord_flip() + theme_bw()
+
+#Get unique OTU between health groups 
 ps.healthy <- subset_samples(ps, Health == "Healthy")
 ps.unhealthy <- subset_samples(ps, Health %in% c("Dead", "Dying"))
+
 taxa.healthy <- taxa_names(prune_taxa(taxa_sums(ps.healthy) > 0, ps.healthy))
 taxa.unhealthy <- taxa_names(prune_taxa(taxa_sums(ps.unhealthy) > 0, ps.unhealthy))
 
@@ -233,9 +253,6 @@ sigtab <- cbind(as(sigtab, "data.frame"), as(tax_table(health2.noNA)[rownames(si
 head(sigtab)
 dim(sigtab)
 
-colorfunc <- function(palname = "Set1", ...){
-  scale_fill_brewer(palatte = palname, ...)
-}
 x <- tapply(sigtab$log2FoldChange, sigtab$Phylum, function(x) max (x))
 x <- sort(x, TRUE)
 sigtab$Phylum = factor(as.character(sigtab$Phylum), levels = names(x))
@@ -248,18 +265,6 @@ ggplot(sigtab, aes(x = Genus, y=log2FoldChange, color = Phylum)) + geom_point(si
 #alpha diversity
 health2prune <- prune_species(speciesSums(ps.2health) > 0, ps.2health)
 theme_set(theme_bw())
-<<<<<<< HEAD
 pal <- "Set1"
-scale_colour_discrete <-  function(palname=pal, ...){
-  scale_colour_brewer(palette=palname, ...)
-}
-scale_fill_discrete <-  function(palname=pal, ...){
-  scale_fill_brewer(palette=palname, ...)
-}
-plot_richness(health2prune, measures = "Shannon") + facet_wrap(~Health, scales = "free_x") 
-
-
-
-=======
-plot_richness(health2prune, x = "Health", measures = "Shannon") + facet_wrap(~Health, scales = "free_x")
->>>>>>> d0f2b920b78c74699d6535d10d58ee99855171da
+plot_richness(health2prune, measures = "Shannon", color = "Location") + facet_wrap(~Health, scales = "free_x") 
+plot_richness(health2prune, x = "Health", measures = "Shannon", color = "Location") + facet_wrap(~Health, scales = "free_x")
