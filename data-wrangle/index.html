@@ -418,22 +418,46 @@ display: none;
 </table>
 <div id="data-wrangle" class="section level2">
 <h2>Data Wrangle</h2>
-<pre class="r"><code>setwd(&quot;~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern&quot;)
-#sites &lt;- read.csv(&quot;./data/field/sword.fern.field.sample.data.csv&quot;)
-#isolates &lt;- read.csv(&quot;./data/lab/sword.fern.isolates.csv&quot;)
-#extractions &lt;- read.csv(&quot;./data/lab/sword.fern.isolate.extractions.august.csv&quot;)
-#greenhouse.weights &lt;- read.csv(&quot;./data/greenhouse/Final.Root.Weights.csv&quot;)
+<div id="combine-isolate-data-with-inat-data" class="section level3">
+<h3>Combine isolate data with iNat data</h3>
+<pre class="r"><code>sites &lt;- read.csv(&quot;https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/field/sword.fern.field.sample.data.csv&quot;)
+isolates &lt;- read.csv(&quot;https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/lab/sword.fern.isolates.csv&quot;)
+extractions &lt;- read.csv(&quot;https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/lab/sword.fern.isolate.extractions.august.csv&quot;)</code></pre>
+</div>
+<div id="combined-greenhouse-data" class="section level3">
+<h3>Combined greenhouse data</h3>
+<pre class="r"><code>#greenhouse.weights &lt;- read.csv(&quot;./data/greenhouse/Final.Root.Weights.csv&quot;)
 #greenhouse.fronds &lt;- read.csv(&quot;./data/greenhouse/Final.Frond.Counts.csv&quot;)
-#write.csv(greenhouse,&quot;Final-Greenhouse-Data-Combined.csv&quot;,row.names=FALSE)
 #greenhouse &lt;- left_join(greenhouse.fronds,greenhouse.weights,by=&quot;Fern.Number&quot;)
+#write.csv(greenhouse,&quot;Final-Greenhouse-Data-Combined.csv&quot;,row.names=FALSE)
 #greenhouse &lt;- read.csv(&quot;./data/greenhouse/Final-Greenhouse-Data-Combined.csv&quot;)</code></pre>
-<pre class="r"><code>#extractions &lt;- extractions[1:15]</code></pre>
-<pre class="r"><code>#extractions &lt;- extractions %&gt;% filter(Sample.Extraction.Number!=&quot;FHL0167&quot;)</code></pre>
-<pre class="r"><code>#results &lt;- left_join(isolates,extractions,join_by(&quot;Isolate.ID&quot;==&quot;Isolate.Name&quot;))</code></pre>
-<pre class="r"><code>#results &lt;- results %&gt;% mutate(Isolate.ID2=Isolate.ID) %&gt;% separate(Isolate.ID2, into=c(&quot;Sample&quot;, &quot;Isolate Number&quot;), sep=&quot;-&quot;)</code></pre>
-<pre class="r"><code>#results &lt;- left_join(results,sites,join_by(&quot;Sample&quot;==&quot;Sample.ID&quot;))</code></pre>
-<pre class="r"><code>#setwd(&quot;~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern&quot;)
-#write.csv(results,file=&quot;./data/lab/combined.results.csv&quot;)</code></pre>
+<pre class="r"><code>intersect(names(isolates), names(extractions))</code></pre>
+<pre><code>##  [1] &quot;Project&quot;                                                            
+##  [2] &quot;Sample.Extraction.Number&quot;                                           
+##  [3] &quot;Sample.Number..Soil.or.Tissue.&quot;                                     
+##  [4] &quot;Secondary.Isolation.Number&quot;                                         
+##  [5] &quot;Sample.Substrate&quot;                                                   
+##  [6] &quot;Priority&quot;                                                           
+##  [7] &quot;Extraction.Kit&quot;                                                     
+##  [8] &quot;Qubit..ng.ul.&quot;                                                      
+##  [9] &quot;PCR.Amplification.Date&quot;                                             
+## [10] &quot;Successful.Amplification.&quot;                                          
+## [11] &quot;Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.&quot;
+## [12] &quot;Genus&quot;                                                              
+## [13] &quot;Oomycete&quot;                                                           
+## [14] &quot;Notes&quot;</code></pre>
+<pre class="r"><code>isolates &lt;- isolates[-c(1,3,15:29)]</code></pre>
+<pre class="r"><code>extractions &lt;- extractions %&gt;% filter(Sample.Extraction.Number!=&quot;FHL0167&quot;)</code></pre>
+<pre class="r"><code>results &lt;- left_join(isolates,extractions,join_by(&quot;Isolate.ID&quot;==&quot;Isolate.Name&quot;))</code></pre>
+<pre><code>## Warning in left_join(isolates, extractions, join_by(&quot;Isolate.ID&quot; == &quot;Isolate.Name&quot;)): Detected an unexpected many-to-many relationship between `x` and `y`.
+## ℹ Row 10 of `x` matches multiple rows in `y`.
+## ℹ Row 92 of `y` matches multiple rows in `x`.
+## ℹ If a many-to-many relationship is expected, set `relationship =
+##   &quot;many-to-many&quot;` to silence this warning.</code></pre>
+<pre class="r"><code>results &lt;- results %&gt;% mutate(Isolate.ID2=Isolate.ID) %&gt;% separate(Isolate.ID2, into=c(&quot;Sample&quot;, &quot;Isolate Number&quot;), sep=&quot;-&quot;)</code></pre>
+<pre class="r"><code>results &lt;- left_join(results,sites,join_by(&quot;Sample&quot;==&quot;Sample.ID&quot;))</code></pre>
+<pre class="r"><code>#write.csv(results,file=&quot;/Users/professorbabykangaroo/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern/data/lab/combined.results.csv&quot;)</code></pre>
+</div>
 </div>
 
 

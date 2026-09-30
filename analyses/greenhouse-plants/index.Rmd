@@ -1,7 +1,7 @@
 ---
 title: "Greenhouse plant analyses"
 output: 
-    html_document:
+  html_document:
     toc: true
     toc_float:
       collapsed: false
