@@ -1,6 +1,6 @@
 library(dplyr)
 library(tidyverse)
-if (!require("BiocManager", quietly = TRUE))
+if (!require("ßBiocManager", quietly = TRUE))
   install.packages("BiocManager")
 library(tibble)
 BiocManager::install("ShortRead")
@@ -158,7 +158,7 @@ top.taxa <- tax.health$top_taxa
 ps.prop <- transform_sample_counts(ps, function(otu) otu/sum(otu))
 ord.nmds.bray <- ordinate(ps.prop, method = "NMDS", distance = "bray")
 plot_ordination(ps.prop, ord.nmds.bray, color = "Health", title = "Bray NMDS") 
-
+f
 ps.sub <- subset_samples(ps, !is.na(Health))
 expt <- prune_taxa(names(sort(taxa_sums(ps.sub), TRUE)[1:50]), ps.sub)
 ord <- ordinate(expt, formula = ~Health, "NMDS", "bray")
@@ -267,3 +267,6 @@ scale_fill_discrete <-  function(palname=pal, ...){
   scale_fill_brewer(palette=palname, ...)
 }
 plot_richness(health2prune, measures = "Shannon") + facet_wrap(~Health, scales = "free_x") 
+
+
+

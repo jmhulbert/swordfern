@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2025-11-14" />
+<meta name="date" content="2026-09-30" />
 
 <title>Data Wrangling Methods</title>
 
@@ -350,17 +350,17 @@ display: none;
 
 
 <h1 class="title toc-ignore">Data Wrangling Methods</h1>
-<h4 class="date">2025-11-14</h4>
+<h4 class="date">2026-09-30</h4>
 
 </div>
 
 
 <pre class="r"><code>library(tidyverse)</code></pre>
 <pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.2.1     ✔ readr     2.1.6
+## ✔ dplyr     1.2.1     ✔ readr     2.2.0
 ## ✔ forcats   1.0.1     ✔ stringr   1.6.0
-## ✔ ggplot2   4.0.1     ✔ tibble    3.3.1
-## ✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+## ✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+## ✔ lubridate 1.9.5     ✔ tidyr     1.3.2
 ## ✔ purrr     1.2.2     
 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
@@ -387,8 +387,8 @@ greenhouse &lt;- read.csv(&quot;./data/greenhouse/Final-Greenhouse-Data-Combined
 ##   &quot;many-to-many&quot;` to silence this warning.</code></pre>
 <pre class="r"><code>results &lt;- results %&gt;% mutate(Isolate.ID2=Isolate.ID) %&gt;% separate(Isolate.ID2, into=c(&quot;Sample&quot;, &quot;Isolate Number&quot;), sep=&quot;-&quot;)</code></pre>
 <pre class="r"><code>results &lt;- left_join(results,sites,join_by(&quot;Sample&quot;==&quot;Sample.ID&quot;))</code></pre>
-<pre class="r"><code>setwd(&quot;~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern&quot;)
-write.csv(results,file=&quot;./data/lab/combined.results.csv&quot;)</code></pre>
+<pre class="r"><code>#setwd(&quot;~/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern&quot;)
+#write.csv(results,file=&quot;./data/lab/combined.results.csv&quot;)</code></pre>
 </div>
 
 

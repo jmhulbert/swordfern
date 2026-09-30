@@ -1,24 +1,52 @@
 ---
 title: "Swordfern Mortality Analyses"
 output: html_document
-date: "2025-11-14"
+date: "`r Sys.Date()`"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Welcome
+|            |            |            |            |            |            |
+|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
+|[Welcome](https://jmhulbert.github.io/swordfern)|[Data](https://jmhulbert.github.io/swordfern/data)|[Methods](https://jmhulbert.github.io/swordfern/methods)|[Analyses](https://jmhulbert.github.io/swordfern/analyses)|[Discussion](https://jmhulbert.github.io/swordfern/discussion)|[Maps](https://jmhulbert.github.io/swordfern/maps)
+|             |           |            |            |            |            |
+
+|            |            |            |            |
+|:----------:|:----------:|:----------:|:----------:|
+|[oomycete](https://jmhulbert.github.io/swordfern/analyses/oomycete)|[illumina](https://jmhulbert.github.io/swordfern/analyses/illumina)|[greenhouse-plants](https://jmhulbert.github.io/swordfern/plants)|[iNaturalist](https://jmhulbert.github.io/swordfern/analyses/inaturalist/)|
+|             |           |            |            |
+
+### Welcome
 
 The purpose of this repository is to organize and share active research about the western sword fern dieback in the Puget Sound. 
 
 
-## Disclaimer
+### Site Map
+
+* Links
+  + [Welcome](https://jmhulbert.github.io/swordfern)
+  + [Data](https://jmhulbert.github.io/swordfern/data)
+  + [Methods](https://jmhulbert.github.io/swordfern/methods)
+  + [Analyses](https://jmhulbert.github.io/swordfern/analyses)
+    + [oomycetes](https://jmhulbert.github.io/swordfern/analyses/oomycete)
+    + [illumina](https://jmhulbert.github.io/swordfern/analyses/illumina)
+    + [greenhouse-plants](https://jmhulbert.github.io/swordfern/plants)
+    + [iNaturalist](https://jmhulbert.github.io/swordfern/analyses/inaturalist/)
+  + [Discussion](https://jmhulbert.github.io/swordfern/discussion)
+  + [Maps](https://jmhulbert.github.io/swordfern/maps)
+
+
+
+
+
+### Disclaimer
 
 Note these data are raw and the analyses are preliminary. Some of the sequence results or isolate identifications are still being fleshed out. Stay tuned for updates.
 
 
-## Contact
+### Contact
 
 Please contact Joey at hulbe@wsu.edu if you're interested in collaborating! 
 

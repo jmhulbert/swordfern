@@ -1,7 +1,7 @@
 ---
 title: "Methods"
 output: html_document
-date: "2025-11-14"
+date: "`r Sys.Date()`"
 ---
 
 ```{r setup, include=FALSE}
