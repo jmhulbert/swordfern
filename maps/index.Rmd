@@ -46,26 +46,19 @@ The purpose of this page is to generate maps of data used in analyses.
 data <- read.csv("https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/lab/combined.results.csv")
 ```
 
+
 ```{r}
-data <- rename(data,Tentative.Result = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.)
+data <- data %>% filter(!is.na(latitude.x))
 ```
 
 
-```{r}
-data <- data %>% filter(common_name.x=="western sword fern") %>% filter(!is.na(latitude.x))
-```
-
-```{r}
-data$Tentative.Result[data$Tentative.Result=="Phytophthora europaea or abietivora?"] <- "Phytophthora sp."
-data$Tentative.Result[data$Tentative.Result=="Phytophthora flexuosa?"] <- "Phytophthora sp."
-```
 
 ```{r}
 data <- data %>%
   mutate(Results.Neg = if_else(
-    is.na(Tentative.Result) | Tentative.Result == "",
-    "No Oomycete found",
-    Tentative.Result
+    is.na(August.Final.Result) | August.Final.Result == "",
+    "No oomycete found",
+    August.Final.Result
   ))
 
 ```
@@ -86,6 +79,8 @@ Seward <- data %>% filter(place_guess.x=="Seward Park, Seattle, WA, US") %>% dro
 
 # Map
 
+
+## Seward Park
 
 ```{r}
 sewardbb <- c(left = min(Seward$longitude.x), 
@@ -117,6 +112,30 @@ syringae.seward.map
 ```
 
 
+### GPS coordinates for Phytophthora syringae
+
+```{r}
+with(
+  subset(data, August.Final.Result == "Phytophthora syringae"),
+  cat(paste(latitude.x, longitude.x, sep = ", "), sep = "\n")
+)
+```
+
+```{r}
+Phytophthora_table <- data %>%
+  filter(grepl("Phytophthora", August.Final.Result, ignore.case = TRUE)) %>%
+  select(
+    Sample.Extraction.Number,
+    Species = August.Final.Result,
+    Latitude = latitude.x,
+    Longitude = longitude.x
+  ) %>%
+  arrange(Species)
+Phytophthora_table
+```
+
+
+## Puget Sound
 
 ```{r}
 databb <- c(left = min(Phytophthora$longitude.x), 
@@ -140,7 +159,7 @@ species.map
 
 
 ```{r}
-syringaebb <- c(left = min(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$longitude.x),bottom = min(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$latitude.x), right = max(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$longitude.x),top = max(Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",]$latitude.x))
+syringaebb <- c(left = min(Phytophthora[Phytophthora$August.Final.Result=="Phytophthora syringae",]$longitude.x),bottom = min(Phytophthora[Phytophthora$August.Final.Result=="Phytophthora syringae",]$latitude.x), right = max(Phytophthora[Phytophthora$August.Final.Result=="Phytophthora syringae",]$longitude.x),top = max(Phytophthora[Phytophthora$August.Final.Result=="Phytophthora syringae",]$latitude.x))
 ```
 
 
@@ -150,7 +169,7 @@ data.map <- get_map(syringaebb, zoom = 10, scale = 2, maptype="terrain",source="
 
 
 ```{r}
-syringae.map <- ggmap(data.map)+geom_point(data=Phytophthora[Phytophthora$Tentative.Result=="Phytophthora syringae",],aes(x=longitude.x,y=latitude.x,fill=Tentative.Result),color = "black",pch=21, size = 3) + theme_minimal() +labs(title="Phytophthora syringae",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) +guides(fill="none")
+syringae.map <- ggmap(data.map)+geom_point(data=Phytophthora[Phytophthora$August.Final.Result=="Phytophthora syringae",],aes(x=longitude.x,y=latitude.x,fill=August.Final.Result),color = "black",pch=21, size = 3) + theme_minimal() +labs(title="Phytophthora syringae",x="Longitude",y="Latitude",fill="Species") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) +guides(fill="none")
 ```
 
 ```{r}
@@ -172,30 +191,6 @@ data.map <- get_map(databb, zoom = 9, scale = 4, maptype="terrain",source="googl
 
 ```{r}
 sample.map <- ggmap(data.map)+geom_jitter(data=Phytophthora,aes(x=longitude.x,y=latitude.x,fill="red"),color="black",pch=21,size=3,alpha=0.7,width=0.015) + theme_minimal() +labs(title="Sword Fern Mortality Sample Locations",x="Longitude",y="Latitude") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) +guides(color="none",fill="none")
-```
-
-```{r}
-sample.map
-```
-
-
-```{r}
-field.baits <- Phytophthora %>% filter(Project.x=="Swordfern Soil Bait Isolates")
-field.baits <- field.baits %>% filter(latitude.x!="NA") 
-databb <- c(left = min(field.baits$longitude.x), 
-                              bottom = min(field.baits$latitude.x), 
-                              right = max(field.baits$longitude.x), 
-                              top = max(field.baits$latitude.x))
-```
-
-
-```{r}
-data.map <- get_map(databb, zoom = 9, scale = 4, maptype="terrain",source="google")
-```
-
-
-```{r}
-sample.map <- ggmap(data.map)+geom_jitter(data=field.baits,aes(x=longitude.x,y=latitude.x,fill="red"),color="black",pch=21,size=3,alpha=0.7,width=0.015) + theme_minimal() +labs(title="Sword Fern Mortality Sample Locations",x="Longitude",y="Latitude") +theme(plot.title = element_text(size = 14, hjust = .5,face = "bold.italic")) +guides(color="none",fill="none")
 ```
 
 ```{r}
