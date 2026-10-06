@@ -25,6 +25,7 @@ library(edgeR)
 library(stringr)
 library(ggpubr)
 library(DESeq2)
+library(purrr)
 
 
 seqtab.nochim <- readRDS("seqtab_nochim.rds")
@@ -260,6 +261,42 @@ tax.noNA <- tax %>%
   drop_na("Species", "Phylum", "Genus", "Class", "Family", "Order", "Kingdom") %>%
   filter(!if_any(c(Species, Phylum, Genus, Class, Family, Order, Kingdom), ~ grepl("incertae_sedis", ignore.case = TRUE, .)))
 
+length(colnames(tax.noNA))
+samp.names <- colnames(tax.noNA[2:112])
+tax.noNA.count <- tax.noNA %>%
+  mutate(across(c(samp.names), ~ifelse(.x !=0,1,.x)
+  ))
+
+tax.noNA.count$Total <- rowSums(tax.noNA.count[,2:112])
+tax.noNA.count <- tax.noNA.count %>% 
+  unite("Taxa", Kingdom, Phylum, Class, Order, Family, Genus, Species, sep = " ", remove = FALSE)
+sample.cols <- c(tax.noNA.count[,2:112])
+sample.cols <- unname(unlist(sample.cols))
+
+tax.noNA.merge <- tax.noNA.count %>%
+  group_by(Taxa) %>%
+  mutate(
+    has_a_one = pmap_lgl(pick(all_of(sample.cols)), ~ any(c(...) == 1)),
+    first_one_row = which(has_a_one)[1],
+    current_row = row_number()
+  ) %>%
+  mutate(across(all_of(sample.cols), ~ {
+    ifelse(current_row != first_one_row & !is.na(first_one_row), 0, .)
+  })) %>%
+  select(-has_a_one, -first_one_row, -current_row) %>%
+  ungroup()
+tax.noNA.merge$Total <- rowSums(tax.noNA.merge[,2:112])
+
+# Merge rows by grouping exact matches
+tax.noNA.spec <- tax.noNA.merge %>%
+  group_by(Taxa) %>%
+  summarise(
+    Total = sum(Total)
+  ) %>% ungroup()
+
+top. <- names(sort(taxa_sums(ps.moreunhealthy), decreasing = TRUE)) [1:40]
+
+ggplot(tax.noNA.count, aes(x = Taxa, y = Total)) + geom_bar(stat = "identity") + coord_flip()
 
 length(unique(tax.noNA$X))
 otu.noNA <- as.data.frame(otu_table(health2.noNA))
