@@ -1,0 +1,30 @@
+---
+title: "Illumina Analyses"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+|            |            |            |            |            |            |
+|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
+|[Welcome](https://jmhulbert.github.io/swordfern)|[Data](https://jmhulbert.github.io/swordfern/data)|[Methods](https://jmhulbert.github.io/swordfern/methods)|[Analyses](https://jmhulbert.github.io/swordfern/analyses)|[Discussion](https://jmhulbert.github.io/swordfern/discussion)|[Maps](https://jmhulbert.github.io/swordfern/maps)
+|             |           |            |            |            |            |
+
+|            |            |            |            |
+|:----------:|:----------:|:----------:|:----------:|
+|[oomycete](https://jmhulbert.github.io/swordfern/analyses/oomycete)|[illumina](https://jmhulbert.github.io/swordfern/analyses/illumina)|[greenhouse-plants](https://jmhulbert.github.io/swordfern/plants)|[iNaturalist](https://jmhulbert.github.io/swordfern/analyses/inaturalist/)|
+|             |           |            |            |
+
+## Welcome
+
+The purpose of this r markdown document is to summarize the analyses completed with illumina sequence data. 
+
+Analyses have been completed by two collaborators below
+
+* Illumina Sequence Analyses
+  + [zarigal](https://jmhulbert.github.io/swordfern/analyses/illumina/zarigal)
+  + [jmhulbert](https://jmhulbert.github.io/swordfern/analyses/illumina/jmhulbert)

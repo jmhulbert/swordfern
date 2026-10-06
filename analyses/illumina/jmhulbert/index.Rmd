@@ -1,0 +1,21 @@
+---
+title: "Illumina Sequence Data Analyses - jmhulbert"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+illumina <- read.csv("https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/illumina/tax_table_count.csv")
+```
+
