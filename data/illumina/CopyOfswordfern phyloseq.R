@@ -263,7 +263,10 @@ tax.noNA <- tax %>%
 
 <<<<<<< HEAD:data/illumina/CopyOfswordfern phyloseq.R
 <<<<<<< HEAD:data/illumina/CopyOfswordfern phyloseq.R
+<<<<<<< HEAD:data/illumina/CopyOfswordfern phyloseq.R
 =======
+=======
+>>>>>>> b1a779ab05bf66de2b8686a88f49c64e4f62ef4d:data/illumina/swordfern phyloseq.R
 =======
 >>>>>>> b1a779ab05bf66de2b8686a88f49c64e4f62ef4d:data/illumina/swordfern phyloseq.R
 length(colnames(tax.noNA))
@@ -303,6 +306,9 @@ top. <- names(sort(taxa_sums(ps.moreunhealthy), decreasing = TRUE)) [1:40]
 
 ggplot(tax.noNA.count, aes(x = Taxa, y = Total)) + geom_bar(stat = "identity") + coord_flip()
 <<<<<<< HEAD:data/illumina/CopyOfswordfern phyloseq.R
+<<<<<<< HEAD:data/illumina/CopyOfswordfern phyloseq.R
+>>>>>>> b1a779ab05bf66de2b8686a88f49c64e4f62ef4d:data/illumina/swordfern phyloseq.R
+=======
 >>>>>>> b1a779ab05bf66de2b8686a88f49c64e4f62ef4d:data/illumina/swordfern phyloseq.R
 =======
 >>>>>>> b1a779ab05bf66de2b8686a88f49c64e4f62ef4d:data/illumina/swordfern phyloseq.R

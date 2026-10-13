@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(tidyverse)
+library(vegan)
 ```
 
 
@@ -20,4 +21,301 @@ illumina <- read.csv("https://github.com/jmhulbert/swordfern/raw/refs/heads/main
 #illumina <- read.csv("../data/illumina/tax")
 ```
 
+## Species abundance comparisons
+
+
+### Total Reads Identified to Species
+
+
+```{r}
+species <- illumina %>% filter(!is.na(Species) & Abundance >0)  %>% droplevels()
+```
+
+1299 reads were identified to species from 96 samples. 
+
+```{r}
+ species <- species %>%
+    mutate(
+      Genus_species = paste(
+        sub("^g__", "", Genus),
+        sub("^s__", "", Species)
+    )
+  )
+```
+
+
+```{r}
+summary <- species %>% group_by(Health,Location,Sample) %>% summarize(n_species=n_distinct(Genus_species))
+summary
+```
+
+
+```{r}
+ggplot(summary,aes(Health,n_species)) +
+  geom_boxplot() +
+  theme_bw()
+```
+
+
+Similar amounts of species were found in both healthy and unhealthy plants
+
+```{r}
+unique(species$Genus_species)
+```
+
+155 species were identified
+
+```{r fig.height=14, fig.width=6}
+ggplot(species,aes(Genus_species,fill=Health)) +
+  geom_bar() +
+  facet_wrap(~Health) +
+  coord_flip() +
+  theme_bw() +
+  guides(fill="none") +
+  labs(x="Species",y="Number of Samples") + 
+  theme(axis.text.y = element_text(face = "italic")) + 
+  scale_fill_manual(values = c("#7CAE00", "#C77CFF")) 
+```
+
+### Species more commonly isolated from unhealthy plants
+
+```{r}
+unhealthy.more.fungi <- species |>
+ group_by(Genus_species) |>
+ filter(n_distinct(Sample[Health %in% "Uunhealthy"]) >
+  n_distinct(Sample[Health %in% "Healthy"])
+) |> ungroup()
+```
+
+
+```{r fig.height=14, fig.width=6}
+ggplot(unhealthy.more.species,aes(Genus_species,fill=Health)) +
+  geom_bar() +
+  facet_wrap(~Health)+
+  coord_flip() +
+  theme_bw() +
+  theme(axis.text.y = element_text(face = "italic")) + 
+  guides(fill="none") +
+  labs(x="Species",y="Number of Samples") +
+  scale_fill_manual(values = c("#7CAE00", "#C77CFF")) 
+```
+
+```{r}
+unique(unhealthy.more.species$Genus_species)
+```
+
+104 species were more commonly isolated from the unhealthy plants
+
+
+### Species only isolated from unhealthy plants
+
+```{r}
+unhealthy.distinct.species <- species |>
+  group_by(Genus_species) |>
+  filter(all(Health %in% "Unhealthy")) |>
+  ungroup()
+```
+
+
+```{r fig.height=14, fig.width=6}
+ggplot(unhealthy.distinct.species,aes(Genus_species,fill=Health)) +
+  geom_bar() +
+  coord_flip() +
+  theme_bw() +
+  theme(axis.text.y = element_text(face = "italic")) + 
+  guides(fill="none") +
+  labs(x="Species",y="Number of Samples") +
+  scale_fill_manual(values = "#C77CFF")
+```
+
+```{r}
+unhealthy.fungi <- unhealthy.distinct.species %>% group_by(Genus_species) %>% summarize(n=n()) %>% arrange(desc(n))
+unhealthy.fungi
+```
+
+
+```{r}
+unique(unhealthy.fungi$Genus_species)
+```
+
+54 species were only isolated from unhealthy plants
+
+
+
+## NMDS
+
+```{r}
+species$Abundance <- as.numeric(as.character(species$Abundance))
+species$Health <- trimws(as.character(species$Health))
+
+stopifnot(
+  all(is.finite(species$Abundance)),
+  all(species$Abundance >= 0),
+  !anyNA(species$Sample),
+  !anyNA(species$OTU),
+  all(species$Health %in% c("Healthy", "Unhealthy"))
+)
+
+# One metadata row per sample.
+metadata <- unique(species[c("Sample", "Health", "Location")])
+stopifnot(!anyDuplicated(metadata$Sample))
+
+# Sample-by-OTU matrix; sum any duplicate sample/OTU records.
+# Use OTU, not the row identifier X.1.
+community <- as.matrix(
+  xtabs(Abundance ~ Sample + Genus_species, data = species)
+)
+
+# Convert abundance to presence (1) / absence (0).
+# Unlisted sample-OTU combinations are assumed absent.
+pa <- 1L * (community > 0)
+
+# Remove empty samples and OTUs.
+pa <- pa[rowSums(pa) > 0, colSums(pa) > 0, drop = FALSE]
+
+# Align metadata with the community matrix.
+metadata <- metadata[match(rownames(pa), metadata$Sample), ]
+metadata$Health <- factor(
+  metadata$Health,
+  levels = c("Healthy", "Unhealthy")
+)
+
+stopifnot(
+  identical(as.character(metadata$Sample), rownames(pa)),
+  all(table(metadata$Health) >= 3)
+)
+
+# Binary Jaccard dissimilarities.
+jaccard <- vegdist(pa, method = "jaccard", binary = TRUE)
+```
+
+
+```{r}
+# Two-dimensional NMDS.
+# Strong ties are retained because this sparse dataset contains many
+# equally dissimilar sample pairs with no shared OTUs.
+set.seed(2026)
+nmds <- metaMDS(
+  jaccard,
+  k = 2,
+  try = 50,
+  trymax = 500,
+  maxit = 500,
+  autotransform = FALSE,
+  weakties = FALSE,
+  trace = FALSE
+)
+
+if (nmds$converged == 0) {
+  warning("The best NMDS solution was not repeated; interpret cautiously.")
+}
+if (nmds$stress > 0.2) {
+  warning("High stress: the two-dimensional plot represents distances poorly.")
+}
+
+# Extract sample coordinates.
+plot_data <- cbind(
+  metadata,
+  as.data.frame(scores(nmds, display = "sites"))
+)
+```
+
+
+```{r}
+# Approximate 95% confidence ellipses around health-group centroids.
+# These describe uncertainty in the centroid, conditional on the
+# ordination and assuming independent samples; they do not enclose
+# 95% of individual samples.
+ellipses <- ordiellipse(
+  nmds,
+  groups = metadata$Health,
+  kind = "se",
+  conf = 0.95,
+  draw = "none",
+  w = rep(1, nrow(metadata))
+)
+
+ellipse_data <- do.call(
+  rbind,
+  lapply(names(ellipses), function(group) {
+    e <- ellipses[[group]]
+    angles <- seq(0, 2 * pi, length.out = 201)
+    circle <- cbind(cos(angles), sin(angles))
+
+    eig <- eigen(e$cov, symmetric = TRUE)
+    transform <- diag(sqrt(pmax(eig$values, 0)), 2) %*%
+      t(eig$vectors)
+
+    coordinates <- sweep(
+      e$scale * circle %*% transform,
+      2,
+      e$center,
+      "+"
+    )
+
+    data.frame(
+      NMDS1 = coordinates[, 1],
+      NMDS2 = coordinates[, 2],
+      Health = group
+    )
+  })
+)
+
+centroids <- aggregate(
+  cbind(NMDS1, NMDS2) ~ Health,
+  data = plot_data,
+  FUN = mean
+)
+
+colors <- c(Healthy = "#7CAE00", Unhealthy = "#C77CFF")
+counts <- table(metadata$Health)
+
+```
+
+
+```{r}
+p <- ggplot(plot_data, aes(NMDS1, NMDS2, color = Health)) +
+  geom_polygon(
+    data = ellipse_data,
+    aes(fill = Health, group = Health),
+    alpha = 0.16,
+    linewidth = 0.7
+  ) +
+  geom_point(aes(shape = Health), size = 2.7, alpha = 0.85) +
+  geom_point(
+    data = centroids,
+    shape = 3,
+    size = 4,
+    stroke = 1.2,
+    show.legend = FALSE
+  ) +
+  scale_color_manual(values = colors) +
+  scale_fill_manual(values = colors) +
+  scale_shape_manual(values = c(Healthy = 16, Unhealthy = 17)) +
+  coord_equal() +
+  labs(
+    title = "Fungal communities: presence/absence",
+    subtitle = sprintf(
+      "Binary Jaccard NMDS | Stress = %.4f | Healthy n = %d; Unhealthy n = %d",
+      nmds$stress, counts["Healthy"], counts["Unhealthy"]
+    ),
+    caption = paste(
+      "Shading: approximate 95% confidence ellipses for group centroids; +: centroid.",
+      "Unlisted sample-OTU combinations are assumed absent.",
+      sep = "\n"
+    ),
+    color = "Health",
+    fill = "Health",
+    shape = "Health"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid.minor = element_blank(),
+    legend.position = "top",
+    plot.title = element_text(face = "bold"),
+    plot.caption = element_text(hjust = 0)
+  )
+
+print(p)
+```
 
