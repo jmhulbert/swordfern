@@ -31,7 +31,7 @@ library(tidyverse)
 ```{r}
 sites <- read.csv("https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/field/sword.fern.field.sample.data.csv")
 isolates <- read.csv("https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/lab/sword.fern.isolates.csv")
-extractions <- read.csv("https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/lab/sword.fern.isolate.extractions.august.csv")
+extractions <- read.csv("https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/lab/sword.fern.isolate.extractions.october.csv")
 ```
 
 ### Combined greenhouse data
@@ -53,7 +53,7 @@ intersect(names(isolates), names(extractions))
 isolates <- isolates %>% rename(Initial.Results = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.)
 isolates$Initial.Result[isolates$Initial.Result=="Phytophthora europaea or abietivora?"] <- "Phytophthora sp."
 isolates$Initial.Result[isolates$Initial.Result=="Phytophthora flexuosa?"] <- "Phytophthora sp."
-
+isolates <- isolates %>% mutate(Isolate.ID = tolower(Isolate.ID))
 isolates <- isolates[c("Isolate.ID","Initial.Results")]
 
 ```
@@ -61,7 +61,8 @@ isolates <- isolates[c("Isolate.ID","Initial.Results")]
 
 ```{r}
 extractions <- extractions %>% rename(Sample = Sample.Number..Soil.or.Tissue.)
-extractions <- extractions[-c(10:21,24:25,27:30)]
+extractions <- extractions[-c(8:20,23,24,26:29)]
+extractions <- extractions %>% mutate(Isolate.Name= tolower(Isolate.Name))
 ```
 
 ```{r}
@@ -91,7 +92,7 @@ extractions <- extractions |>
 
 
 ```{r}
-results <- left_join(extractions,isolates,join_by("Isolate.Name"=="Isolate.ID"))
+results <- full_join(extractions,isolates,join_by("Isolate.Name"=="Isolate.ID"))
 ```
 
 
@@ -99,8 +100,12 @@ results <- left_join(extractions,isolates,join_by("Isolate.Name"=="Isolate.ID"))
 results <- left_join(results,sites,join_by("Sample"=="Sample.ID"))
 ```
 
+```{r}
+swordfern <- results %>% filter(Project=="Sword Fern Mortalilty")
+```
+
 
 ```{r}
-#write.csv(results,file="/Users/professorbabykangaroo/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern/data/lab/combined.results.csv")
+#write.csv(swordfern,file="/Users/professorbabykangaroo/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern/data/lab/combined.results.csv")
 ```
 

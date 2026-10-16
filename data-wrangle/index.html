@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2026-10-15" />
+<meta name="date" content="2026-10-16" />
 
 <title>Data Wrangling Methods</title>
 
@@ -350,7 +350,7 @@ display: none;
 
 
 <h1 class="title toc-ignore">Data Wrangling Methods</h1>
-<h4 class="date">2026-10-15</h4>
+<h4 class="date">2026-10-16</h4>
 
 </div>
 
@@ -422,7 +422,7 @@ display: none;
 <h3>Combine isolate data with iNat data</h3>
 <pre class="r"><code>sites &lt;- read.csv(&quot;https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/field/sword.fern.field.sample.data.csv&quot;)
 isolates &lt;- read.csv(&quot;https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/lab/sword.fern.isolates.csv&quot;)
-extractions &lt;- read.csv(&quot;https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/lab/sword.fern.isolate.extractions.august.csv&quot;)</code></pre>
+extractions &lt;- read.csv(&quot;https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/lab/sword.fern.isolate.extractions.october.csv&quot;)</code></pre>
 </div>
 <div id="combined-greenhouse-data" class="section level3">
 <h3>Combined greenhouse data</h3>
@@ -435,24 +435,24 @@ extractions &lt;- read.csv(&quot;https://github.com/jmhulbert/swordfern/raw/refs
 <pre><code>##  [1] &quot;Project&quot;                                                            
 ##  [2] &quot;Sample.Extraction.Number&quot;                                           
 ##  [3] &quot;Sample.Number..Soil.or.Tissue.&quot;                                     
-##  [4] &quot;Secondary.Isolation.Number&quot;                                         
-##  [5] &quot;Sample.Substrate&quot;                                                   
-##  [6] &quot;Priority&quot;                                                           
-##  [7] &quot;Extraction.Kit&quot;                                                     
-##  [8] &quot;Qubit..ng.ul.&quot;                                                      
-##  [9] &quot;PCR.Amplification.Date&quot;                                             
-## [10] &quot;Successful.Amplification.&quot;                                          
-## [11] &quot;Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.&quot;
-## [12] &quot;Genus&quot;                                                              
-## [13] &quot;Oomycete&quot;                                                           
-## [14] &quot;Notes&quot;</code></pre>
+##  [4] &quot;Sample.Substrate&quot;                                                   
+##  [5] &quot;Priority&quot;                                                           
+##  [6] &quot;Extraction.Kit&quot;                                                     
+##  [7] &quot;Qubit..ng.ul.&quot;                                                      
+##  [8] &quot;PCR.Amplification.Date&quot;                                             
+##  [9] &quot;Successful.Amplification.&quot;                                          
+## [10] &quot;Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.&quot;
+## [11] &quot;Genus&quot;                                                              
+## [12] &quot;Oomycete&quot;                                                           
+## [13] &quot;Notes&quot;</code></pre>
 <pre class="r"><code>isolates &lt;- isolates %&gt;% rename(Initial.Results = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.)
 isolates$Initial.Result[isolates$Initial.Result==&quot;Phytophthora europaea or abietivora?&quot;] &lt;- &quot;Phytophthora sp.&quot;
 isolates$Initial.Result[isolates$Initial.Result==&quot;Phytophthora flexuosa?&quot;] &lt;- &quot;Phytophthora sp.&quot;
-
+isolates &lt;- isolates %&gt;% mutate(Isolate.ID = tolower(Isolate.ID))
 isolates &lt;- isolates[c(&quot;Isolate.ID&quot;,&quot;Initial.Results&quot;)]</code></pre>
 <pre class="r"><code>extractions &lt;- extractions %&gt;% rename(Sample = Sample.Number..Soil.or.Tissue.)
-extractions &lt;- extractions[-c(10:21,24:25,27:30)]</code></pre>
+extractions &lt;- extractions[-c(8:20,23,24,26:29)]
+extractions &lt;- extractions %&gt;% mutate(Isolate.Name= tolower(Isolate.Name))</code></pre>
 <pre class="r"><code>extractions &lt;- extractions %&gt;% filter(Sample.Extraction.Number!=&quot;FHL0167&quot;)</code></pre>
 <pre class="r"><code># in isolates this sample is listed twice: FZJ074-1 Root Elongisporangium anandrum
 isolates &lt;- isolates |&gt;
@@ -468,9 +468,10 @@ extractions &lt;- extractions |&gt;
     across(everything(), ~ first(.x[!is.na(.x)], default = NA)),
     .groups = &quot;drop&quot;
   )</code></pre>
-<pre class="r"><code>results &lt;- left_join(extractions,isolates,join_by(&quot;Isolate.Name&quot;==&quot;Isolate.ID&quot;))</code></pre>
+<pre class="r"><code>results &lt;- full_join(extractions,isolates,join_by(&quot;Isolate.Name&quot;==&quot;Isolate.ID&quot;))</code></pre>
 <pre class="r"><code>results &lt;- left_join(results,sites,join_by(&quot;Sample&quot;==&quot;Sample.ID&quot;))</code></pre>
-<pre class="r"><code>#write.csv(results,file=&quot;/Users/professorbabykangaroo/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern/data/lab/combined.results.csv&quot;)</code></pre>
+<pre class="r"><code>swordfern &lt;- results %&gt;% filter(Project==&quot;Sword Fern Mortalilty&quot;)</code></pre>
+<pre class="r"><code>#write.csv(swordfern,file=&quot;/Users/professorbabykangaroo/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern/data/lab/combined.results.csv&quot;)</code></pre>
 </div>
 </div>
 
