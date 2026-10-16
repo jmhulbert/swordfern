@@ -54,9 +54,8 @@ library(npmv)
 data <- read.csv("https://github.com/jmhulbert/swordfern/raw/refs/heads/main/data/lab/combined.results.csv")
 data <- rename(data,Tentative.Result = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.)
 data <- data %>% filter(common_name.x=="western sword fern")
-data$Tentative.Result[data$Tentative.Result=="Phytophthora europaea or abietivora?"] <- "Phytophthora sp."
-data$Tentative.Result[data$Tentative.Result=="Phytophthora flexuosa?"] <- "Phytophthora sp."
-data$Project <- as.factor(data$Project.x)
+data$Project <- as.factor(data$Project)
+data$Experiment <- as.factor(data$Experiment)
 data$place_guess.x <- as.factor(data$place_guess.x)
 data$Oomycete <- as.factor(data$Oomycete)
 roots <- data %>% filter(Project=="Swordfern Roots")

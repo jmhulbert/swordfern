@@ -9,7 +9,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-
 ```{r}
 library(tidyverse)
 library(vegan)
@@ -269,7 +268,6 @@ centroids <- aggregate(
 
 colors <- c(Healthy = "#7CAE00", Unhealthy = "#C77CFF")
 counts <- table(metadata$Health)
-
 ```
 
 

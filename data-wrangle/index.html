@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2026-09-30" />
+<meta name="date" content="2026-10-15" />
 
 <title>Data Wrangling Methods</title>
 
@@ -350,7 +350,7 @@ display: none;
 
 
 <h1 class="title toc-ignore">Data Wrangling Methods</h1>
-<h4 class="date">2026-09-30</h4>
+<h4 class="date">2026-10-15</h4>
 
 </div>
 
@@ -446,15 +446,29 @@ extractions &lt;- read.csv(&quot;https://github.com/jmhulbert/swordfern/raw/refs
 ## [12] &quot;Genus&quot;                                                              
 ## [13] &quot;Oomycete&quot;                                                           
 ## [14] &quot;Notes&quot;</code></pre>
-<pre class="r"><code>isolates &lt;- isolates[-c(1,3,15:29)]</code></pre>
+<pre class="r"><code>isolates &lt;- isolates %&gt;% rename(Initial.Results = Tentative.Results..Internal.NCBI.Oomcycete.including.voucher.blast.)
+isolates$Initial.Result[isolates$Initial.Result==&quot;Phytophthora europaea or abietivora?&quot;] &lt;- &quot;Phytophthora sp.&quot;
+isolates$Initial.Result[isolates$Initial.Result==&quot;Phytophthora flexuosa?&quot;] &lt;- &quot;Phytophthora sp.&quot;
+
+isolates &lt;- isolates[c(&quot;Isolate.ID&quot;,&quot;Initial.Results&quot;)]</code></pre>
+<pre class="r"><code>extractions &lt;- extractions %&gt;% rename(Sample = Sample.Number..Soil.or.Tissue.)
+extractions &lt;- extractions[-c(10:21,24:25,27:30)]</code></pre>
 <pre class="r"><code>extractions &lt;- extractions %&gt;% filter(Sample.Extraction.Number!=&quot;FHL0167&quot;)</code></pre>
-<pre class="r"><code>results &lt;- left_join(isolates,extractions,join_by(&quot;Isolate.ID&quot;==&quot;Isolate.Name&quot;))</code></pre>
-<pre><code>## Warning in left_join(isolates, extractions, join_by(&quot;Isolate.ID&quot; == &quot;Isolate.Name&quot;)): Detected an unexpected many-to-many relationship between `x` and `y`.
-## ℹ Row 10 of `x` matches multiple rows in `y`.
-## ℹ Row 92 of `y` matches multiple rows in `x`.
-## ℹ If a many-to-many relationship is expected, set `relationship =
-##   &quot;many-to-many&quot;` to silence this warning.</code></pre>
-<pre class="r"><code>results &lt;- results %&gt;% mutate(Isolate.ID2=Isolate.ID) %&gt;% separate(Isolate.ID2, into=c(&quot;Sample&quot;, &quot;Isolate Number&quot;), sep=&quot;-&quot;)</code></pre>
+<pre class="r"><code># in isolates this sample is listed twice: FZJ074-1 Root Elongisporangium anandrum
+isolates &lt;- isolates |&gt;
+  group_by(Isolate.ID) |&gt;
+  summarise(
+    across(everything(), ~ first(.x[!is.na(.x)], default = NA)),
+    .groups = &quot;drop&quot;
+  )</code></pre>
+<pre class="r"><code># in extractions this sample is listed twice: FHL0099 - FZJ004-2 Soil
+extractions &lt;- extractions |&gt;
+  group_by(Sample.Extraction.Number) |&gt;
+  summarise(
+    across(everything(), ~ first(.x[!is.na(.x)], default = NA)),
+    .groups = &quot;drop&quot;
+  )</code></pre>
+<pre class="r"><code>results &lt;- left_join(extractions,isolates,join_by(&quot;Isolate.Name&quot;==&quot;Isolate.ID&quot;))</code></pre>
 <pre class="r"><code>results &lt;- left_join(results,sites,join_by(&quot;Sample&quot;==&quot;Sample.ID&quot;))</code></pre>
 <pre class="r"><code>#write.csv(results,file=&quot;/Users/professorbabykangaroo/Library/Mobile Documents/com~apple~CloudDocs/Core/Server Files/swordfern/data/lab/combined.results.csv&quot;)</code></pre>
 </div>
